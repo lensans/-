@@ -11,12 +11,34 @@ QT+=sql
 SOURCES += \
     main.cpp \
     mainwindow.cpp
+    
+    check_score.cpp \
+    input_score.cpp \
+    login.cpp \
+    main.cpp \
+    managerwindow.cpp \
+    revise_score.cpp \
+    total_score.cpp
 
 HEADERS += \
     mainwindow.h
 
+    check_score.h \
+    input_score.h \
+    login.h \
+    managerwindow.h \
+    revise_score.h \
+    total_score.h
+
 FORMS += \
     mainwindow.ui
+
+    check_score.ui \
+    input_score.ui \
+    login.ui \
+    managerwindow.ui \
+    revise_score.ui \
+    total_score.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
