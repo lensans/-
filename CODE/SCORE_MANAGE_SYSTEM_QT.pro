@@ -16,7 +16,8 @@ SOURCES += \
     login.cpp \
     managerwindow.cpp \
     revise_score.cpp \
-    total_score.cpp
+    total_score.cpp \
+    paint.cpp
 
 HEADERS += \
     check_score.h \
@@ -36,7 +37,8 @@ HEADERS += \
     ui_managerwindow.h \
     ui_revise_score.h \
     ui_total_score.h \
-    mysql_connect.h
+    mysql_connect.h \
+    paint.h
 
 FORMS += \
     mainwindow.ui\
@@ -47,6 +49,10 @@ FORMS += \
     total_score.ui
 
 # Default rules for deployment.
+QXLSX_PARENTPATH=./     # current QXlsx path is . (. means curret directory)
+QXLSX_HEADERPATH=./qxlsx/header/  # current QXlsx header path is ./header/
+QXLSX_SOURCEPATH=./qxlsx/source/# current QXlsx source path is ./source/
+include(./QXlsx/QXlsx.pri)
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
