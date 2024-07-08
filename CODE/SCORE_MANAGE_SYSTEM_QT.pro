@@ -10,7 +10,7 @@ QT+=sql
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp\
     
     check_score.cpp \
     input_score.cpp \
@@ -21,7 +21,7 @@ SOURCES += \
     total_score.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h\
 
     check_score.h \
     input_score.h \
@@ -31,7 +31,7 @@ HEADERS += \
     total_score.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui\
 
     check_score.ui \
     input_score.ui \
