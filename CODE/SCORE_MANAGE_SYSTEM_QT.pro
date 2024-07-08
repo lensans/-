@@ -35,7 +35,8 @@ HEADERS += \
     ui_login.h \
     ui_managerwindow.h \
     ui_revise_score.h \
-    ui_total_score.h
+    ui_total_score.h \
+    mysql_connect.h
 
 FORMS += \
     mainwindow.ui\
