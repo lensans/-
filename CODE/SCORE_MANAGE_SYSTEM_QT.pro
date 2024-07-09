@@ -15,6 +15,7 @@ SOURCES += \
     input_score.cpp \
     login.cpp \
     managerwindow.cpp \
+    mysql_connect.cpp \
     revise_score.cpp \
     total_score.cpp \
     paint.cpp
