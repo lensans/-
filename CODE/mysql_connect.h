@@ -47,7 +47,7 @@ int get_single_score(QSqlDatabase db,int student_id,QString subject);
 
 //将一个学生的科目和成绩保存在一个pair数组中返回-待实现
 
-void get_all_score(QSqlDatabase db,QString student_name,QPair<QString,int>& subject_score);
+void get_all_score(QSqlDatabase db,QString student_name,VP& subject_score);
 
 //修改某个学生某科目的成绩-已实现
 
