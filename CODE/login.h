@@ -2,10 +2,11 @@
 #define LOGIN_H
 
 #include <QMainWindow>
-#include <QSqlDatabase> //数据驱动
-#include <QSqlQuery> //数据库执行语句
-#include <QMessageBox>//消息盒子
+#include <QSqlDatabase> 
+#include <QSqlQuery> 
+#include <QMessageBox>
 #include <QDebug>
+
 void sqlite_Init();
 
 QT_BEGIN_NAMESPACE
@@ -18,10 +19,12 @@ class login : public QMainWindow
 
 public:
     login(QWidget *parent = nullptr);
+    
+    void on_btn_signin_clicked();//点击确认登录
+    
     ~login();
 
 private slots:
-    void on_btn_signin_clicked();
 
 
 private:

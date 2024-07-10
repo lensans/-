@@ -30,7 +30,7 @@ public:
     QPushButton *btn_revise;
     QPushButton *btn_total_score;
     QPushButton *btn_subject;
-    QPushButton *btn_showgrade;
+    QPushButton *btn_show_score;
     QLabel *interface_1;
 
     void setupUi(QMainWindow *managerwindow)
@@ -113,9 +113,9 @@ public:
 
         verticalLayout->addWidget(btn_subject);
 
-        btn_showgrade = new QPushButton(widget);
-        btn_showgrade->setObjectName(QString::fromUtf8("btn_showgrade"));
-        btn_showgrade->setStyleSheet(QString::fromUtf8("background-color: rgb(220, 219, 255);\n"
+        btn_show_score = new QPushButton(widget);
+        btn_show_score->setObjectName(QString::fromUtf8("btn_show_score"));
+        btn_show_score->setStyleSheet(QString::fromUtf8("background-color: rgb(220, 219, 255);\n"
 "color: rgb(0,0,0);\n"
 "\n"
 "border:0px groove gray;border-radius:\n"
@@ -123,7 +123,7 @@ public:
 "font: 16pt \"Candara\";\n"
 ""));
 
-        verticalLayout->addWidget(btn_showgrade);
+        verticalLayout->addWidget(btn_show_score);
 
         interface_1 = new QLabel(centralwidget);
         interface_1->setObjectName(QString::fromUtf8("interface_1"));
@@ -147,7 +147,7 @@ public:
         btn_revise->setText(QCoreApplication::translate("managerwindow", "\344\277\256\346\224\271\346\210\220\347\273\251", nullptr));
         btn_total_score->setText(QCoreApplication::translate("managerwindow", "\346\237\245\350\257\242\346\200\273\345\210\206\346\216\222\345\220\215", nullptr));
         btn_subject->setText(QCoreApplication::translate("managerwindow", "\350\257\255\346\225\260\345\244\226\345\222\214\347\220\206\345\214\226\347\224\237\345\205\263\347\263\273", nullptr));
-        btn_showgrade->setText(QCoreApplication::translate("managerwindow", "\345\261\225\347\244\272\345\215\225\347\247\221\346\210\220\347\273\251\347\233\264\346\226\271\345\233\276", nullptr));
+        btn_show_score->setText(QCoreApplication::translate("managerwindow", "\345\261\225\347\244\272\345\215\225\347\247\221\346\210\220\347\273\251\347\233\264\346\226\271\345\233\276", nullptr));
         interface_1->setText(QCoreApplication::translate("managerwindow", "\346\254\242\350\277\216\344\275\277\347\224\250\351\253\230\350\200\203\346\210\220\347\273\251\347\256\241\347\220\206\347\263\273\347\273\237\347\256\241\347\220\206\345\221\230\347\253\257", nullptr));
     } // retranslateUi
 

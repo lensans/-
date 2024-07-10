@@ -1,8 +1,7 @@
-﻿#ifndef INPUT_SCORE_H
+#ifndef INPUT_SCORE_H
 #define INPUT_SCORE_H
 
 #include <QMainWindow>
-#include <QObject>
 
 namespace Ui {
 class Input_score;
@@ -26,3 +25,4 @@ private:
 };
 
 #endif // INPUT_SCORE_H
+

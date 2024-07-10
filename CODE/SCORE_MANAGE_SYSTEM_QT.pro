@@ -12,7 +12,6 @@ DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs depr
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp \
     check_score.cpp \
     input_score.cpp \
     login.cpp \
@@ -44,7 +43,6 @@ HEADERS += \
     paint.h
 
 FORMS += \
-    mainwindow.ui \
     check_score.ui \
     input_score.ui \
     login.ui \

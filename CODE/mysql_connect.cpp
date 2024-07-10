@@ -5,25 +5,6 @@
 
 DB::DB(){
     Init();
-    // db =QSqlDatabase::addDatabase("QMYSQL");//使用qmysql驱动连接数据库
-    // db.setHostName("sh-cynosdbmysql-grp-mejzbbvg.sql.tencentcdb.com");
-    // db.setPort(21693);
-    // db.setDatabaseName("scores");
-    // db.setUserName("user");
-    // db.setPassword("123456Abc");//设置连接相关参数
-    // // db.setHostName("127.0.0.1");
-    // // db.setPort(3306);
-    // // db.setDatabaseName("mysql");
-    // // db.setUserName("root");
-    // // db.setPassword("123456");//设置连接相关参数
-    // bool success=db.open();
-    // if(success){
-    //     QMessageBox::information(nullptr,"success","您已成功连接到数据库");
-    // }
-    // else{
-    //     QSqlError error = db.lastError();
-    //     QMessageBox::critical(nullptr,"error", error.text());
-    // }//检测连接是否成功
 }
 
 QSqlDatabase  DB::Init()
@@ -68,7 +49,7 @@ int DB::get_single_score(int student_id,QString subject){
 }
 
 
-bool DB::update_score(QString student_id,QString subject,int new_score){
+bool DB::update_score(int student_id,QString subject,int new_score){
     QSqlQuery query(db);//指定数据库连接
     //QString sql = QString("UPDATE SCORE SET Chinese=66 WHERE ID=100");
     QString sql=QString("UPDATE SCORE SET %1=%2 WHERE ID=%3").arg(subject).arg(new_score).arg(student_id);
@@ -89,7 +70,7 @@ bool DB::update_score(QString student_id,QString subject,int new_score){
 }
 
 
-bool DB::add_score(QString student_id, QString student_name, VP subject_scores){
+bool DB::add_score(int student_id, QString student_name, VP subject_scores){
     QSqlQuery query1(db);
     query1.prepare("INSERT INTO SCORE (NAME,ID ) VALUES( ?,? )");
     query1.addBindValue(student_name);
@@ -254,6 +235,43 @@ void DB::upload_score(QString file_path){
         }
         row++;
     }
+}
+bool DB::revise_password(QString username,QString new_password){
+    QSqlQuery query(db);
+    QString sql=QString("UPDATE USER SET password=%1 WHERE username=%2").arg(new_password).arg(username);
+    if(!query.exec(sql)){
+        QMessageBox::critical(nullptr,"error","密码更新失败："+query.lastError().text());
+        return 0;
+    }
+    else{
+        return 1;
+    }
+}
+void DB::get_students_scores(int start_student_id, int end_student_id, QString subject, std::vector<int>& scores){
+    QSqlQuery query(db);
+    QString sql=QString("SELECT %1 FROM SCORE WHERE ID BETWEEN %2 AND %3").arg(subject).arg(QString::number(start_student_id)).arg(QString::number(end_student_id));
+    if(query.exec(sql)){
+        while(query.next()){
+            scores.push_back(query.value(subject).toInt());
+        }
+    }
+    else{
+        QMessageBox::critical(nullptr,"error","成绩获取失败："+query.lastError().text());
+    }
+
+}
+int DB::get_rank(int student_id, QString subject){
+    QSqlQuery query(db);
+    std::vector<int> scores;int distribution[751]{0};int rank[751];int myscore;
+    myscore=get_single_score(student_id,subject);
+    get_students_scores(1,query.size(),subject,scores);
+    for(int a:scores){
+        distribution[a]+=1;
+    }
+    for(int b=1;b<=750;b++){
+        rank[b]=distribution[b]+distribution[b-1];
+    }
+    return rank[myscore];
 }
 
 DB::~DB(){

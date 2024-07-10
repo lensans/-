@@ -96,7 +96,7 @@ border:1px groove gray;border-radius:
 font: 10pt &quot;Candara&quot;;</string>
        </property>
        <property name="placeholderText">
-        <string>Places input your Id</string>
+        <string>Places input your name</string>
        </property>
       </widget>
      </item>
@@ -150,7 +150,7 @@ border:0px groove gray;border-radius:
 font: 14pt &quot;Candara&quot;;</string>
     </property>
     <property name="text">
-     <string>Sign in</string>
+     <string>确认登录</string>
     </property>
    </widget>
   </widget>

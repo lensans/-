@@ -1,8 +1,9 @@
-﻿#ifndef TOTAL_SCORE_H
+#ifndef TOTAL_SCORE_H
 #define TOTAL_SCORE_H
 
 #include <QMainWindow>
-#include <QObject>
+
+//总分及排名
 
 namespace Ui {
 class total_score;

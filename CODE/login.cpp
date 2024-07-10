@@ -1,5 +1,8 @@
 #include "login.h"
 #include "ui_login.h"
+#include <mysql_connect.h>
+#include "change_password.h"
+#include "managerwindow.h"
 #include <QGraphicsDropShadowEffect>
 
 login::login(QWidget *parent)
@@ -21,63 +24,32 @@ login::login(QWidget *parent)
     shadow->setBlurRadius(30);// 设置阴影的模糊半径
     ui->label_image->setGraphicsEffect(shadow);// 将阴影效果应用到label_image上
 
-    //初始化数据库
-    sqlite_Init();
+    connect(ui->btn_signin,&QPushButton::clicked,this,&login::on_btn_signin_clicked);//点击确认登录按钮
+    
+}
+
+void login::on_btn_signin_clicked()//点击确认登录
+{
+    //从文本框读入姓名和密码
+    QString username = ui->lineEdit_username->text();
+    QString password = ui->lineEdit_password->text();
+
+    DB db;
+    int res = db.login_check(username, password);
+    if(res != -1 && password == "123456")//登陆成功并且是第一次登录，跳入修改密码界面
+    {
+        change_password *w3 = new change_password(this);
+        w3->show();
+    }
+    if(res != -1)//登陆成功则进入菜单界面
+    {
+        managerwindow *ma_on = new managerwindow(this);
+        ma_on->show();
+        this->close();
+    }
 }
 
 login::~login()
 {
     delete ui;
 }
-
-void sqlite_Init()
-{
-
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("user.db");
-    if(!db.open())
-    {
-        qDebug()<<"open error";// 如果打开失败，输出错误信息
-    }
-    //create excle
-    QString createsql=QString("create table if not exists user(id integer primary key autoincrement,"
-                        "username ntext unique not NULL,"
-                        "password ntext not NULL)");
-    QSqlQuery query;
-    if(!query.exec(createsql))// 创建一个QSqlQuery对象用于执行SQL语句
-    {
-        qDebug()<<"table create error";
-    }
-    else{
-        qDebug()<<"table create success";
-    }
-}
-
-
-void login::on_btn_signin_clicked()
-{
-    sqlite_Init();
-    QString username = ui->lineEdit_username->text();// 获取用户名输入框的内容
-    QString password = ui->lineEdit_password->text();// 获取密码输入框的内容
-    QString sql=QString("select * from user where username='%1' and password='%2'")
-            .arg(username).arg(password);
-    //创建执行语句对象
-    QSqlQuery query(sql);
-    //判断执行结果
-    if(!query.next())
-    {
-        qDebug()<<"Login error";
-        QMessageBox::information(this,"登录认证","登录失败,账户或者密码错误");
-
-    }
-    else
-    {
-        qDebug()<<"Login success";
-        QMessageBox::information(this,"登录认证","登录成功");
-        QWidget *w = new QWidget;
-        w->show();
-        this->close();
-    }
-}
-
-
