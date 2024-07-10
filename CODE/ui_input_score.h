@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -27,28 +28,24 @@ class Ui_Input_score
 {
 public:
     QWidget *centralwidget;
-    QFormLayout *formLayout;
     QTabWidget *input_tab;
     QWidget *single_input;
     QWidget *widget;
-    QFormLayout *formLayout_4;
-    QLabel *input_Chinese_label;
+    QGridLayout *gridLayout;
+    QLineEdit *input_Chinese;
     QLineEdit *input_Chinese_line;
-    QSpacerItem *verticalSpacer;
-    QLabel *input_math_label;
+    QLineEdit *input_math;
     QLineEdit *input_math_line;
-    QSpacerItem *verticalSpacer_2;
-    QLabel *input_English_label;
+    QLineEdit *input_English;
     QLineEdit *input_English_line;
-    QSpacerItem *verticalSpacer_3;
-    QLabel *input_physics_label;
+    QLineEdit *input_physics;
     QLineEdit *input_physics_line;
-    QSpacerItem *verticalSpacer_4;
-    QLabel *input_chemistry_label;
+    QLineEdit *input_chemistry;
     QLineEdit *input_chemistry_line;
-    QSpacerItem *verticalSpacer_5;
-    QLabel *input_biology_label;
+    QLineEdit *input_biology;
     QLineEdit *input_biology_line;
+    QLineEdit *input_sum;
+    QLineEdit *input_sum_line;
     QWidget *widget_2;
     QFormLayout *formLayout_3;
     QLineEdit *input_name_line;
@@ -73,10 +70,9 @@ public:
         Input_score->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         centralwidget = new QWidget(Input_score);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        formLayout = new QFormLayout(centralwidget);
-        formLayout->setObjectName(QString::fromUtf8("formLayout"));
         input_tab = new QTabWidget(centralwidget);
         input_tab->setObjectName(QString::fromUtf8("input_tab"));
+        input_tab->setGeometry(QRect(9, 9, 782, 539));
         input_tab->setMinimumSize(QSize(782, 539));
         QFont font;
         font.setFamilies({QString::fromUtf8("\345\256\213\344\275\223")});
@@ -90,108 +86,101 @@ public:
         single_input->setObjectName(QString::fromUtf8("single_input"));
         widget = new QWidget(single_input);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(390, 100, 251, 281));
+        widget->setGeometry(QRect(410, 60, 291, 361));
         widget->setStyleSheet(QString::fromUtf8("\n"
 "color: rgb(0, 0,0);"));
-        formLayout_4 = new QFormLayout(widget);
-        formLayout_4->setObjectName(QString::fromUtf8("formLayout_4"));
-        input_Chinese_label = new QLabel(widget);
-        input_Chinese_label->setObjectName(QString::fromUtf8("input_Chinese_label"));
-        input_Chinese_label->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\256\213\344\275\223\";"));
+        gridLayout = new QGridLayout(widget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        input_Chinese = new QLineEdit(widget);
+        input_Chinese->setObjectName(QString::fromUtf8("input_Chinese"));
+        input_Chinese->setStyleSheet(QString::fromUtf8("font: 12pt \"\345\256\213\344\275\223\";"));
 
-        formLayout_4->setWidget(0, QFormLayout::LabelRole, input_Chinese_label);
+        gridLayout->addWidget(input_Chinese, 0, 0, 1, 1);
 
         input_Chinese_line = new QLineEdit(widget);
         input_Chinese_line->setObjectName(QString::fromUtf8("input_Chinese_line"));
         input_Chinese_line->setStyleSheet(QString::fromUtf8("border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;"));
 
-        formLayout_4->setWidget(0, QFormLayout::FieldRole, input_Chinese_line);
+        gridLayout->addWidget(input_Chinese_line, 0, 1, 1, 1);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        input_math = new QLineEdit(widget);
+        input_math->setObjectName(QString::fromUtf8("input_math"));
+        input_math->setStyleSheet(QString::fromUtf8("font: 12pt \"\345\256\213\344\275\223\";"));
 
-        formLayout_4->setItem(1, QFormLayout::FieldRole, verticalSpacer);
-
-        input_math_label = new QLabel(widget);
-        input_math_label->setObjectName(QString::fromUtf8("input_math_label"));
-        input_math_label->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\256\213\344\275\223\";"));
-
-        formLayout_4->setWidget(2, QFormLayout::LabelRole, input_math_label);
+        gridLayout->addWidget(input_math, 1, 0, 1, 1);
 
         input_math_line = new QLineEdit(widget);
         input_math_line->setObjectName(QString::fromUtf8("input_math_line"));
         input_math_line->setStyleSheet(QString::fromUtf8("border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;"));
 
-        formLayout_4->setWidget(2, QFormLayout::FieldRole, input_math_line);
+        gridLayout->addWidget(input_math_line, 1, 1, 1, 1);
 
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        input_English = new QLineEdit(widget);
+        input_English->setObjectName(QString::fromUtf8("input_English"));
+        input_English->setStyleSheet(QString::fromUtf8("font: 12pt \"\345\256\213\344\275\223\";"));
 
-        formLayout_4->setItem(3, QFormLayout::FieldRole, verticalSpacer_2);
-
-        input_English_label = new QLabel(widget);
-        input_English_label->setObjectName(QString::fromUtf8("input_English_label"));
-        input_English_label->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\256\213\344\275\223\";"));
-
-        formLayout_4->setWidget(4, QFormLayout::LabelRole, input_English_label);
+        gridLayout->addWidget(input_English, 2, 0, 1, 1);
 
         input_English_line = new QLineEdit(widget);
         input_English_line->setObjectName(QString::fromUtf8("input_English_line"));
         input_English_line->setStyleSheet(QString::fromUtf8("border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;"));
 
-        formLayout_4->setWidget(4, QFormLayout::FieldRole, input_English_line);
+        gridLayout->addWidget(input_English_line, 2, 1, 1, 1);
 
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        input_physics = new QLineEdit(widget);
+        input_physics->setObjectName(QString::fromUtf8("input_physics"));
+        input_physics->setStyleSheet(QString::fromUtf8("font: 12pt \"\345\256\213\344\275\223\";"));
 
-        formLayout_4->setItem(5, QFormLayout::FieldRole, verticalSpacer_3);
-
-        input_physics_label = new QLabel(widget);
-        input_physics_label->setObjectName(QString::fromUtf8("input_physics_label"));
-        input_physics_label->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\256\213\344\275\223\";"));
-
-        formLayout_4->setWidget(6, QFormLayout::LabelRole, input_physics_label);
+        gridLayout->addWidget(input_physics, 3, 0, 1, 1);
 
         input_physics_line = new QLineEdit(widget);
         input_physics_line->setObjectName(QString::fromUtf8("input_physics_line"));
         input_physics_line->setStyleSheet(QString::fromUtf8("border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;"));
 
-        formLayout_4->setWidget(6, QFormLayout::FieldRole, input_physics_line);
+        gridLayout->addWidget(input_physics_line, 3, 1, 1, 1);
 
-        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        input_chemistry = new QLineEdit(widget);
+        input_chemistry->setObjectName(QString::fromUtf8("input_chemistry"));
+        input_chemistry->setStyleSheet(QString::fromUtf8("font: 12pt \"\345\256\213\344\275\223\";"));
 
-        formLayout_4->setItem(7, QFormLayout::FieldRole, verticalSpacer_4);
-
-        input_chemistry_label = new QLabel(widget);
-        input_chemistry_label->setObjectName(QString::fromUtf8("input_chemistry_label"));
-        input_chemistry_label->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\256\213\344\275\223\";"));
-
-        formLayout_4->setWidget(8, QFormLayout::LabelRole, input_chemistry_label);
+        gridLayout->addWidget(input_chemistry, 4, 0, 1, 1);
 
         input_chemistry_line = new QLineEdit(widget);
         input_chemistry_line->setObjectName(QString::fromUtf8("input_chemistry_line"));
         input_chemistry_line->setStyleSheet(QString::fromUtf8("border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;"));
 
-        formLayout_4->setWidget(8, QFormLayout::FieldRole, input_chemistry_line);
+        gridLayout->addWidget(input_chemistry_line, 4, 1, 1, 1);
 
-        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        input_biology = new QLineEdit(widget);
+        input_biology->setObjectName(QString::fromUtf8("input_biology"));
+        input_biology->setStyleSheet(QString::fromUtf8("font: 12pt \"\345\256\213\344\275\223\";"));
 
-        formLayout_4->setItem(9, QFormLayout::FieldRole, verticalSpacer_5);
-
-        input_biology_label = new QLabel(widget);
-        input_biology_label->setObjectName(QString::fromUtf8("input_biology_label"));
-        input_biology_label->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\256\213\344\275\223\";"));
-
-        formLayout_4->setWidget(10, QFormLayout::LabelRole, input_biology_label);
+        gridLayout->addWidget(input_biology, 5, 0, 1, 1);
 
         input_biology_line = new QLineEdit(widget);
         input_biology_line->setObjectName(QString::fromUtf8("input_biology_line"));
         input_biology_line->setStyleSheet(QString::fromUtf8("border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;"));
 
-        formLayout_4->setWidget(10, QFormLayout::FieldRole, input_biology_line);
+        gridLayout->addWidget(input_biology_line, 5, 1, 1, 1);
+
+        input_sum = new QLineEdit(widget);
+        input_sum->setObjectName(QString::fromUtf8("input_sum"));
+        input_sum->setStyleSheet(QString::fromUtf8("font: 12pt \"\345\256\213\344\275\223\";"));
+
+        gridLayout->addWidget(input_sum, 6, 0, 1, 1);
+
+        input_sum_line = new QLineEdit(widget);
+        input_sum_line->setObjectName(QString::fromUtf8("input_sum_line"));
+        input_sum_line->setStyleSheet(QString::fromUtf8("border:1px groove gray;border-radius:\n"
+"7px;padding:2px 4px;"));
+
+        gridLayout->addWidget(input_sum_line, 6, 1, 1, 1);
 
         widget_2 = new QWidget(single_input);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
@@ -268,9 +257,6 @@ public:
         revise_title->setGeometry(QRect(320, 10, 141, 61));
         revise_title->setFont(font);
         input_tab->addTab(excel_input, QString());
-
-        formLayout->setWidget(0, QFormLayout::FieldRole, input_tab);
-
         Input_score->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(Input_score);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -287,12 +273,13 @@ public:
     void retranslateUi(QMainWindow *Input_score)
     {
         Input_score->setWindowTitle(QCoreApplication::translate("Input_score", "MainWindow", nullptr));
-        input_Chinese_label->setText(QCoreApplication::translate("Input_score", "<html><head/><body><p><span style=\" font-size:16pt;\">\350\257\255\346\226\207\357\274\232</span></p></body></html>", nullptr));
-        input_math_label->setText(QCoreApplication::translate("Input_score", "\346\225\260\345\255\246\357\274\232", nullptr));
-        input_English_label->setText(QCoreApplication::translate("Input_score", "\350\213\261\350\257\255\357\274\232", nullptr));
-        input_physics_label->setText(QCoreApplication::translate("Input_score", "\347\211\251\347\220\206\357\274\232", nullptr));
-        input_chemistry_label->setText(QCoreApplication::translate("Input_score", "\345\214\226\345\255\246\357\274\232", nullptr));
-        input_biology_label->setText(QCoreApplication::translate("Input_score", "\347\224\237\347\211\251\357\274\232", nullptr));
+        input_Chinese->setText(QCoreApplication::translate("Input_score", "Chinese", nullptr));
+        input_math->setText(QCoreApplication::translate("Input_score", "Math", nullptr));
+        input_English->setText(QCoreApplication::translate("Input_score", "English", nullptr));
+        input_physics->setText(QCoreApplication::translate("Input_score", "Physics", nullptr));
+        input_chemistry->setText(QCoreApplication::translate("Input_score", "Chemestriy", nullptr));
+        input_biology->setText(QCoreApplication::translate("Input_score", "Biology", nullptr));
+        input_sum->setText(QCoreApplication::translate("Input_score", "Sum", nullptr));
         input_name_label->setText(QCoreApplication::translate("Input_score", "<html><head/><body><p><span style=\" font-size:16pt;\">\345\247\223\345\220\215\357\274\232</span></p></body></html>", nullptr));
         input_num_label->setText(QCoreApplication::translate("Input_score", "<html><head/><body><p><span style=\" font-size:16pt;\">\345\255\246\345\217\267\357\274\232</span></p></body></html>", nullptr));
         input_single_confirm->setText(QCoreApplication::translate("Input_score", "\347\241\256\345\256\232\345\257\274\345\205\245", nullptr));
