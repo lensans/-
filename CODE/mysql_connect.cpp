@@ -233,3 +233,29 @@ int DB::login_check(QString username, QString password){
         return -1;
     }
 }
+
+void DB::upload_score(QString file_path){
+    QXlsx::Document xlsx(file_path);
+    if(!xlsx.isLoadPackage()){
+        QMessageBox::critical(nullptr,"error","Failed to open Excel document.");
+        return;
+    }
+    QSqlQuery query(db);
+    query.prepare("INSERT INTO scores (student_id, score) VALUES (:student_id, :score)");
+
+    int row=1;
+    while(!xlsx.read(row,1).isNull()){
+        QString student_id=xlsx.read(row,1).toString();
+        int score=xlsx.read(row,2).toInt();
+        query.bindValue(":student_id",student_id);
+        query.bindValue(":score",score);
+        if(!query.exec()){
+            QMessageBox::information(nullptr,"fail",query.lastError().text());
+        }
+        row++;
+    }
+}
+
+DB::~DB(){
+    db.close();
+}
