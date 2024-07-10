@@ -12,13 +12,13 @@ managerwindow::managerwindow(QWidget *parent)
 {
     ui->setupUi(this);
     connect(ui->btn_input,&QPushButton::clicked,this,&managerwindow::on_btn_input_clicked);//点击录入成绩按钮，跳入录入成绩界面
-    connect(ui->btn_input,&QPushButton::clicked,this,&managerwindow::close);//并且关闭菜单界面
+    //connect(ui->btn_input,&QPushButton::clicked,this,&managerwindow::close);//并且关闭菜单界面
 
     connect(ui->btn_revise,&QPushButton::clicked,this,&managerwindow::on_btn_revise_clicked);//跳入修改成绩界面
-    connect(ui->btn_revise,&QPushButton::clicked,this,&managerwindow::close);
+    //connect(ui->btn_revise,&QPushButton::clicked,this,&managerwindow::close);
 
     connect(ui->btn_check,&QPushButton::clicked,this,&managerwindow::on_btn_check_clicked);//跳入查询成绩界面
-    connect(ui->btn_check,&QPushButton::clicked,this,&managerwindow::close);
+    //connect(ui->btn_check,&QPushButton::clicked,this,&managerwindow::close);
 }
 
 void managerwindow::on_btn_input_clicked()
