@@ -18,6 +18,8 @@
 
 #include<QString>
 
+#include<QSqlRecord>
+
 #include "xlsxdocument.h"
 
 #include "xlsxchartsheet.h"

@@ -1,3 +1,5 @@
+#ifndef MANAGERWINDOW_H
+#define MANAGERWINDOW_H
 #include "input_score.h"
 #include <QMainWindow>
 #include <QWidget>>
