@@ -1,16 +1,18 @@
 QT       += core gui
+QT       += sql
+QT       += charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG   += c++17
-QT       += sql
+
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp\
+    mainwindow.cpp \
     check_score.cpp \
     input_score.cpp \
     login.cpp \
@@ -26,7 +28,7 @@ HEADERS += \
     grade.h \
     input_score.h \
     login.h \
-    mainwindow.h\ \
+    mainwindow.h \
     manager.h \
     managerwindow.h \
     revise_score.h \
@@ -42,7 +44,7 @@ HEADERS += \
     paint.h
 
 FORMS += \
-    mainwindow.ui\
+    mainwindow.ui \
     check_score.ui \
     input_score.ui \
     login.ui \
@@ -57,3 +59,6 @@ include(./QXlsx/QXlsx.pri)
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+INCLUDEPATH += E:/QT/6.6.1/mingw_64/include
+LIBS += -LE:/QT/6.6.1/mingw_64/lib

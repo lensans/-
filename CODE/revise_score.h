@@ -1,7 +1,8 @@
-#ifndef REVISE_SCORE_H
+﻿#ifndef REVISE_SCORE_H
 #define REVISE_SCORE_H
 
 #include <QMainWindow>
+#include <QObject>
 
 namespace Ui {
 class revise_score;
@@ -14,6 +15,9 @@ class revise_score : public QMainWindow
 public:
     explicit revise_score(QWidget *parent = nullptr);
     ~revise_score();
+
+public slots:
+    void on_btn_revise_return_clicked();
 
 private:
     Ui::revise_score *ui;

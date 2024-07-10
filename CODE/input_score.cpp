@@ -1,7 +1,7 @@
-#include "input_score.h"
+﻿#include "input_score.h"
 #include "ui_input_score.h"
 #include "managerwindow.h"
-#include <mysql_connect.h>
+#include "mysql_connect.h"
 
 Input_score::Input_score(QWidget *parent)
     : QMainWindow(parent)
@@ -34,7 +34,9 @@ void Input_score::on_input_single_confirm_clicked()
 {
     QString student_id = ui->input_num_line->text();
     QString student_name = ui->input_name_line->text();
-    add_score(QSqlDatabase db, int student_id, QString student_name, VP subject_scores)；
+    VP subject_scores;
+    DB db;
+    db.add_score(student_id, student_name, subject_scores);
 }
 
 Input_score::~Input_score()
