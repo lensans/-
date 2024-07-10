@@ -1,8 +1,6 @@
 #include"mysql_connect.h"
 
 
-
-
 QSqlDatabase Initdb()
 {
     QSqlDatabase db =QSqlDatabase::addDatabase("QMYSQL");//使用qmysql驱动连接数据库
@@ -62,54 +60,88 @@ void update_score(QSqlDatabase db,int student_id,QString subject,int new_score){
     else{
         QMessageBox::information(nullptr,"success","success");
     }
-    db.close();
 }
 
 
 bool add_score(QSqlDatabase db, int student_id, QString student_name, VP subject_scores){
-    QSqlQuery query(db);
-    query.prepare("INSERT INTO SCORE(Name,ID,Chinese,Math,English,Physics,Chemestriy,Biology,Sum)" "VALUES(? ? ? ? ? ? ? ? ?)");
-    query.bindValue(0,student_name);
-    query.bindValue(1,student_id);
-    for(int i=0;i<subject_scores.size();i++){
-        if(subject_scores[i].first=="Chinese"){
-            query.bindValue(2,subject_scores[i].second);
-            continue;
-        }
-        if(subject_scores[i].first=="Math"){
-            query.bindValue(3,subject_scores[i].second);
-            continue;
-        }
-        if(subject_scores[i].first=="English"){
-            query.bindValue(4,subject_scores[i].second);
-            continue;
-        }
-        if(subject_scores[i].first=="Physics"){
-            query.bindValue(5,subject_scores[i].second);
-            continue;
-        }
-        if(subject_scores[i].first=="Chemestriy"){
-            query.bindValue(6,subject_scores[i].second);
-            continue;
-        }
-        if(subject_scores[i].first=="Biology"){
-            query.bindValue(7,subject_scores[i].second);
-            continue;
-        }
-        if(subject_scores[i].first=="Sum"){
-            query.bindValue(8,subject_scores[i].second);
-            continue;
-        }
-    }
-    if(query.exec()){
+    QSqlQuery query(db),query1(db);
+    query1.prepare("INSERT INTO SCORE (NAME,ID ) VALUES( ?,? )");
+    query1.addBindValue(student_name);
+    query1.addBindValue(QString::number(student_id));
+    if(query1.exec()){
         QMessageBox::information(nullptr,"success","success");
-        return 1;
     }
     else{
-        QMessageBox::information(nullptr,"success",query.lastError().text());
-        return 0;
+        QMessageBox::information(nullptr,"failed",query1.lastError().text());
     }
-    return query.exec();
+    for(QPair s:subject_scores){
+        update_score(db,student_id,s.first,s.second);
+    }
+    // QString sql = "INSERT INTO SCORE (ID,";
+    // QString values = "VALUES (" + QString::number(student_id)+", ";
+    // for (size_t i = 0; i < subject_scores.size(); ++i) {
+    //     sql += subject_scores[i].first;
+    //     values += "?";
+    //     sql += ", ";
+    //     values += ", ";
+    // }
+    // sql += ") ";
+    // values +=")";
+    // sql += values;
+    // query.prepare(sql);
+    // // 绑定值
+    // for (int i=0;i<subject_scores.size();i++) {
+    //     query.bindValue(i,subject_scores[i].second);
+    // }
+    // if(query.exec()){
+    //     return 1;
+    // }
+    // else{
+    //     QMessageBox::information(nullptr,"error",query.lastError().text());
+    //     return 0;
+    // }
+    // query.prepare("INSERT INTO SCORE(Name,ID,Chinese,Math,English,Physics,Chemestriy,Biology,Sum) VALUES(? ? ? ? ? ? ? ? ?)");
+    // query.bindValue(0,student_name);
+    // query.bindValue(1,student_id);
+    // for(int i=0;i<subject_scores.size();i++){
+    //     if(subject_scores[i].first=="Chinese"){
+    //         query.bindValue(2,subject_scores[i].second);
+    //         continue;
+    //     }
+    //     if(subject_scores[i].first=="Math"){
+    //         query.bindValue(3,subject_scores[i].second);
+    //         continue;
+    //     }
+    //     if(subject_scores[i].first=="English"){
+    //         query.bindValue(4,subject_scores[i].second);
+    //         continue;
+    //     }
+    //     if(subject_scores[i].first=="Physics"){
+    //         query.bindValue(5,subject_scores[i].second);
+    //         continue;
+    //     }
+    //     if(subject_scores[i].first=="Chemestriy"){
+    //         query.bindValue(6,subject_scores[i].second);
+    //         continue;
+    //     }
+    //     if(subject_scores[i].first=="Biology"){
+    //         query.bindValue(7,subject_scores[i].second);
+    //         continue;
+    //     }
+    //     if(subject_scores[i].first=="Sum"){
+    //         query.bindValue(8,subject_scores[i].second);
+    //         continue;
+    //     }
+    // }
+    // if(query.exec()){
+    //     QMessageBox::information(nullptr,"success","success");
+    //     return 1;
+    // }
+    // else{
+    //     QMessageBox::information(nullptr,"success",query.lastError().text());
+    //     return 0;
+    // }
+    // return query.exec();
 }
 
 
@@ -123,5 +155,24 @@ bool delete_student(QSqlDatabase db, int student_id){
     }
     else{
         QMessageBox::information(nullptr,"fail",query.lastError().text());
+    }
+}
+
+void get_all_score(QSqlDatabase db, int student_id,VP& subject_score){
+    QSqlQuery query(db);
+    query.prepare("SELECT Chinese,Math,English,Physics,Chemestriy,Biology,Sum FROM SCORE WHERE ID=?");
+    query.bindValue(0,student_id);
+    if(query.exec()){
+        while(query.next()){
+            QSqlRecord record=query.record();
+            for(int i=0;i<record.count();++i){
+                QString filename=record.fieldName(i);
+                int value=query.value(i).toInt();
+                subject_score.push_back(qMakePair(filename,value));
+            }
+        }
+    }
+    else{
+        QMessageBox::critical(nullptr,"error",query.lastError().text());
     }
 }
