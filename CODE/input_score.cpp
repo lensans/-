@@ -56,9 +56,9 @@ void Input_score::on_input_single_confirm_clicked()
     subject_scores[6].second = ui->input_sum_line->text().toInt();    
 
     DB db;
-     qDebug()<<"调用了这个函数1";
+    
     db.add_score(student_id, student_name, subject_scores);
-     qDebug()<<"调用了这个函数2";
+   
 }
 
 Input_score::~Input_score()
