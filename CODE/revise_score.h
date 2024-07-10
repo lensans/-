@@ -13,6 +13,9 @@ class revise_score : public QMainWindow
 
 public:
     explicit revise_score(QWidget *parent = nullptr);
+
+    void on_btn_revise_return_clicked();
+
     ~revise_score();
 
 private:
