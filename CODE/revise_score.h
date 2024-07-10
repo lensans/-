@@ -19,9 +19,6 @@ public:
 
     ~revise_score();
 
-public slots:
-    void on_btn_revise_return_clicked();
-
 private:
     Ui::revise_score *ui;
 };

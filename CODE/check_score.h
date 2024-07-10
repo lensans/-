@@ -18,8 +18,6 @@ public:
 
     ~check_score();
 
-public slots:
-    void on_btn_check_return_clicked();
 
 private:
     Ui::check_score *ui;

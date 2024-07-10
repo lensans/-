@@ -1,3 +1,6 @@
+﻿#ifndef MANAGERWINDOW_H
+#define MANAGERWINDOW_H
+
 #include "input_score.h"
 #include <QMainWindow>
 #include <QWidget>
@@ -17,11 +20,6 @@ public:
     void on_btn_check_clicked();
     //void on_btn_total_clicked();
     ~managerwindow();
-
-public slots:
-    void on_btn_input_clicked();
-    void on_btn_revise_clicked();
-    void on_btn_check_clicked();
 
 private:
     Ui::managerwindow *ui;

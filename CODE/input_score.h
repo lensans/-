@@ -21,12 +21,6 @@ public:
 
     ~Input_score();
 
-public slots:
-    void contextMenuEvent(QContextMenuEvent *event) override;
-    void on_btn_excel_return_clicked();
-    void on_btn_single_return_clicked();
-    void on_input_single_confirm_clicked();
-
 private:
     Ui::Input_score *ui;
 };
