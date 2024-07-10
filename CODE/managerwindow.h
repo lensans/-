@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 #ifndef MANAGERWINDOW_H
 #define MANAGERWINDOW_H
+=======
+﻿#ifndef MANAGERWINDOW_H
+#define MANAGERWINDOW_H
+
+>>>>>>> eae3de45a9ca010dc73b35dbb34bfc4ba3df93c4
 #include "input_score.h"
 #include <QMainWindow>
-#include <QWidget>>
+#include <QWidget>
+#include <QObject>
+
 namespace Ui {
 class managerwindow;
 }

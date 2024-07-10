@@ -1,7 +1,8 @@
-#ifndef CHECK_SCORE_H
+﻿#ifndef CHECK_SCORE_H
 #define CHECK_SCORE_H
 
 #include <QMainWindow>
+#include <QObject>
 
 namespace Ui {
 class check_score;
@@ -16,6 +17,7 @@ public:
     void on_btn_check_return_clicked();
 
     ~check_score();
+
 
 private:
     Ui::check_score *ui;

@@ -4,12 +4,14 @@
 
 #include <QApplication>
 
+DB db;
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //login w1;
-    //w1.show();
-    managerwindow w2;
-    w2.show();
+    login w1;
+    w1.show();
+    // managerwindow w2;
+    // w2.show();
     return a.exec();
 }

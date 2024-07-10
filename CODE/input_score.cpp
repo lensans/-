@@ -1,7 +1,7 @@
-#include "input_score.h"
+﻿#include "input_score.h"
 #include "ui_input_score.h"
 #include "managerwindow.h"
-#include <mysql_connect.h>
+#include "mysql_connect.h"
 
 
 
@@ -36,7 +36,7 @@ void Input_score::on_input_single_confirm_clicked()
 {
     //Init();
     QString student_name = ui->input_name_line->text();
-    int student_id = ui->input_num_line->text().toInt();
+    QString student_id = ui->input_num_line->text();
 
     VP subject_scores(7);
 
