@@ -64,7 +64,7 @@ public:
 
     //修改某个学生某科目的成绩
 
-    bool update_score(QString student_id,QString subject,int new_score);
+    bool update_score(int  student_id,QString subject,int new_score);
 
     //将excel文件上传到数据库，批量上传可用for循环-待实现
 

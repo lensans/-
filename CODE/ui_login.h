@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'login.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.4
+** Created by: Qt User Interface Compiler version 6.2.12
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -109,9 +109,9 @@ public:
         label_image->setText(QString());
         label->setText(QString());
         login_welcome->setText(QCoreApplication::translate("login", "\346\254\242\350\277\216\347\231\273\345\275\225\351\253\230\350\200\203\346\210\220\347\273\251\347\256\241\347\220\206\347\263\273\347\273\237", nullptr));
-        lineEdit_username->setPlaceholderText(QCoreApplication::translate("login", "Places input your Id", nullptr));
+        lineEdit_username->setPlaceholderText(QCoreApplication::translate("login", "Places input your name", nullptr));
         lineEdit_password->setPlaceholderText(QCoreApplication::translate("login", "Please input your password", nullptr));
-        btn_signin->setText(QCoreApplication::translate("login", "Sign in", nullptr));
+        btn_signin->setText(QCoreApplication::translate("login", "\347\241\256\350\256\244\347\231\273\345\275\225", nullptr));
     } // retranslateUi
 
 };

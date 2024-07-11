@@ -74,7 +74,7 @@ bool DB::add_score(int student_id, QString student_name, VP subject_scores){
     QSqlQuery query1(db);
     query1.prepare("INSERT INTO SCORE (NAME,ID ) VALUES( ?,? )");
     query1.addBindValue(student_name);
-    query1.addBindValue(student_id);
+    query1.addBindValue(QString::number(student_id));
     if(query1.exec()){
         for(QPair s:subject_scores){
             update_score(student_id,s.first,s.second);
@@ -165,6 +165,7 @@ bool DB::delete_student(int student_id){
     }
     else{
         QMessageBox::information(nullptr,"fail",query.lastError().text());
+        return 0;
     }
 }
 
@@ -210,7 +211,8 @@ int DB::login_check(QString username, QString password){
             int identity=query1.value(0).toInt();
             return identity;
         }
-    }else{
+    }
+    else{
         return -1;
     }
 }

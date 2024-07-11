@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'total_score.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.4
+** Created by: Qt User Interface Compiler version 6.2.12
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
@@ -22,6 +23,7 @@ class Ui_total_score
 {
 public:
     QWidget *centralwidget;
+    QLabel *total_score_label;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -33,6 +35,13 @@ public:
         total_score->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         centralwidget = new QWidget(total_score);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        total_score_label = new QLabel(centralwidget);
+        total_score_label->setObjectName(QString::fromUtf8("total_score_label"));
+        total_score_label->setGeometry(QRect(350, 40, 61, 61));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("\345\256\213\344\275\223")});
+        font.setPointSize(20);
+        total_score_label->setFont(font);
         total_score->setCentralWidget(centralwidget);
         menubar = new QMenuBar(total_score);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -50,6 +59,7 @@ public:
     void retranslateUi(QMainWindow *total_score)
     {
         total_score->setWindowTitle(QCoreApplication::translate("total_score", "MainWindow", nullptr));
+        total_score_label->setText(QCoreApplication::translate("total_score", "\346\200\273\345\210\206", nullptr));
     } // retranslateUi
 
 };

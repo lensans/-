@@ -40,7 +40,7 @@ void Input_score::on_input_single_confirm_clicked()//单个录入成绩
     subject_scores[6].second = ui->input_sum_line->text().toInt();    
 
     DB db;
-    db.add_score(student_id, student_name, subject_scores);
+    db.add_score(student_id.toInt(), student_name, subject_scores);
 
 }
 

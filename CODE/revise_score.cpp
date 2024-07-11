@@ -21,7 +21,7 @@ void revise_score::on_btn_revise_confirm_clicked()//修改单科成绩
     int new_score = ui->revise_new_score->text().toInt();
 
     DB db;
-    db.update_score(student_id, subject, new_score);
+    db.update_score(student_id.toInt(), subject, new_score);
 }
 
 revise_score::~revise_score()

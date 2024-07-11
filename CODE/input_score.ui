@@ -293,25 +293,6 @@ color: rgb(103, 103, 103);</string>
        <string>Places input your id</string>
       </property>
      </widget>
-     <widget class="QLabel" name="revise_title_3">
-      <property name="geometry">
-       <rect>
-        <x>540</x>
-        <y>270</y>
-        <width>141</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>宋体</family>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>录入成绩</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="excel_input">
      <attribute name="title">

@@ -27,17 +27,13 @@ HEADERS += \
     grade.h \
     input_score.h \
     login.h \
-    mainwindow.h \
     manager.h \
     managerwindow.h \
     revise_score.h \
     student.h \
     total_score.h \
-    ui_check_score.h \
     ui_input_score.h \
     ui_login.h \
-    ui_managerwindow.h \
-    ui_revise_score.h \
     ui_total_score.h \
     mysql_connect.h \
     paint.h
@@ -47,7 +43,9 @@ FORMS += \
     input_score.ui \
     login.ui \
     revise_score.ui \
-    total_score.ui
+    total_score.ui \
+    managerwindow.ui
+
 
 # Default rules for deployment.
 QXLSX_PARENTPATH=./     # current QXlsx path is . (. means curret directory)

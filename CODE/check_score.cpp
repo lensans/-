@@ -44,3 +44,7 @@ check_score::~check_score()
 {
     delete ui;
 }
+
+
+
+

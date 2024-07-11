@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'input_score.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.4
+** Created by: Qt User Interface Compiler version 6.2.12
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -11,13 +11,11 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
@@ -46,16 +44,11 @@ public:
     QLineEdit *input_biology_line;
     QLineEdit *input_sum;
     QLineEdit *input_sum_line;
-    QWidget *widget_2;
-    QFormLayout *formLayout_3;
-    QLineEdit *input_name_line;
-    QLabel *input_name_label;
-    QLineEdit *input_num_line;
-    QLabel *input_num_label;
-    QSpacerItem *verticalSpacer_6;
     QPushButton *input_single_confirm;
     QPushButton *input_single_return;
     QLabel *revise_title_2;
+    QLineEdit *input_name_line;
+    QLineEdit *input_num_line;
     QWidget *excel_input;
     QPushButton *input_excel_confirm;
     QPushButton *input_excel_return;
@@ -86,7 +79,7 @@ public:
         single_input->setObjectName(QString::fromUtf8("single_input"));
         widget = new QWidget(single_input);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(410, 60, 291, 361));
+        widget->setGeometry(QRect(380, 60, 291, 361));
         widget->setStyleSheet(QString::fromUtf8("\n"
 "color: rgb(0, 0,0);"));
         gridLayout = new QGridLayout(widget);
@@ -182,64 +175,37 @@ public:
 
         gridLayout->addWidget(input_sum_line, 6, 1, 1, 1);
 
-        widget_2 = new QWidget(single_input);
-        widget_2->setObjectName(QString::fromUtf8("widget_2"));
-        widget_2->setGeometry(QRect(80, 110, 251, 101));
-        widget_2->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(0, 0, 0);"));
-        formLayout_3 = new QFormLayout(widget_2);
-        formLayout_3->setObjectName(QString::fromUtf8("formLayout_3"));
-        input_name_line = new QLineEdit(widget_2);
-        input_name_line->setObjectName(QString::fromUtf8("input_name_line"));
-        input_name_line->setStyleSheet(QString::fromUtf8("border:1px groove gray;border-radius:\n"
-"7px;padding:2px 4px;"));
-
-        formLayout_3->setWidget(2, QFormLayout::FieldRole, input_name_line);
-
-        input_name_label = new QLabel(widget_2);
-        input_name_label->setObjectName(QString::fromUtf8("input_name_label"));
-        input_name_label->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\256\213\344\275\223\";"));
-
-        formLayout_3->setWidget(2, QFormLayout::LabelRole, input_name_label);
-
-        input_num_line = new QLineEdit(widget_2);
-        input_num_line->setObjectName(QString::fromUtf8("input_num_line"));
-        input_num_line->setStyleSheet(QString::fromUtf8("border:1px groove gray;border-radius:\n"
-"7px;padding:2px 4px;"));
-
-        formLayout_3->setWidget(4, QFormLayout::FieldRole, input_num_line);
-
-        input_num_label = new QLabel(widget_2);
-        input_num_label->setObjectName(QString::fromUtf8("input_num_label"));
-        input_num_label->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\256\213\344\275\223\";"));
-        input_num_label->setAlignment(Qt::AlignCenter);
-
-        formLayout_3->setWidget(4, QFormLayout::LabelRole, input_num_label);
-
-        verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout_3->setItem(3, QFormLayout::FieldRole, verticalSpacer_6);
-
         input_single_confirm = new QPushButton(single_input);
         input_single_confirm->setObjectName(QString::fromUtf8("input_single_confirm"));
-        input_single_confirm->setGeometry(QRect(390, 420, 111, 41));
+        input_single_confirm->setGeometry(QRect(390, 430, 111, 41));
         input_single_confirm->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\256\213\344\275\223\";\n"
 "background-color: rgb(218, 205, 255);"));
         input_single_return = new QPushButton(single_input);
         input_single_return->setObjectName(QString::fromUtf8("input_single_return"));
-        input_single_return->setGeometry(QRect(230, 420, 111, 41));
+        input_single_return->setGeometry(QRect(230, 430, 111, 41));
         input_single_return->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\256\213\344\275\223\";\n"
 "background-color: rgb(204, 204, 191);"));
         revise_title_2 = new QLabel(single_input);
         revise_title_2->setObjectName(QString::fromUtf8("revise_title_2"));
         revise_title_2->setGeometry(QRect(320, 10, 141, 61));
         revise_title_2->setFont(font);
+        input_name_line = new QLineEdit(single_input);
+        input_name_line->setObjectName(QString::fromUtf8("input_name_line"));
+        input_name_line->setGeometry(QRect(130, 110, 171, 41));
+        input_name_line->setStyleSheet(QString::fromUtf8("background-color: rgb(243, 243, 255);\n"
+"border:1px groove gray;border-radius:\n"
+"7px;padding:2px 4px;\n"
+"font: 10pt \"\345\256\213\344\275\223\";\n"
+"color: rgb(103, 103, 103);"));
+        input_num_line = new QLineEdit(single_input);
+        input_num_line->setObjectName(QString::fromUtf8("input_num_line"));
+        input_num_line->setGeometry(QRect(130, 180, 171, 41));
+        input_num_line->setStyleSheet(QString::fromUtf8("background-color: rgb(243, 243, 255);\n"
+"border:1px groove gray;border-radius:\n"
+"7px;padding:2px 4px;\n"
+"font: 10pt \"\345\256\213\344\275\223\";\n"
+"color: rgb(103, 103, 103);"));
         input_tab->addTab(single_input, QString());
-        widget->raise();
-        input_single_confirm->raise();
-        input_single_return->raise();
-        widget_2->raise();
-        revise_title_2->raise();
         excel_input = new QWidget();
         excel_input->setObjectName(QString::fromUtf8("excel_input"));
         input_excel_confirm = new QPushButton(excel_input);
@@ -280,11 +246,11 @@ public:
         input_chemistry->setText(QCoreApplication::translate("Input_score", "Chemestriy", nullptr));
         input_biology->setText(QCoreApplication::translate("Input_score", "Biology", nullptr));
         input_sum->setText(QCoreApplication::translate("Input_score", "Sum", nullptr));
-        input_name_label->setText(QCoreApplication::translate("Input_score", "<html><head/><body><p><span style=\" font-size:16pt;\">\345\247\223\345\220\215\357\274\232</span></p></body></html>", nullptr));
-        input_num_label->setText(QCoreApplication::translate("Input_score", "<html><head/><body><p><span style=\" font-size:16pt;\">\345\255\246\345\217\267\357\274\232</span></p></body></html>", nullptr));
         input_single_confirm->setText(QCoreApplication::translate("Input_score", "\347\241\256\345\256\232\345\257\274\345\205\245", nullptr));
         input_single_return->setText(QCoreApplication::translate("Input_score", "\350\277\224\345\233\236", nullptr));
         revise_title_2->setText(QCoreApplication::translate("Input_score", "\345\275\225\345\205\245\346\210\220\347\273\251", nullptr));
+        input_name_line->setPlaceholderText(QCoreApplication::translate("Input_score", "Places input your name", nullptr));
+        input_num_line->setPlaceholderText(QCoreApplication::translate("Input_score", "Places input your id", nullptr));
         input_tab->setTabText(input_tab->indexOf(single_input), QCoreApplication::translate("Input_score", "\345\215\225\344\270\252\345\275\225\345\205\245", nullptr));
         input_excel_confirm->setText(QCoreApplication::translate("Input_score", "\347\241\256\350\256\244\345\257\274\345\205\245", nullptr));
         input_excel_return->setText(QCoreApplication::translate("Input_score", "\350\277\224\345\233\236", nullptr));

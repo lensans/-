@@ -25,4 +25,3 @@ private:
 
 #endif // REVISE_SCORE_H
 
-#endif // REVISE_SCORE_H

@@ -17,7 +17,10 @@ public:
     void on_btn_check_return_clicked();//点击返回
     void on_btn_check_confirm_clicked();//点击确认查询
     
-    ~check_score(); 
+    ~check_score();
+
+private slots:
+
 
 private:
     Ui::check_score *ui;
