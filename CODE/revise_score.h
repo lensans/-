@@ -1,4 +1,4 @@
-#ifndef REVISE_SCORE_H
+﻿#ifndef REVISE_SCORE_H
 #define REVISE_SCORE_H
 
 #include <QMainWindow>

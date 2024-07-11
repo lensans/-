@@ -10,4 +10,5 @@ QString generateSalt(int length=16);
 
 QString hashPasswordPBKDF2(const QString &password, const QString &salt);
 
+
 #endif // PASSWORD_H

@@ -4,6 +4,7 @@ debug/input_score.o
 debug/login.o
 debug/managerwindow.o
 debug/mysql_connect.o
+debug/password.o
 debug/revise_score.o
 debug/total_score.o
 debug/password.o

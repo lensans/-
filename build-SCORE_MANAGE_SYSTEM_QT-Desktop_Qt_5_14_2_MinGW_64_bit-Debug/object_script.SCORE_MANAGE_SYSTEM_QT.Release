@@ -4,6 +4,7 @@ release/input_score.o
 release/login.o
 release/managerwindow.o
 release/mysql_connect.o
+release/password.o
 release/revise_score.o
 release/total_score.o
 release/password.o

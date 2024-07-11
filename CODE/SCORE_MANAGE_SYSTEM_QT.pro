@@ -17,6 +17,7 @@ SOURCES += \
     login.cpp \
     managerwindow.cpp \
     mysql_connect.cpp \
+    password.cpp \
     revise_score.cpp \
     total_score.cpp \
     password.cpp \
@@ -62,5 +63,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 #################################
+
 LIBS += -lssl -lcrypto
 INCLUDEPATH += ./OpenSSL/include
