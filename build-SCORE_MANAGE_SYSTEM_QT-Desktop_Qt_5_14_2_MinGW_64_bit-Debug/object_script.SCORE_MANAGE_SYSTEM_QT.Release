@@ -1,3 +1,4 @@
+release/drag_drop_widget.o
 release/main.o
 release/check_score.o
 release/input_score.o
@@ -42,6 +43,7 @@ release/xlsxworksheet.o
 release/xlsxzipreader.o
 release/xlsxzipwriter.o
 release/moc_check_score.o
+release/moc_drag_drop_widget.o
 release/moc_input_score.o
 release/moc_login.o
 release/moc_managerwindow.o

@@ -1,3 +1,4 @@
+debug/drag_drop_widget.o
 debug/main.o
 debug/check_score.o
 debug/input_score.o
@@ -42,6 +43,7 @@ debug/xlsxworksheet.o
 debug/xlsxzipreader.o
 debug/xlsxzipwriter.o
 debug/moc_check_score.o
+debug/moc_drag_drop_widget.o
 debug/moc_input_score.o
 debug/moc_login.o
 debug/moc_managerwindow.o

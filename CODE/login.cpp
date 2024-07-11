@@ -30,7 +30,7 @@ login::login(QWidget *parent)
 
 void login::on_btn_signin_clicked()//点击确认登录
 {
-    DB db;
+    extern DB db;
     int res=INT_MIN;
     QString username, password;
     do{

@@ -230,7 +230,7 @@ public:
 
         retranslateUi(Input_score);
 
-        input_tab->setCurrentIndex(0);
+        input_tab->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(Input_score);
