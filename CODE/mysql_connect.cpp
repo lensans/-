@@ -1,4 +1,5 @@
 ﻿#include"mysql_connect.h"
+#include "password.h"
 #include <QSqlField>
 #include <QSqlRecord>
 
@@ -32,7 +33,7 @@ QSqlDatabase  DB::Init()
 }
 
 
-int DB::get_single_score(int student_id,QString subject){
+int DB::get_single_score(QString student_id,QString subject){
     int result;
     QSqlQuery query(db);//指定数据库连接
     QString sql=QString("SELECT * FROM SCORE WHERE ID=%1").arg(student_id);
@@ -49,7 +50,7 @@ int DB::get_single_score(int student_id,QString subject){
 }
 
 
-bool DB::update_score(int student_id,QString subject,int new_score){
+bool DB::update_score(QString student_id,QString subject,int new_score){
     QSqlQuery query(db);//指定数据库连接
     //QString sql = QString("UPDATE SCORE SET Chinese=66 WHERE ID=100");
     QString sql=QString("UPDATE SCORE SET %1=%2 WHERE ID=%3").arg(subject).arg(new_score).arg(student_id);
@@ -70,7 +71,7 @@ bool DB::update_score(int student_id,QString subject,int new_score){
 }
 
 
-bool DB::add_score(int student_id, QString student_name, VP subject_scores){
+bool DB::add_score(QString student_id, QString student_name, VP subject_scores){
     QSqlQuery query1(db);
     query1.prepare("INSERT INTO SCORE (NAME,ID ) VALUES( ?,? )");
     query1.addBindValue(student_name);
@@ -155,7 +156,7 @@ bool DB::add_score(int student_id, QString student_name, VP subject_scores){
 // return query.exec();
 
 
-bool DB::delete_student(int student_id){
+bool DB::delete_student(QString student_id){
     QSqlQuery query(db);
     query.prepare("DELETE FROM SCORE WHERE ID=?");
     query.bindValue(0,student_id);
@@ -168,7 +169,7 @@ bool DB::delete_student(int student_id){
     }
 }
 
-void DB::get_all_score(int student_id,VP& subject_score){
+void DB::get_all_score(QString student_id,VP& subject_score){
     QSqlQuery query(db);
     query.prepare("SELECT Chinese,Math,English,Physics,Chemestriy,Biology,Sum FROM SCORE WHERE ID=?");
     query.bindValue(0,student_id);
@@ -188,27 +189,43 @@ void DB::get_all_score(int student_id,VP& subject_score){
 }
 
 int DB::login_check(QString username, QString password){
+    //查询该用户是否为新用户
+    QSqlQuery query0(db);
+    query0.prepare("SELECT password FROM USER WHERE username = :username");
+    query0.bindValue(":username",username);
+    if(!query0.exec()){
+        QMessageBox::critical(nullptr,"error",query0.lastError().text());
+        return -1;
+    }
+    if(query0.next()){
+        QString password=query0.value(0).toString();
+        if(password=="123456") return 3;
+    }
+
+    //查询数据库中是否存在某个用户，其用户名为username，密码为password，盐值为salt
     QSqlQuery query(db);
-    //查询数据库中是否存在某个用户，其用户名为username，密码为password
-    query.prepare("SELECT COUNT(*) FROM users WHERE username = :username AND password = :password");
-    query.bindValue(":username",username);
-    query.bindValue(":password",password);
-    if(!query.exec()){
+    query.prepare("SELECT password, salt FROM users WHERE username = :username");
+    query.bindValue(":username", username);
+    if(!query.exec()||!query.next()){
         QMessageBox::critical(nullptr,"error",query.lastError().text());
         return -1;
     }
     if(query.next() && query.value(0).toInt()==1){
         QSqlQuery query1(db);
-        query1.prepare("SELECT identity FROM USER WHERE username=:username AND password=:password");
+        query1.prepare("SELECT identity,password,salt FROM USER WHERE username=:username");
         query1.bindValue(":user",username);
         query1.bindValue(":password",password);
-        if(!query.exec()){
+        if(!query1.exec()){
             QMessageBox::critical(nullptr,"error",query.lastError().text());
             return -1;
         }
         if(query1.next()){
             int identity=query1.value(0).toInt();
-            return identity;
+            QString storedHashedPassword=query1.value(1).toString();
+            QString storedSalt=query1.value(2).toString();
+            QString hashedInputPassword=hashPasswordPBKDF2(password,storedSalt);
+            if(hashedInputPassword==storedHashedPassword) return identity;
+            else return -1;
         }
     }else{
         return -1;
@@ -236,9 +253,12 @@ void DB::upload_score(QString file_path){
         row++;
     }
 }
+
 bool DB::revise_password(QString username,QString new_password){
     QSqlQuery query(db);
-    QString sql=QString("UPDATE USER SET password=%1 WHERE username=%2").arg(new_password).arg(username);
+    QString new_salt=generateSalt();
+    QString hashedPassword=hashPasswordPBKDF2(new_password,new_salt);
+    QString sql=QString("UPDATE USER SET password=%1, salt=%2 WHERE username=%3").arg(new_password).arg(new_salt).arg(username);
     if(!query.exec(sql)){
         QMessageBox::critical(nullptr,"error","密码更新失败："+query.lastError().text());
         return 0;
@@ -247,9 +267,10 @@ bool DB::revise_password(QString username,QString new_password){
         return 1;
     }
 }
-void DB::get_students_scores(int start_student_id, int end_student_id, QString subject, std::vector<int>& scores){
+
+void DB::get_students_scores(QString start_student_id, QString end_student_id, QString subject, std::vector<int>& scores){
     QSqlQuery query(db);
-    QString sql=QString("SELECT %1 FROM SCORE WHERE ID BETWEEN %2 AND %3").arg(subject).arg(QString::number(start_student_id)).arg(QString::number(end_student_id));
+    QString sql=QString("SELECT %1 FROM SCORE WHERE ID BETWEEN %2 AND %3").arg(subject).arg(start_student_id).arg(end_student_id);
     if(query.exec(sql)){
         while(query.next()){
             scores.push_back(query.value(subject).toInt());
@@ -260,16 +281,20 @@ void DB::get_students_scores(int start_student_id, int end_student_id, QString s
     }
 
 }
-int DB::get_rank(int student_id, QString subject){
+
+int DB::get_rank(QString student_id, QString subject){
     QSqlQuery query(db);
-    std::vector<int> scores;int distribution[751]{0};int rank[751];int myscore;
-    myscore=get_single_score(student_id,subject);
-    get_students_scores(1,query.size(),subject,scores);
+    std::vector<int> scores;
+    int distribution[751]{0};
+    int rank[751];
+    int myscore=get_single_score(student_id,subject);
+    get_students_scores("1",QString::number(query.size()),subject,scores);
     for(int a:scores){
         distribution[a]+=1;
     }
+    rank[0]=0;
     for(int b=1;b<=750;b++){
-        rank[b]=distribution[b]+distribution[b-1];
+        rank[b]=distribution[b]+rank[b-1];
     }
     return rank[myscore];
 }

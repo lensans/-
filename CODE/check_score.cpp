@@ -1,4 +1,4 @@
-#include "check_score.h"
+﻿#include "check_score.h"
 #include "ui_check_score.h"
 #include <mysql_connect.h>
 
@@ -17,7 +17,7 @@ check_score::check_score(QWidget *parent)
 void check_score::on_btn_check_confirm_clicked()//查询全部成绩
 {
     //从文本框读入要查询的学生id
-    int student_id = ui->check_student_id->text().toInt();
+    QString student_id = ui->check_student_id->text().toInt();
     VP subject_scores(7);
 
     DB db;

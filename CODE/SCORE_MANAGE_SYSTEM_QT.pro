@@ -19,6 +19,7 @@ SOURCES += \
     mysql_connect.cpp \
     revise_score.cpp \
     total_score.cpp \
+    password.cpp \
     paint.cpp
 
 HEADERS += \
@@ -30,6 +31,7 @@ HEADERS += \
     mainwindow.h \
     manager.h \
     managerwindow.h \
+    password.h \
     revise_score.h \
     student.h \
     total_score.h \
@@ -40,6 +42,7 @@ HEADERS += \
     ui_revise_score.h \
     ui_total_score.h \
     mysql_connect.h \
+    password.h \
     paint.h
 
 FORMS += \
@@ -58,5 +61,6 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-INCLUDEPATH += E:/QT/6.6.1/mingw_64/include
-LIBS += -LE:/QT/6.6.1/mingw_64/lib
+#################################
+LIBS += -lssl -lcrypto
+INCLUDEPATH += ./OpenSSL/include
