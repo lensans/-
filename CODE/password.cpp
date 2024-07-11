@@ -1,7 +1,6 @@
 ﻿#include "password.h"
 
-QString generateSalt(int length = 16) {
->>>>>>> Stashed changes
+QString generateSalt(int length) {
     QByteArray salt;
     salt.resize(length);
     RAND_bytes(reinterpret_cast<unsigned char *>(salt.data()), length);

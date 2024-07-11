@@ -1,10 +1,10 @@
-#include"Paint.h"
-#include<algorithm>
+﻿#include "paint.h"
+#include <algorithm>
 
 // 绘制类型一直方图
 QChart *Paint::createBarChart1()
 {
-     getnums1(data1);
+    getnums1(data1);
     QChart *chart = new QChart();
     chart->setTitle("直方图演示");
 
