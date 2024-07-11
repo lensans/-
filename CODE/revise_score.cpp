@@ -9,7 +9,7 @@ revise_score::revise_score(QWidget *parent)
     ui->setupUi(this);
 
     connect(ui->btn_revise_return,&QPushButton::clicked,this,&revise_score::close);//点击返回，关闭修改成绩界面
-    
+
     connect(ui->btn_revise_confirm,&QPushButton::clicked,this,&revise_score::on_btn_revise_confirm_clicked);//点击确认修改
 }
 

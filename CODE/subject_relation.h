@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+//学科间线性关系
+
 namespace Ui {
 class Subject_relation;
 }

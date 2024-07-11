@@ -8,7 +8,7 @@ CONFIG   += c++17
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
-DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+# DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
     main.cpp \
@@ -17,8 +17,10 @@ SOURCES += \
     login.cpp \
     managerwindow.cpp \
     mysql_connect.cpp \
+    password.cpp \
     revise_score.cpp \
     total_score.cpp \
+    password.cpp \
     paint.cpp
 
 HEADERS += \
@@ -29,6 +31,7 @@ HEADERS += \
     login.h \
     manager.h \
     managerwindow.h \
+    password.h \
     revise_score.h \
     student.h \
     total_score.h \
@@ -36,6 +39,7 @@ HEADERS += \
     ui_login.h \
     ui_total_score.h \
     mysql_connect.h \
+    password.h \
     paint.h
 
 FORMS += \
@@ -56,5 +60,7 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-INCLUDEPATH += E:/QT/6.6.1/mingw_64/include
-LIBS += -LE:/QT/6.6.1/mingw_64/lib
+#################################
+
+LIBS += -lssl -lcrypto
+INCLUDEPATH += ./OpenSSL/include

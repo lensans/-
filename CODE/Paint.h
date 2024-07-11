@@ -1,10 +1,12 @@
-#ifndef PAINT_H
+﻿#ifndef PAINT_H
 #define PAINT_H
 
 #include <vector>
 #include <QtCharts>
 
 using namespace std;
+QT_CHARTS_USE_NAMESPACE;
+
 class Paint{
 public:
     Paint(vector<int> data):data(data){

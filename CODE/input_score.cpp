@@ -22,7 +22,7 @@ void Input_score::on_input_single_confirm_clicked()//单个录入成绩
     QString student_id = ui->input_num_line->text();
 
     VP subject_scores(7);
-    
+
     //从文本框读入要查询的学科和对应成绩
     subject_scores[0].first = ui->input_Chinese->text();
     subject_scores[0].second = ui->input_Chinese_line->text().toInt();

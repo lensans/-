@@ -1,4 +1,4 @@
-#include "login.h"
+﻿#include "login.h"
 #include "ui_login.h"
 #include <mysql_connect.h>
 #include "change_password.h"
@@ -25,27 +25,39 @@ login::login(QWidget *parent)
     ui->label_image->setGraphicsEffect(shadow);// 将阴影效果应用到label_image上
 
     connect(ui->btn_signin,&QPushButton::clicked,this,&login::on_btn_signin_clicked);//点击确认登录按钮
-    
+
 }
 
 void login::on_btn_signin_clicked()//点击确认登录
 {
-    //从文本框读入姓名和密码
-    QString username = ui->lineEdit_username->text();
-    QString password = ui->lineEdit_password->text();
-
     DB db;
-    int res = db.login_check(username, password);
-    if(res != -1 && password == "123456")//登陆成功并且是第一次登录，跳入修改密码界面
+    int res=INT_MIN;
+    QString username, password;
+    do{
+        if(res==-1){
+            QMessageBox::critical(this,"error","Please enter again.");
+        }
+        //从文本框读入姓名和密码
+        username = ui->lineEdit_username->text();
+        password = ui->lineEdit_password->text();
+        res = db.login_check(username, password);
+    }while(res==-1);
+    if(res==3)//登陆成功并且是第一次登录，跳入修改密码界面
     {
         change_password *w3 = new change_password(this);
         w3->show();
     }
-    if(res != -1)//登陆成功则进入菜单界面
+    if(res == 0)//登陆成功则进入管理员菜单界面
     {
         managerwindow *ma_on = new managerwindow(this);
         ma_on->show();
         this->close();
+    }
+    else if(res == 1){
+        //进入学生界面
+    }
+    else if(res == 2){
+        //进入老师界面
     }
 }
 

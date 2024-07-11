@@ -49,18 +49,18 @@ public:
 
     
     //登录检查
-    int login_check(QString username, QString password);//返回登陆账户的identity(int)：0表示管理员 1表示学生 2表示老师 -1表示错误
+    int login_check(QString username, QString password);//返回登陆账户的identity(int)：0表示管理员 1表示学生 2表示老师 -1表示错误 3表示新用户
 
     //密码修改
     bool revise_password(QString username,QString new_password);
 
     //返回某学生的单科成绩
 
-    int get_single_score(int student_id,QString subject);
+    int get_single_score(QString student_id,QString subject);
 
     //将一个学生的科目和成绩保存在一个pair的vector数组中返回
 
-    void get_all_score(int student_id,VP& subject_score);
+    void get_all_score(QString student_id,VP& subject_score);
 
     //修改某个学生某科目的成绩
 
@@ -71,16 +71,16 @@ public:
     void upload_score(QString file_path);
 
     //批量获取学生的单科成绩，保存在pair类型的vector中返回
-    void get_students_scores(int start_student_id,int end_student_id,QString subject,std::vector<int>& scores);
+    void get_students_scores(QString start_student_id,QString end_student_id,QString subject,std::vector<int>& scores);
 
     //删除某个学生
-    bool delete_student(int student_id);
+    bool delete_student(QString student_id);
 
     //添加学生信息
-    bool add_score(int student_id, QString student_name, VP subject_scores);
+    bool add_score(QString student_id, QString student_name, VP subject_scores);
 
     //获取各科排名 总分用SUM替代
-    int get_rank(int student_id,QString subject);
+    int get_rank(QString student_id,QString subject);
 
 };
 
