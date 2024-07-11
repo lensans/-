@@ -20,7 +20,7 @@ void revise_score::on_btn_revise_confirm_clicked()//修改单科成绩
     QString subject = ui->revise_subject->text();
     int new_score = ui->revise_new_score->text().toInt();
 
-    DB db;
+    extern DB db;
     db.update_score(student_id, subject, new_score);
 }
 

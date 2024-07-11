@@ -55,7 +55,7 @@ font: 10pt &quot;Arial&quot;;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="login_welcome">
+   <widget class="QLabel" name="login_label">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -93,7 +93,8 @@ font: 10pt &quot;Arial&quot;;</string>
         <string notr="true">background-color: rgb(243, 243, 255);
 border:1px groove gray;border-radius:
 7px;padding:2px 4px;
-font: 10pt &quot;Candara&quot;;</string>
+font: 10pt &quot;宋体&quot;;
+color: rgb(103, 103, 103);</string>
        </property>
        <property name="placeholderText">
         <string>Places input your name</string>
@@ -112,7 +113,8 @@ font: 10pt &quot;Candara&quot;;</string>
         <string notr="true">background-color: rgb(243, 243, 255);
 border:1px groove gray;border-radius:
 7px;padding:2px 4px;
-font: 10pt &quot;Candara&quot;;</string>
+font: 10pt &quot;宋体&quot;;
+color: rgb(103, 103, 103);</string>
        </property>
        <property name="echoMode">
         <enum>QLineEdit::Password</enum>

@@ -29,18 +29,19 @@ Input_score::Input_score(QWidget *parent)
 
     connect(dragDropWidget, &DragDropWidget::fileDropped, this, &Input_score::on_file_dropped);
 
-    connect(ui->input_excel_confirm,&QPushButton::clicked,this,&Input_score::on_input_excel_confirm_clicked);
+    connect(ui->input_excel_confirm,&QPushButton::clicked,this,&Input_score::on_input_excel_confirm_clicked);//EXCEL导入时点击确认导入
+
 }
 
 void Input_score::on_input_single_confirm_clicked()//单个录入成绩
 {
-    //从文本框读入要查询的学生姓名和id
+    //从文本框读入要录入的学生姓名和id
     QString student_name = ui->input_name_line->text();
     QString student_id = ui->input_num_line->text();
 
     VP subject_scores(7);
 
-    //从文本框读入要查询的学科和对应成绩
+    //从文本框读入要录入的学科和对应成绩
     subject_scores[0].first = ui->input_Chinese->text();
     subject_scores[0].second = ui->input_Chinese_line->text().toInt();
     subject_scores[1].first = ui->input_math->text();
@@ -56,14 +57,14 @@ void Input_score::on_input_single_confirm_clicked()//单个录入成绩
     subject_scores[6].first = ui->input_sum->text();
     subject_scores[6].second = ui->input_sum_line->text().toInt();    
 
-    DB db;
+    extern DB db;
     db.add_score(student_id, student_name, subject_scores);
 
 }
 
 void Input_score::on_input_excel_confirm_clicked(){
     if(!filePath.isEmpty()){
-        DB db;
+        extern DB db;
         db.upload_score(filePath);
         QMessageBox::information(this,"Success","文件成功上传");
         filePath.clear();

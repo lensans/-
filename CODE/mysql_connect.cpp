@@ -71,13 +71,14 @@ bool DB::update_score(QString student_id,QString subject,int new_score){
 }
 
 
-bool DB::add_score(QString student_id, QString student_name, VP subject_scores){
+bool DB::add_score(QString student_id, QString student_name, VP subject_scores)
+{
     QSqlQuery query1(db);
     query1.prepare("INSERT INTO SCORE (NAME,ID ) VALUES( ?,? )");
     query1.addBindValue(student_name);
     query1.addBindValue(student_id);
     if(query1.exec()){
-        for(QPair s:subject_scores){
+        for(QPair<QString,int> s:subject_scores){
             update_score(student_id,s.first,s.second);
         }
         QMessageBox::information(nullptr,"success","success");
