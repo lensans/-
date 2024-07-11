@@ -2,8 +2,8 @@
 #define LOGIN_H
 
 #include <QMainWindow>
-#include <QSqlDatabase> 
-#include <QSqlQuery> 
+#include <QSqlDatabase>
+#include <QSqlQuery>
 #include <QMessageBox>
 #include <QDebug>
 
@@ -19,9 +19,9 @@ class login : public QMainWindow
 
 public:
     login(QWidget *parent = nullptr);
-    
+
     void on_btn_signin_clicked();//点击确认登录
-    
+
     ~login();
 
 private slots:

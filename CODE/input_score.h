@@ -25,4 +25,3 @@ private:
 };
 
 #endif // INPUT_SCORE_H
-

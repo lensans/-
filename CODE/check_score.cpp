@@ -10,7 +10,7 @@ check_score::check_score(QWidget *parent)
     ui->setupUi(this);
 
     connect(ui->btn_check_return,&QPushButton::clicked,this,&check_score::close);//点击返回,关闭查询成绩界面
-    
+
     connect(ui->btn_check_confirm,&QPushButton::clicked,this,&check_score::on_btn_check_confirm_clicked);//点击确定查询
 }
 

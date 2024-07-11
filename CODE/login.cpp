@@ -25,7 +25,7 @@ login::login(QWidget *parent)
     ui->label_image->setGraphicsEffect(shadow);// 将阴影效果应用到label_image上
 
     connect(ui->btn_signin,&QPushButton::clicked,this,&login::on_btn_signin_clicked);//点击确认登录按钮
-    
+
 }
 
 void login::on_btn_signin_clicked()//点击确认登录

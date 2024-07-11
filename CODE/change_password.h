@@ -13,7 +13,9 @@ class change_password : public QMainWindow
 
 public:
     explicit change_password(QWidget *parent = nullptr);
-    void on_change_password_confirm_clicked();
+
+    void on_change_password_confirm_clicked();//点击确认修改密码
+
     ~change_password();
 
 private:
