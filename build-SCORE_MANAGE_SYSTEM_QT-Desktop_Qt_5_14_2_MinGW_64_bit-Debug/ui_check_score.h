@@ -191,7 +191,7 @@ public:
         check_score->setCentralWidget(centralwidget);
         menubar = new QMenuBar(check_score);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 800, 17));
         check_score->setMenuBar(menubar);
         statusbar = new QStatusBar(check_score);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

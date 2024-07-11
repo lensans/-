@@ -49,7 +49,6 @@ public:
     QLabel *revise_title_2;
     QLineEdit *input_name_line;
     QLineEdit *input_num_line;
-    QLabel *revise_title_3;
     QWidget *excel_input;
     QPushButton *input_excel_confirm;
     QPushButton *input_excel_return;
@@ -206,10 +205,6 @@ public:
 "7px;padding:2px 4px;\n"
 "font: 10pt \"\345\256\213\344\275\223\";\n"
 "color: rgb(103, 103, 103);"));
-        revise_title_3 = new QLabel(single_input);
-        revise_title_3->setObjectName(QString::fromUtf8("revise_title_3"));
-        revise_title_3->setGeometry(QRect(540, 270, 141, 61));
-        revise_title_3->setFont(font);
         input_tab->addTab(single_input, QString());
         excel_input = new QWidget();
         excel_input->setObjectName(QString::fromUtf8("excel_input"));
@@ -256,7 +251,6 @@ public:
         revise_title_2->setText(QCoreApplication::translate("Input_score", "\345\275\225\345\205\245\346\210\220\347\273\251", nullptr));
         input_name_line->setPlaceholderText(QCoreApplication::translate("Input_score", "Places input your name", nullptr));
         input_num_line->setPlaceholderText(QCoreApplication::translate("Input_score", "Places input your id", nullptr));
-        revise_title_3->setText(QCoreApplication::translate("Input_score", "\345\275\225\345\205\245\346\210\220\347\273\251", nullptr));
         input_tab->setTabText(input_tab->indexOf(single_input), QCoreApplication::translate("Input_score", "\345\215\225\344\270\252\345\275\225\345\205\245", nullptr));
         input_excel_confirm->setText(QCoreApplication::translate("Input_score", "\347\241\256\350\256\244\345\257\274\345\205\245", nullptr));
         input_excel_return->setText(QCoreApplication::translate("Input_score", "\350\277\224\345\233\236", nullptr));

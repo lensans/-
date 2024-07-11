@@ -20,7 +20,6 @@ SOURCES += \
     password.cpp \
     revise_score.cpp \
     total_score.cpp \
-    password.cpp \
     paint.cpp
 
 HEADERS += \
@@ -39,7 +38,6 @@ HEADERS += \
     ui_login.h \
     ui_total_score.h \
     mysql_connect.h \
-    password.h \
     paint.h
 
 FORMS += \
@@ -62,5 +60,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 #################################
 
-LIBS += -lssl -lcrypto
-INCLUDEPATH += ./OpenSSL/include
+LIBS += -L$$PWD/OpenSSL-Win64/lib/ -llibssl
+
+LIBS += -L$$PWD/OpenSSL-Win64/lib/ -llibcrypto
+
+INCLUDEPATH += $$PWD/OpenSSL-Win64/include
+DEPENDPATH += $$PWD/OpenSSL-Win64/include

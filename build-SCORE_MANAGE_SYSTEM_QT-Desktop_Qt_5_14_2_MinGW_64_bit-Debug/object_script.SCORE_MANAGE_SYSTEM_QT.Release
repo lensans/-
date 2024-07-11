@@ -7,7 +7,6 @@ release/mysql_connect.o
 release/password.o
 release/revise_score.o
 release/total_score.o
-release/password.o
 release/paint.o
 release/xlsxabstractooxmlfile.o
 release/xlsxabstractsheet.o
@@ -45,7 +44,6 @@ release/xlsxzipwriter.o
 release/moc_check_score.o
 release/moc_input_score.o
 release/moc_login.o
-release/moc_mainwindow.o
 release/moc_managerwindow.o
 release/moc_revise_score.o
 release/moc_total_score.o

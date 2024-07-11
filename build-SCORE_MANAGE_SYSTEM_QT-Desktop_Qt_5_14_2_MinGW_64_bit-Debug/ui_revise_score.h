@@ -86,7 +86,7 @@ public:
         revise_score->setCentralWidget(centralwidget);
         menubar = new QMenuBar(revise_score);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 800, 17));
         revise_score->setMenuBar(menubar);
         statusbar = new QStatusBar(revise_score);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

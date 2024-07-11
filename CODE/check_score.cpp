@@ -17,7 +17,7 @@ check_score::check_score(QWidget *parent)
 void check_score::on_btn_check_confirm_clicked()//查询全部成绩
 {
     //从文本框读入要查询的学生id
-    QString student_id = ui->check_student_id->text().toInt();
+    QString student_id = ui->check_student_id->text();
     VP subject_scores(7);
 
     DB db;

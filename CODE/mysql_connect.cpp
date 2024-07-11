@@ -75,7 +75,7 @@ bool DB::add_score(QString student_id, QString student_name, VP subject_scores){
     QSqlQuery query1(db);
     query1.prepare("INSERT INTO SCORE (NAME,ID ) VALUES( ?,? )");
     query1.addBindValue(student_name);
-    query1.addBindValue(QString::number(student_id));
+    query1.addBindValue(student_id);
     if(query1.exec()){
         for(QPair s:subject_scores){
             update_score(student_id,s.first,s.second);
@@ -251,6 +251,7 @@ void DB::upload_score(QString file_path){
         query.bindValue(":score",score);
         if(!query.exec()){
             QMessageBox::information(nullptr,"fail",query.lastError().text());
+            return;
         }
         row++;
     }
@@ -299,6 +300,24 @@ int DB::get_rank(QString student_id, QString subject){
         rank[b]=distribution[b]+rank[b-1];
     }
     return rank[myscore];
+}
+
+void DB::get_all_ranks(QString subject,QMap<int,int> &scoreDistribution){
+    QSqlQuery query(db);
+
+    //使用Mysql自带的排序功能
+    QString str=QString("SELECT %1 FROM SCORE  ODER BY %2 DESC").arg(subject).arg(subject);
+    query.prepare(str);
+
+    if(!query.exec()){
+        QMessageBox::critical(nullptr,"error",query.lastError().text());
+    }
+    else{
+        while(query.next()){
+            int score=query.value(0).toInt();
+            scoreDistribution[score]++;
+        }
+    }
 }
 
 DB::~DB(){

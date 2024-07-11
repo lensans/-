@@ -13,13 +13,13 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_DISABLE_DEPRECATED_BEFORE=0x060000 -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
+DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -O2 -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -O2 -std=gnu++1z -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I..\CODE -I. -I..\CODE\QXlsx -I..\CODE -I..\CODE\qxlsx\header -I./qxlsx/header/win32-gcc -I..\CODE\OpenSSL\include -IE:\Qt\5.14.2\mingw73_64\include -IE:\Qt\5.14.2\mingw73_64\include\QtCharts -IE:\Qt\5.14.2\mingw73_64\include\QtWidgets -IE:\Qt\5.14.2\mingw73_64\include\QtGui\5.14.2 -IE:\Qt\5.14.2\mingw73_64\include\QtGui\5.14.2\QtGui -IE:\Qt\5.14.2\mingw73_64\include\QtGui -IE:\Qt\5.14.2\mingw73_64\include\QtANGLE -IE:\Qt\5.14.2\mingw73_64\include\QtSql -IE:\Qt\5.14.2\mingw73_64\include\QtCore\5.14.2 -IE:\Qt\5.14.2\mingw73_64\include\QtCore\5.14.2\QtCore -IE:\Qt\5.14.2\mingw73_64\include\QtCore -Irelease -I. -I/include -IE:\Qt\5.14.2\mingw73_64\mkspecs\win32-g++ 
+INCPATH       = -I..\CODE -I. -I..\CODE\QXlsx -I..\CODE -I..\CODE\qxlsx\header -I./qxlsx/header/win32-gcc -I..\CODE\OpenSSL-Win64\include -IE:\Qt\5.14.2\mingw73_64\include -IE:\Qt\5.14.2\mingw73_64\include\QtCharts -IE:\Qt\5.14.2\mingw73_64\include\QtWidgets -IE:\Qt\5.14.2\mingw73_64\include\QtGui\5.14.2 -IE:\Qt\5.14.2\mingw73_64\include\QtGui\5.14.2\QtGui -IE:\Qt\5.14.2\mingw73_64\include\QtGui -IE:\Qt\5.14.2\mingw73_64\include\QtANGLE -IE:\Qt\5.14.2\mingw73_64\include\QtSql -IE:\Qt\5.14.2\mingw73_64\include\QtCore\5.14.2 -IE:\Qt\5.14.2\mingw73_64\include\QtCore\5.14.2\QtCore -IE:\Qt\5.14.2\mingw73_64\include\QtCore -Irelease -I. -I/include -IE:\Qt\5.14.2\mingw73_64\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
-LIBS        =        -lssl -lcrypto E:\Qt\5.14.2\mingw73_64\lib\libQt5Charts.a E:\Qt\5.14.2\mingw73_64\lib\libQt5Widgets.a E:\Qt\5.14.2\mingw73_64\lib\libQt5Gui.a E:\Qt\5.14.2\mingw73_64\lib\libQt5Sql.a E:\Qt\5.14.2\mingw73_64\lib\libQt5Core.a  -lmingw32 E:\Qt\5.14.2\mingw73_64\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-winx64\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
+LIBS        =        -LD:\code\SCORE_MANAGE_SYSTEM\CODE\OpenSSL-Win64\lib -llibssl -llibcrypto E:\Qt\5.14.2\mingw73_64\lib\libQt5Charts.a E:\Qt\5.14.2\mingw73_64\lib\libQt5Widgets.a E:\Qt\5.14.2\mingw73_64\lib\libQt5Gui.a E:\Qt\5.14.2\mingw73_64\lib\libQt5Sql.a E:\Qt\5.14.2\mingw73_64\lib\libQt5Core.a  -lmingw32 E:\Qt\5.14.2\mingw73_64\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-winx64\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
 QMAKE         = E:\Qt\5.14.2\mingw73_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -56,9 +56,9 @@ SOURCES       = ..\CODE\main.cpp \
 		..\CODE\login.cpp \
 		..\CODE\managerwindow.cpp \
 		..\CODE\mysql_connect.cpp \
+		..\CODE\password.cpp \
 		..\CODE\revise_score.cpp \
 		..\CODE\total_score.cpp \
-		..\CODE\password.cpp \
 		..\CODE\paint.cpp \
 		..\CODE\qxlsx\source\xlsxabstractooxmlfile.cpp \
 		..\CODE\qxlsx\source\xlsxabstractsheet.cpp \
@@ -95,7 +95,6 @@ SOURCES       = ..\CODE\main.cpp \
 		..\CODE\qxlsx\source\xlsxzipwriter.cpp release\moc_check_score.cpp \
 		release\moc_input_score.cpp \
 		release\moc_login.cpp \
-		release\moc_mainwindow.cpp \
 		release\moc_managerwindow.cpp \
 		release\moc_revise_score.cpp \
 		release\moc_total_score.cpp \
@@ -106,9 +105,9 @@ OBJECTS       = release/main.o \
 		release/login.o \
 		release/managerwindow.o \
 		release/mysql_connect.o \
+		release/password.o \
 		release/revise_score.o \
 		release/total_score.o \
-		release/password.o \
 		release/paint.o \
 		release/xlsxabstractooxmlfile.o \
 		release/xlsxabstractsheet.o \
@@ -146,7 +145,6 @@ OBJECTS       = release/main.o \
 		release/moc_check_score.o \
 		release/moc_input_score.o \
 		release/moc_login.o \
-		release/moc_mainwindow.o \
 		release/moc_managerwindow.o \
 		release/moc_revise_score.o \
 		release/moc_total_score.o \
@@ -157,21 +155,16 @@ DIST          =  ..\CODE\check_score.h \
 		..\CODE\grade.h \
 		..\CODE\input_score.h \
 		..\CODE\login.h \
-		..\CODE\mainwindow.h \
 		..\CODE\manager.h \
 		..\CODE\managerwindow.h \
 		..\CODE\password.h \
 		..\CODE\revise_score.h \
 		..\CODE\student.h \
 		..\CODE\total_score.h \
-		..\CODE\ui_check_score.h \
 		..\CODE\ui_input_score.h \
 		..\CODE\ui_login.h \
-		..\CODE\ui_managerwindow.h \
-		..\CODE\ui_revise_score.h \
 		..\CODE\ui_total_score.h \
 		..\CODE\mysql_connect.h \
-		..\CODE\password.h \
 		..\CODE\paint.h \
 		..\CODE\qxlsx\header\xlsxabstractooxmlfile.h \
 		..\CODE\qxlsx\header\xlsxabstractooxmlfile_p.h \
@@ -225,9 +218,9 @@ DIST          =  ..\CODE\check_score.h \
 		..\CODE\login.cpp \
 		..\CODE\managerwindow.cpp \
 		..\CODE\mysql_connect.cpp \
+		..\CODE\password.cpp \
 		..\CODE\revise_score.cpp \
 		..\CODE\total_score.cpp \
-		..\CODE\password.cpp \
 		..\CODE\paint.cpp \
 		..\CODE\qxlsx\source\xlsxabstractooxmlfile.cpp \
 		..\CODE\qxlsx\source\xlsxabstractsheet.cpp \
@@ -272,7 +265,7 @@ DESTDIR_TARGET = release\SCORE_MANAGE_SYSTEM_QT.exe
 first: all
 all: Makefile.Release  release/SCORE_MANAGE_SYSTEM_QT.exe
 
-release/SCORE_MANAGE_SYSTEM_QT.exe: E:/Qt/5.14.2/mingw73_64/lib/libQt5Charts.a E:/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a E:/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a E:/Qt/5.14.2/mingw73_64/lib/libQt5Sql.a E:/Qt/5.14.2/mingw73_64/lib/libQt5Core.a E:/Qt/5.14.2/mingw73_64/lib/libqtmain.a ui_check_score.h ui_input_score.h ui_login.h ui_revise_score.h ui_total_score.h $(OBJECTS) 
+release/SCORE_MANAGE_SYSTEM_QT.exe: E:/Qt/5.14.2/mingw73_64/lib/libQt5Charts.a E:/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a E:/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a E:/Qt/5.14.2/mingw73_64/lib/libQt5Sql.a E:/Qt/5.14.2/mingw73_64/lib/libQt5Core.a E:/Qt/5.14.2/mingw73_64/lib/libqtmain.a ui_check_score.h ui_input_score.h ui_login.h ui_revise_score.h ui_total_score.h ui_managerwindow.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @object_script.SCORE_MANAGE_SYSTEM_QT.Release  $(LIBS)
 
 qmake: FORCE
@@ -281,10 +274,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) SCORE_MANAGE_SYSTEM_QT.zip $(SOURCES) $(DIST) ..\CODE\SCORE_MANAGE_SYSTEM_QT.pro E:\Qt\5.14.2\mingw73_64\mkspecs\features\spec_pre.prf E:\Qt\5.14.2\mingw73_64\mkspecs\qdevice.pri E:\Qt\5.14.2\mingw73_64\mkspecs\features\device_config.prf E:\Qt\5.14.2\mingw73_64\mkspecs\common\sanitize.conf E:\Qt\5.14.2\mingw73_64\mkspecs\common\gcc-base.conf E:\Qt\5.14.2\mingw73_64\mkspecs\common\g++-base.conf E:\Qt\5.14.2\mingw73_64\mkspecs\common\angle.conf E:\Qt\5.14.2\mingw73_64\mkspecs\features\win32\windows_vulkan_sdk.prf E:\Qt\5.14.2\mingw73_64\mkspecs\common\windows-vulkan.conf E:\Qt\5.14.2\mingw73_64\mkspecs\common\g++-win32.conf E:\Qt\5.14.2\mingw73_64\mkspecs\common\windows-desktop.conf E:\Qt\5.14.2\mingw73_64\mkspecs\qconfig.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3danimation.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3danimation_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dcore.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dcore_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dextras.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dextras_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dinput.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dinput_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquick.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquick_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3drender.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3drender_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_accessibility_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axbase.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axbase_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axserver.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axserver_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bodymovin_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bootstrap_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_charts.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_charts_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_concurrent.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_concurrent_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_core.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_core_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_datavisualization.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_datavisualization_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_dbus.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_dbus_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designer.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designer_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designercomponents_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_edid_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_egl_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_fb_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gamepad.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gamepad_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gui.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gui_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_help.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_help_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_location.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_location_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimedia.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimedia_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_network.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_network_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_networkauth.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_networkauth_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_nfc.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_nfc_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_opengl.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_opengl_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_packetprotocol_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioning.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioning_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_printsupport.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_printsupport_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qml.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qml_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmldebug_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmldevtools_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlmodels.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlmodels_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmltest.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmltest_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3d.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3d_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dassetimport.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dassetimport_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3drender.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3drender_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3druntimerender.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3druntimerender_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dutils.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dutils_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickparticles_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickshapes_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_repparser.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_repparser_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_script.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_script_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scripttools.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scripttools_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scxml.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scxml_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sensors.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sensors_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialbus.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialbus_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialport.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialport_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sql.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sql_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_svg.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_svg_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_testlib.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_testlib_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_theme_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uiplugin.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uitools.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uitools_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_vulkan_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_webchannel.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_webchannel_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_websockets.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_websockets_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_widgets.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_widgets_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_winextras.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_winextras_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xml.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xml_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_zlib_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\features\qt_functions.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\qt_config.prf E:\Qt\5.14.2\mingw73_64\mkspecs\win32-g++\qmake.conf E:\Qt\5.14.2\mingw73_64\mkspecs\features\spec_post.prf .qmake.stash E:\Qt\5.14.2\mingw73_64\mkspecs\features\exclusive_builds.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\toolchain.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\default_pre.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\win32\default_pre.prf ..\CODE\QXlsx\QXlsx.pri E:\Qt\5.14.2\mingw73_64\mkspecs\features\resolve_config.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\exclusive_builds_post.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\default_post.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\build_pass.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\qml_debug.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\precompile_header.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\warn_on.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\qt.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\resources_functions.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\resources.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\moc.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\win32\opengl.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\uic.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\qmake_use.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\file_copies.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\win32\windows.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\testcase_targets.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\exceptions.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\yacc.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\lex.prf ..\CODE\SCORE_MANAGE_SYSTEM_QT.pro E:\Qt\5.14.2\mingw73_64\lib\Qt5Charts.prl E:\Qt\5.14.2\mingw73_64\lib\Qt5Widgets.prl E:\Qt\5.14.2\mingw73_64\lib\Qt5Gui.prl E:\Qt\5.14.2\mingw73_64\lib\Qt5Sql.prl E:\Qt\5.14.2\mingw73_64\lib\Qt5Core.prl E:\Qt\5.14.2\mingw73_64\lib\qtmain.prl    E:\Qt\5.14.2\mingw73_64\mkspecs\features\data\dummy.cpp ..\CODE\check_score.h ..\CODE\course.h ..\CODE\grade.h ..\CODE\input_score.h ..\CODE\login.h ..\CODE\mainwindow.h ..\CODE\manager.h ..\CODE\managerwindow.h ..\CODE\password.h ..\CODE\revise_score.h ..\CODE\student.h ..\CODE\total_score.h ..\CODE\ui_check_score.h ..\CODE\ui_input_score.h ..\CODE\ui_login.h ..\CODE\ui_managerwindow.h ..\CODE\ui_revise_score.h ..\CODE\ui_total_score.h ..\CODE\mysql_connect.h ..\CODE\password.h ..\CODE\paint.h ..\CODE\qxlsx\header\xlsxabstractooxmlfile.h ..\CODE\qxlsx\header\xlsxabstractooxmlfile_p.h ..\CODE\qxlsx\header\xlsxabstractsheet.h ..\CODE\qxlsx\header\xlsxabstractsheet_p.h ..\CODE\qxlsx\header\xlsxcell.h ..\CODE\qxlsx\header\xlsxcellformula.h ..\CODE\qxlsx\header\xlsxcellformula_p.h ..\CODE\qxlsx\header\xlsxcelllocation.h ..\CODE\qxlsx\header\xlsxcellrange.h ..\CODE\qxlsx\header\xlsxcellreference.h ..\CODE\qxlsx\header\xlsxcell_p.h ..\CODE\qxlsx\header\xlsxchart.h ..\CODE\qxlsx\header\xlsxchartsheet.h ..\CODE\qxlsx\header\xlsxchartsheet_p.h ..\CODE\qxlsx\header\xlsxchart_p.h ..\CODE\qxlsx\header\xlsxcolor_p.h ..\CODE\qxlsx\header\xlsxconditionalformatting.h ..\CODE\qxlsx\header\xlsxconditionalformatting_p.h ..\CODE\qxlsx\header\xlsxcontenttypes_p.h ..\CODE\qxlsx\header\xlsxdatavalidation.h ..\CODE\qxlsx\header\xlsxdatavalidation_p.h ..\CODE\qxlsx\header\xlsxdatetype.h ..\CODE\qxlsx\header\xlsxdocpropsapp_p.h ..\CODE\qxlsx\header\xlsxdocpropscore_p.h ..\CODE\qxlsx\header\xlsxdocument.h ..\CODE\qxlsx\header\xlsxdocument_p.h ..\CODE\qxlsx\header\xlsxdrawinganchor_p.h ..\CODE\qxlsx\header\xlsxdrawing_p.h ..\CODE\qxlsx\header\xlsxformat.h ..\CODE\qxlsx\header\xlsxformat_p.h ..\CODE\qxlsx\header\xlsxglobal.h ..\CODE\qxlsx\header\xlsxmediafile_p.h ..\CODE\qxlsx\header\xlsxnumformatparser_p.h ..\CODE\qxlsx\header\xlsxrelationships_p.h ..\CODE\qxlsx\header\xlsxrichstring.h ..\CODE\qxlsx\header\xlsxrichstring_p.h ..\CODE\qxlsx\header\xlsxsharedstrings_p.h ..\CODE\qxlsx\header\xlsxsimpleooxmlfile_p.h ..\CODE\qxlsx\header\xlsxstyles_p.h ..\CODE\qxlsx\header\xlsxtheme_p.h ..\CODE\qxlsx\header\xlsxutility_p.h ..\CODE\qxlsx\header\xlsxworkbook.h ..\CODE\qxlsx\header\xlsxworkbook_p.h ..\CODE\qxlsx\header\xlsxworksheet.h ..\CODE\qxlsx\header\xlsxworksheet_p.h ..\CODE\qxlsx\header\xlsxzipreader_p.h ..\CODE\qxlsx\header\xlsxzipwriter_p.h  ..\CODE\main.cpp ..\CODE\check_score.cpp ..\CODE\input_score.cpp ..\CODE\login.cpp ..\CODE\managerwindow.cpp ..\CODE\mysql_connect.cpp ..\CODE\revise_score.cpp ..\CODE\total_score.cpp ..\CODE\password.cpp ..\CODE\paint.cpp ..\CODE\qxlsx\source\xlsxabstractooxmlfile.cpp ..\CODE\qxlsx\source\xlsxabstractsheet.cpp ..\CODE\qxlsx\source\xlsxcell.cpp ..\CODE\qxlsx\source\xlsxcellformula.cpp ..\CODE\qxlsx\source\xlsxcelllocation.cpp ..\CODE\qxlsx\source\xlsxcellrange.cpp ..\CODE\qxlsx\source\xlsxcellreference.cpp ..\CODE\qxlsx\source\xlsxchart.cpp ..\CODE\qxlsx\source\xlsxchartsheet.cpp ..\CODE\qxlsx\source\xlsxcolor.cpp ..\CODE\qxlsx\source\xlsxconditionalformatting.cpp ..\CODE\qxlsx\source\xlsxcontenttypes.cpp ..\CODE\qxlsx\source\xlsxdatavalidation.cpp ..\CODE\qxlsx\source\xlsxdatetype.cpp ..\CODE\qxlsx\source\xlsxdocpropsapp.cpp ..\CODE\qxlsx\source\xlsxdocpropscore.cpp ..\CODE\qxlsx\source\xlsxdocument.cpp ..\CODE\qxlsx\source\xlsxdrawing.cpp ..\CODE\qxlsx\source\xlsxdrawinganchor.cpp ..\CODE\qxlsx\source\xlsxformat.cpp ..\CODE\qxlsx\source\xlsxmediafile.cpp ..\CODE\qxlsx\source\xlsxnumformatparser.cpp ..\CODE\qxlsx\source\xlsxrelationships.cpp ..\CODE\qxlsx\source\xlsxrichstring.cpp ..\CODE\qxlsx\source\xlsxsharedstrings.cpp ..\CODE\qxlsx\source\xlsxsimpleooxmlfile.cpp ..\CODE\qxlsx\source\xlsxstyles.cpp ..\CODE\qxlsx\source\xlsxtheme.cpp ..\CODE\qxlsx\source\xlsxutility.cpp ..\CODE\qxlsx\source\xlsxworkbook.cpp ..\CODE\qxlsx\source\xlsxworksheet.cpp ..\CODE\qxlsx\source\xlsxzipreader.cpp ..\CODE\qxlsx\source\xlsxzipwriter.cpp ..\CODE\check_score.ui ..\CODE\input_score.ui ..\CODE\login.ui ..\CODE\revise_score.ui ..\CODE\total_score.ui    
+	$(ZIP) SCORE_MANAGE_SYSTEM_QT.zip $(SOURCES) $(DIST) ..\CODE\SCORE_MANAGE_SYSTEM_QT.pro E:\Qt\5.14.2\mingw73_64\mkspecs\features\spec_pre.prf E:\Qt\5.14.2\mingw73_64\mkspecs\qdevice.pri E:\Qt\5.14.2\mingw73_64\mkspecs\features\device_config.prf E:\Qt\5.14.2\mingw73_64\mkspecs\common\sanitize.conf E:\Qt\5.14.2\mingw73_64\mkspecs\common\gcc-base.conf E:\Qt\5.14.2\mingw73_64\mkspecs\common\g++-base.conf E:\Qt\5.14.2\mingw73_64\mkspecs\common\angle.conf E:\Qt\5.14.2\mingw73_64\mkspecs\features\win32\windows_vulkan_sdk.prf E:\Qt\5.14.2\mingw73_64\mkspecs\common\windows-vulkan.conf E:\Qt\5.14.2\mingw73_64\mkspecs\common\g++-win32.conf E:\Qt\5.14.2\mingw73_64\mkspecs\common\windows-desktop.conf E:\Qt\5.14.2\mingw73_64\mkspecs\qconfig.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3danimation.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3danimation_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dcore.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dcore_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dextras.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dextras_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dinput.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dinput_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquick.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquick_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3drender.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3drender_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_accessibility_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axbase.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axbase_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axserver.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axserver_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bodymovin_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bootstrap_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_charts.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_charts_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_concurrent.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_concurrent_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_core.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_core_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_datavisualization.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_datavisualization_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_dbus.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_dbus_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designer.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designer_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designercomponents_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_edid_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_egl_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_fb_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gamepad.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gamepad_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gui.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gui_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_help.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_help_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_location.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_location_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimedia.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimedia_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_network.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_network_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_networkauth.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_networkauth_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_nfc.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_nfc_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_opengl.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_opengl_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_packetprotocol_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioning.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioning_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_printsupport.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_printsupport_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qml.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qml_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmldebug_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmldevtools_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlmodels.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlmodels_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmltest.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmltest_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3d.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3d_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dassetimport.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dassetimport_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3drender.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3drender_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3druntimerender.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3druntimerender_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dutils.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dutils_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickparticles_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickshapes_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_repparser.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_repparser_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_script.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_script_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scripttools.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scripttools_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scxml.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scxml_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sensors.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sensors_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialbus.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialbus_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialport.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialport_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sql.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sql_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_svg.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_svg_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_testlib.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_testlib_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_theme_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uiplugin.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uitools.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uitools_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_vulkan_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_webchannel.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_webchannel_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_websockets.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_websockets_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_widgets.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_widgets_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_winextras.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_winextras_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xml.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xml_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\modules\qt_lib_zlib_private.pri E:\Qt\5.14.2\mingw73_64\mkspecs\features\qt_functions.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\qt_config.prf E:\Qt\5.14.2\mingw73_64\mkspecs\win32-g++\qmake.conf E:\Qt\5.14.2\mingw73_64\mkspecs\features\spec_post.prf .qmake.stash E:\Qt\5.14.2\mingw73_64\mkspecs\features\exclusive_builds.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\toolchain.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\default_pre.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\win32\default_pre.prf ..\CODE\QXlsx\QXlsx.pri E:\Qt\5.14.2\mingw73_64\mkspecs\features\resolve_config.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\exclusive_builds_post.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\default_post.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\build_pass.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\qml_debug.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\precompile_header.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\warn_on.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\qt.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\resources_functions.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\resources.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\moc.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\win32\opengl.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\uic.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\qmake_use.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\file_copies.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\win32\windows.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\testcase_targets.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\exceptions.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\yacc.prf E:\Qt\5.14.2\mingw73_64\mkspecs\features\lex.prf ..\CODE\SCORE_MANAGE_SYSTEM_QT.pro E:\Qt\5.14.2\mingw73_64\lib\Qt5Charts.prl E:\Qt\5.14.2\mingw73_64\lib\Qt5Widgets.prl E:\Qt\5.14.2\mingw73_64\lib\Qt5Gui.prl E:\Qt\5.14.2\mingw73_64\lib\Qt5Sql.prl E:\Qt\5.14.2\mingw73_64\lib\Qt5Core.prl E:\Qt\5.14.2\mingw73_64\lib\qtmain.prl    E:\Qt\5.14.2\mingw73_64\mkspecs\features\data\dummy.cpp ..\CODE\check_score.h ..\CODE\course.h ..\CODE\grade.h ..\CODE\input_score.h ..\CODE\login.h ..\CODE\manager.h ..\CODE\managerwindow.h ..\CODE\password.h ..\CODE\revise_score.h ..\CODE\student.h ..\CODE\total_score.h ..\CODE\ui_input_score.h ..\CODE\ui_login.h ..\CODE\ui_total_score.h ..\CODE\mysql_connect.h ..\CODE\paint.h ..\CODE\qxlsx\header\xlsxabstractooxmlfile.h ..\CODE\qxlsx\header\xlsxabstractooxmlfile_p.h ..\CODE\qxlsx\header\xlsxabstractsheet.h ..\CODE\qxlsx\header\xlsxabstractsheet_p.h ..\CODE\qxlsx\header\xlsxcell.h ..\CODE\qxlsx\header\xlsxcellformula.h ..\CODE\qxlsx\header\xlsxcellformula_p.h ..\CODE\qxlsx\header\xlsxcelllocation.h ..\CODE\qxlsx\header\xlsxcellrange.h ..\CODE\qxlsx\header\xlsxcellreference.h ..\CODE\qxlsx\header\xlsxcell_p.h ..\CODE\qxlsx\header\xlsxchart.h ..\CODE\qxlsx\header\xlsxchartsheet.h ..\CODE\qxlsx\header\xlsxchartsheet_p.h ..\CODE\qxlsx\header\xlsxchart_p.h ..\CODE\qxlsx\header\xlsxcolor_p.h ..\CODE\qxlsx\header\xlsxconditionalformatting.h ..\CODE\qxlsx\header\xlsxconditionalformatting_p.h ..\CODE\qxlsx\header\xlsxcontenttypes_p.h ..\CODE\qxlsx\header\xlsxdatavalidation.h ..\CODE\qxlsx\header\xlsxdatavalidation_p.h ..\CODE\qxlsx\header\xlsxdatetype.h ..\CODE\qxlsx\header\xlsxdocpropsapp_p.h ..\CODE\qxlsx\header\xlsxdocpropscore_p.h ..\CODE\qxlsx\header\xlsxdocument.h ..\CODE\qxlsx\header\xlsxdocument_p.h ..\CODE\qxlsx\header\xlsxdrawinganchor_p.h ..\CODE\qxlsx\header\xlsxdrawing_p.h ..\CODE\qxlsx\header\xlsxformat.h ..\CODE\qxlsx\header\xlsxformat_p.h ..\CODE\qxlsx\header\xlsxglobal.h ..\CODE\qxlsx\header\xlsxmediafile_p.h ..\CODE\qxlsx\header\xlsxnumformatparser_p.h ..\CODE\qxlsx\header\xlsxrelationships_p.h ..\CODE\qxlsx\header\xlsxrichstring.h ..\CODE\qxlsx\header\xlsxrichstring_p.h ..\CODE\qxlsx\header\xlsxsharedstrings_p.h ..\CODE\qxlsx\header\xlsxsimpleooxmlfile_p.h ..\CODE\qxlsx\header\xlsxstyles_p.h ..\CODE\qxlsx\header\xlsxtheme_p.h ..\CODE\qxlsx\header\xlsxutility_p.h ..\CODE\qxlsx\header\xlsxworkbook.h ..\CODE\qxlsx\header\xlsxworkbook_p.h ..\CODE\qxlsx\header\xlsxworksheet.h ..\CODE\qxlsx\header\xlsxworksheet_p.h ..\CODE\qxlsx\header\xlsxzipreader_p.h ..\CODE\qxlsx\header\xlsxzipwriter_p.h  ..\CODE\main.cpp ..\CODE\check_score.cpp ..\CODE\input_score.cpp ..\CODE\login.cpp ..\CODE\managerwindow.cpp ..\CODE\mysql_connect.cpp ..\CODE\password.cpp ..\CODE\revise_score.cpp ..\CODE\total_score.cpp ..\CODE\paint.cpp ..\CODE\qxlsx\source\xlsxabstractooxmlfile.cpp ..\CODE\qxlsx\source\xlsxabstractsheet.cpp ..\CODE\qxlsx\source\xlsxcell.cpp ..\CODE\qxlsx\source\xlsxcellformula.cpp ..\CODE\qxlsx\source\xlsxcelllocation.cpp ..\CODE\qxlsx\source\xlsxcellrange.cpp ..\CODE\qxlsx\source\xlsxcellreference.cpp ..\CODE\qxlsx\source\xlsxchart.cpp ..\CODE\qxlsx\source\xlsxchartsheet.cpp ..\CODE\qxlsx\source\xlsxcolor.cpp ..\CODE\qxlsx\source\xlsxconditionalformatting.cpp ..\CODE\qxlsx\source\xlsxcontenttypes.cpp ..\CODE\qxlsx\source\xlsxdatavalidation.cpp ..\CODE\qxlsx\source\xlsxdatetype.cpp ..\CODE\qxlsx\source\xlsxdocpropsapp.cpp ..\CODE\qxlsx\source\xlsxdocpropscore.cpp ..\CODE\qxlsx\source\xlsxdocument.cpp ..\CODE\qxlsx\source\xlsxdrawing.cpp ..\CODE\qxlsx\source\xlsxdrawinganchor.cpp ..\CODE\qxlsx\source\xlsxformat.cpp ..\CODE\qxlsx\source\xlsxmediafile.cpp ..\CODE\qxlsx\source\xlsxnumformatparser.cpp ..\CODE\qxlsx\source\xlsxrelationships.cpp ..\CODE\qxlsx\source\xlsxrichstring.cpp ..\CODE\qxlsx\source\xlsxsharedstrings.cpp ..\CODE\qxlsx\source\xlsxsimpleooxmlfile.cpp ..\CODE\qxlsx\source\xlsxstyles.cpp ..\CODE\qxlsx\source\xlsxtheme.cpp ..\CODE\qxlsx\source\xlsxutility.cpp ..\CODE\qxlsx\source\xlsxworkbook.cpp ..\CODE\qxlsx\source\xlsxworksheet.cpp ..\CODE\qxlsx\source\xlsxzipreader.cpp ..\CODE\qxlsx\source\xlsxzipwriter.cpp ..\CODE\check_score.ui ..\CODE\input_score.ui ..\CODE\login.ui ..\CODE\revise_score.ui ..\CODE\total_score.ui ..\CODE\managerwindow.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.o release\check_score.o release\input_score.o release\login.o release\managerwindow.o release\mysql_connect.o release\revise_score.o release\total_score.o release\password.o release\paint.o release\xlsxabstractooxmlfile.o release\xlsxabstractsheet.o release\xlsxcell.o release\xlsxcellformula.o release\xlsxcelllocation.o release\xlsxcellrange.o release\xlsxcellreference.o release\xlsxchart.o release\xlsxchartsheet.o release\xlsxcolor.o release\xlsxconditionalformatting.o release\xlsxcontenttypes.o release\xlsxdatavalidation.o release\xlsxdatetype.o release\xlsxdocpropsapp.o release\xlsxdocpropscore.o release\xlsxdocument.o release\xlsxdrawing.o release\xlsxdrawinganchor.o release\xlsxformat.o release\xlsxmediafile.o release\xlsxnumformatparser.o release\xlsxrelationships.o release\xlsxrichstring.o release\xlsxsharedstrings.o release\xlsxsimpleooxmlfile.o release\xlsxstyles.o release\xlsxtheme.o release\xlsxutility.o release\xlsxworkbook.o release\xlsxworksheet.o release\xlsxzipreader.o release\xlsxzipwriter.o release\moc_check_score.o release\moc_input_score.o release\moc_login.o release\moc_mainwindow.o release\moc_managerwindow.o release\moc_revise_score.o release\moc_total_score.o release\moc_xlsxdocument.o
+	-$(DEL_FILE) release\main.o release\check_score.o release\input_score.o release\login.o release\managerwindow.o release\mysql_connect.o release\password.o release\revise_score.o release\total_score.o release\paint.o release\xlsxabstractooxmlfile.o release\xlsxabstractsheet.o release\xlsxcell.o release\xlsxcellformula.o release\xlsxcelllocation.o release\xlsxcellrange.o release\xlsxcellreference.o release\xlsxchart.o release\xlsxchartsheet.o release\xlsxcolor.o release\xlsxconditionalformatting.o release\xlsxcontenttypes.o release\xlsxdatavalidation.o release\xlsxdatetype.o release\xlsxdocpropsapp.o release\xlsxdocpropscore.o release\xlsxdocument.o release\xlsxdrawing.o release\xlsxdrawinganchor.o release\xlsxformat.o release\xlsxmediafile.o release\xlsxnumformatparser.o release\xlsxrelationships.o release\xlsxrichstring.o release\xlsxsharedstrings.o release\xlsxsimpleooxmlfile.o release\xlsxstyles.o release\xlsxtheme.o release\xlsxutility.o release\xlsxworkbook.o release\xlsxworksheet.o release\xlsxzipreader.o release\xlsxzipwriter.o release\moc_check_score.o release\moc_input_score.o release\moc_login.o release\moc_managerwindow.o release\moc_revise_score.o release\moc_total_score.o release\moc_xlsxdocument.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -309,9 +302,9 @@ compiler_moc_predefs_clean:
 release/moc_predefs.h: E:/Qt/5.14.2/mingw73_64/mkspecs/features/data/dummy.cpp
 	g++ -fno-keep-inline-dllexport -O2 -std=gnu++1z -Wall -Wextra -Wextra -dM -E -o release\moc_predefs.h E:\Qt\5.14.2\mingw73_64\mkspecs\features\data\dummy.cpp
 
-compiler_moc_header_make_all: release/moc_check_score.cpp release/moc_input_score.cpp release/moc_login.cpp release/moc_mainwindow.cpp release/moc_managerwindow.cpp release/moc_revise_score.cpp release/moc_total_score.cpp release/moc_xlsxdocument.cpp
+compiler_moc_header_make_all: release/moc_check_score.cpp release/moc_input_score.cpp release/moc_login.cpp release/moc_managerwindow.cpp release/moc_revise_score.cpp release/moc_total_score.cpp release/moc_xlsxdocument.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_check_score.cpp release\moc_input_score.cpp release\moc_login.cpp release\moc_mainwindow.cpp release\moc_managerwindow.cpp release\moc_revise_score.cpp release\moc_total_score.cpp release\moc_xlsxdocument.cpp
+	-$(DEL_FILE) release\moc_check_score.cpp release\moc_input_score.cpp release\moc_login.cpp release\moc_managerwindow.cpp release\moc_revise_score.cpp release\moc_total_score.cpp release\moc_xlsxdocument.cpp
 release/moc_check_score.cpp: ../CODE/check_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QMainWindow \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qmainwindow.h \
@@ -422,7 +415,7 @@ release/moc_check_score.cpp: ../CODE/check_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qicon.h \
 		release/moc_predefs.h \
 		E:/Qt/5.14.2/mingw73_64/bin/moc.exe
-	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\check_score.h -o release\moc_check_score.cpp
+	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL-Win64/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\check_score.h -o release\moc_check_score.cpp
 
 release/moc_input_score.cpp: ../CODE/input_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QMainWindow \
@@ -534,7 +527,7 @@ release/moc_input_score.cpp: ../CODE/input_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qicon.h \
 		release/moc_predefs.h \
 		E:/Qt/5.14.2/mingw73_64/bin/moc.exe
-	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\input_score.h -o release\moc_input_score.cpp
+	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL-Win64/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\input_score.h -o release\moc_input_score.cpp
 
 release/moc_login.cpp: ../CODE/login.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QMainWindow \
@@ -656,120 +649,7 @@ release/moc_login.cpp: ../CODE/login.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtCore/QDebug \
 		release/moc_predefs.h \
 		E:/Qt/5.14.2/mingw73_64/bin/moc.exe
-	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\login.h -o release\moc_login.cpp
-
-release/moc_mainwindow.cpp: ../CODE/mainwindow.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QMainWindow \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qmainwindow.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qtguiglobal.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qglobal.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qconfig.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qtcore-config.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qprocessordetection.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qcompilerdetection.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qsysinfo.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qlogging.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qflags.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qatomic.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qbasicatomic.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qgenericatomic.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qatomic_msvc.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qglobalstatic.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qmutex.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qnumeric.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qversiontagging.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qtgui-config.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qtwidgets-config.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qwidget.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qwindowdefs.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qnamespace.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qwindowdefs_win.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qobject.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstring.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qchar.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qbytearray.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qrefcount.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qarraydata.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringliteral.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringalgorithms.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringview.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringbuilder.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qlist.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qiterator.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qhashfunctions.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qpair.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qvector.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qcontainertools_impl.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qpoint.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qbytearraylist.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringlist.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qregexp.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringmatcher.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qcoreevent.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qscopedpointer.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qmetatype.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qvarlengtharray.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qcontainerfwd.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qobject_impl.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qmargins.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qpaintdevice.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qrect.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qsize.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qpalette.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qcolor.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qrgb.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qrgba64.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qbrush.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qmatrix.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qpolygon.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qregion.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qdatastream.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qiodevice.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qline.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qtransform.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qpainterpath.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qimage.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qpixelformat.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qpixmap.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qsharedpointer.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qshareddata.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qhash.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qsharedpointer_impl.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qfont.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qfontmetrics.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qfontinfo.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qsizepolicy.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qcursor.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qkeysequence.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qevent.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qvariant.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qmap.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qdebug.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qtextstream.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qlocale.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qset.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qcontiguouscache.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qurl.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qurlquery.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qfile.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qfiledevice.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qvector2d.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtGui/qicon.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/QObject \
-		release/moc_predefs.h \
-		E:/Qt/5.14.2/mingw73_64/bin/moc.exe
-	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\mainwindow.h -o release\moc_mainwindow.cpp
+	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL-Win64/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\login.h -o release\moc_login.cpp
 
 release/moc_managerwindow.cpp: ../CODE/managerwindow.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QMainWindow \
@@ -881,7 +761,7 @@ release/moc_managerwindow.cpp: ../CODE/managerwindow.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qicon.h \
 		release/moc_predefs.h \
 		E:/Qt/5.14.2/mingw73_64/bin/moc.exe
-	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\managerwindow.h -o release\moc_managerwindow.cpp
+	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL-Win64/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\managerwindow.h -o release\moc_managerwindow.cpp
 
 release/moc_revise_score.cpp: ../CODE/revise_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QMainWindow \
@@ -993,7 +873,7 @@ release/moc_revise_score.cpp: ../CODE/revise_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qicon.h \
 		release/moc_predefs.h \
 		E:/Qt/5.14.2/mingw73_64/bin/moc.exe
-	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\revise_score.h -o release\moc_revise_score.cpp
+	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL-Win64/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\revise_score.h -o release\moc_revise_score.cpp
 
 release/moc_total_score.cpp: ../CODE/total_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QMainWindow \
@@ -1105,7 +985,7 @@ release/moc_total_score.cpp: ../CODE/total_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qicon.h \
 		release/moc_predefs.h \
 		E:/Qt/5.14.2/mingw73_64/bin/moc.exe
-	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\total_score.h -o release\moc_total_score.cpp
+	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL-Win64/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\total_score.h -o release\moc_total_score.cpp
 
 release/moc_xlsxdocument.cpp: ../CODE/qxlsx/header/xlsxdocument.h \
 		../CODE/qxlsx/header/xlsxformat.h \
@@ -1227,15 +1107,15 @@ release/moc_xlsxdocument.cpp: ../CODE/qxlsx/header/xlsxdocument.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtCore/qurlquery.h \
 		release/moc_predefs.h \
 		E:/Qt/5.14.2/mingw73_64/bin/moc.exe
-	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\qxlsx\header\xlsxdocument.h -o release\moc_xlsxdocument.cpp
+	E:\Qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/code/SCORE_MANAGE_SYSTEM/build-SCORE_MANAGE_SYSTEM_QT-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -IE:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/QXlsx -ID:/code/SCORE_MANAGE_SYSTEM/CODE -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header -ID:/code/SCORE_MANAGE_SYSTEM/CODE/qxlsx/header/win32-gcc -ID:/code/SCORE_MANAGE_SYSTEM/CODE/OpenSSL-Win64/include -IE:/Qt/5.14.2/mingw73_64/include -IE:/Qt/5.14.2/mingw73_64/include/QtCharts -IE:/Qt/5.14.2/mingw73_64/include/QtWidgets -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtGui/5.14.2/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtGui -IE:/Qt/5.14.2/mingw73_64/include/QtANGLE -IE:/Qt/5.14.2/mingw73_64/include/QtSql -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2 -IE:/Qt/5.14.2/mingw73_64/include/QtCore/5.14.2/QtCore -IE:/Qt/5.14.2/mingw73_64/include/QtCore -I. -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CODE\qxlsx\header\xlsxdocument.h -o release\moc_xlsxdocument.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_check_score.h ui_input_score.h ui_login.h ui_revise_score.h ui_total_score.h
+compiler_uic_make_all: ui_check_score.h ui_input_score.h ui_login.h ui_revise_score.h ui_total_score.h ui_managerwindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_check_score.h ui_input_score.h ui_login.h ui_revise_score.h ui_total_score.h
+	-$(DEL_FILE) ui_check_score.h ui_input_score.h ui_login.h ui_revise_score.h ui_total_score.h ui_managerwindow.h
 ui_check_score.h: ../CODE/check_score.ui \
 		E:/Qt/5.14.2/mingw73_64/bin/uic.exe
 	E:\Qt\5.14.2\mingw73_64\bin\uic.exe ..\CODE\check_score.ui -o ui_check_score.h
@@ -1255,6 +1135,10 @@ ui_revise_score.h: ../CODE/revise_score.ui \
 ui_total_score.h: ../CODE/total_score.ui \
 		E:/Qt/5.14.2/mingw73_64/bin/uic.exe
 	E:\Qt\5.14.2\mingw73_64\bin\uic.exe ..\CODE\total_score.ui -o ui_total_score.h
+
+ui_managerwindow.h: ../CODE/managerwindow.ui \
+		E:/Qt/5.14.2/mingw73_64/bin/uic.exe
+	E:\Qt\5.14.2\mingw73_64\bin\uic.exe ..\CODE\managerwindow.ui -o ui_managerwindow.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -1503,7 +1387,7 @@ release/check_score.o: ../CODE/check_score.cpp ../CODE/check_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qicon.h \
-		../CODE/ui_check_score.h \
+		ui_check_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtCore/QVariant \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QApplication \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
@@ -1512,13 +1396,11 @@ release/check_score.o: ../CODE/check_score.cpp ../CODE/check_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qinputmethod.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QFormLayout \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qformlayout.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QLayout \
+		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGridLayout \
+		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgridlayout.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlayout.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qboxlayout.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgridlayout.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QLabel \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlabel.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qframe.h \
@@ -1536,7 +1418,6 @@ release/check_score.o: ../CODE/check_score.cpp ../CODE/check_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QPushButton \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qpushbutton.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QSpacerItem \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QStatusBar \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qstatusbar.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QWidget \
@@ -1716,14 +1597,11 @@ release/input_score.o: ../CODE/input_score.cpp ../CODE/input_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qinputmethod.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QFormLayout \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qformlayout.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QLayout \
+		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGridLayout \
+		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgridlayout.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlayout.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qboxlayout.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgridlayout.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGridLayout \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QLabel \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlabel.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qframe.h \
@@ -1736,7 +1614,6 @@ release/input_score.o: ../CODE/input_score.cpp ../CODE/input_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QPushButton \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qpushbutton.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QSpacerItem \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QStatusBar \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qstatusbar.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QTabWidget \
@@ -2107,7 +1984,7 @@ release/managerwindow.o: ../CODE/managerwindow.cpp ../CODE/managerwindow.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qicon.h \
-		../CODE/ui_managerwindow.h \
+		ui_managerwindow.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtCore/QVariant \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QApplication \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
@@ -2300,38 +2177,94 @@ release/mysql_connect.o: ../CODE/mysql_connect.cpp ../CODE/mysql_connect.h \
 		../CODE/password.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtCore/QCryptographicHash \
 		E:/Qt/5.14.2/mingw73_64/include/QtCore/qcryptographichash.h \
-		../CODE/OpenSSL/include/openssl/evp.h \
-		../CODE/OpenSSL/include/openssl/macros.h \
-		../CODE/OpenSSL/include/openssl/opensslconf.h \
-		../CODE/OpenSSL/include/openssl/configuration.h \
-		../CODE/OpenSSL/include/openssl/opensslv.h \
-		../CODE/OpenSSL/include/openssl/types.h \
-		../CODE/OpenSSL/include/openssl/e_os2.h \
-		../CODE/OpenSSL/include/openssl/safestack.h \
-		../CODE/OpenSSL/include/openssl/stack.h \
-		../CODE/OpenSSL/include/openssl/core.h \
-		../CODE/OpenSSL/include/openssl/core_dispatch.h \
-		../CODE/OpenSSL/include/openssl/symhacks.h \
-		../CODE/OpenSSL/include/openssl/bio.h \
-		../CODE/OpenSSL/include/openssl/crypto.h \
-		../CODE/OpenSSL/include/openssl/cryptoerr.h \
-		../CODE/OpenSSL/include/openssl/cryptoerr_legacy.h \
-		../CODE/OpenSSL/include/openssl/ebcdic.h \
-		../CODE/OpenSSL/include/openssl/bioerr.h \
-		../CODE/OpenSSL/include/openssl/evperr.h \
-		../CODE/OpenSSL/include/openssl/params.h \
-		../CODE/OpenSSL/include/openssl/bn.h \
-		../CODE/OpenSSL/include/openssl/bnerr.h \
-		../CODE/OpenSSL/include/openssl/objects.h \
-		../CODE/OpenSSL/include/openssl/obj_mac.h \
-		../CODE/OpenSSL/include/openssl/asn1.h \
-		../CODE/OpenSSL/include/openssl/asn1err.h \
-		../CODE/OpenSSL/include/openssl/objectserr.h \
-		../CODE/OpenSSL/include/openssl/rand.h \
-		../CODE/OpenSSL/include/openssl/randerr.h \
+		../CODE/OpenSSL-Win64/include/openssl/evp.h \
+		../CODE/OpenSSL-Win64/include/openssl/opensslconf.h \
+		../CODE/OpenSSL-Win64/include/openssl/opensslv.h \
+		../CODE/OpenSSL-Win64/include/openssl/ossl_typ.h \
+		../CODE/OpenSSL-Win64/include/openssl/e_os2.h \
+		../CODE/OpenSSL-Win64/include/openssl/symhacks.h \
+		../CODE/OpenSSL-Win64/include/openssl/bio.h \
+		../CODE/OpenSSL-Win64/include/openssl/crypto.h \
+		../CODE/OpenSSL-Win64/include/openssl/safestack.h \
+		../CODE/OpenSSL-Win64/include/openssl/stack.h \
+		../CODE/OpenSSL-Win64/include/openssl/cryptoerr.h \
+		../CODE/OpenSSL-Win64/include/openssl/ebcdic.h \
+		../CODE/OpenSSL-Win64/include/openssl/bioerr.h \
+		../CODE/OpenSSL-Win64/include/openssl/evperr.h \
+		../CODE/OpenSSL-Win64/include/openssl/objects.h \
+		../CODE/OpenSSL-Win64/include/openssl/obj_mac.h \
+		../CODE/OpenSSL-Win64/include/openssl/asn1.h \
+		../CODE/OpenSSL-Win64/include/openssl/asn1err.h \
+		../CODE/OpenSSL-Win64/include/openssl/bn.h \
+		../CODE/OpenSSL-Win64/include/openssl/bnerr.h \
+		../CODE/OpenSSL-Win64/include/openssl/objectserr.h \
+		../CODE/OpenSSL-Win64/include/openssl/rand.h \
+		../CODE/OpenSSL-Win64/include/openssl/randerr.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtSql/QSqlField \
 		E:/Qt/5.14.2/mingw73_64/include/QtSql/qsqlfield.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mysql_connect.o ..\CODE\mysql_connect.cpp
+
+release/password.o: ../CODE/password.cpp ../CODE/password.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/QString \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstring.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qchar.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qglobal.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qconfig.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qtcore-config.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qprocessordetection.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qcompilerdetection.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qsysinfo.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qlogging.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qflags.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qatomic.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qbasicatomic.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qgenericatomic.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qatomic_msvc.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qglobalstatic.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qmutex.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qnumeric.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qversiontagging.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qbytearray.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qrefcount.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qnamespace.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qarraydata.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringliteral.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringalgorithms.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringview.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringbuilder.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/QCryptographicHash \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qcryptographichash.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		../CODE/OpenSSL-Win64/include/openssl/evp.h \
+		../CODE/OpenSSL-Win64/include/openssl/opensslconf.h \
+		../CODE/OpenSSL-Win64/include/openssl/opensslv.h \
+		../CODE/OpenSSL-Win64/include/openssl/ossl_typ.h \
+		../CODE/OpenSSL-Win64/include/openssl/e_os2.h \
+		../CODE/OpenSSL-Win64/include/openssl/symhacks.h \
+		../CODE/OpenSSL-Win64/include/openssl/bio.h \
+		../CODE/OpenSSL-Win64/include/openssl/crypto.h \
+		../CODE/OpenSSL-Win64/include/openssl/safestack.h \
+		../CODE/OpenSSL-Win64/include/openssl/stack.h \
+		../CODE/OpenSSL-Win64/include/openssl/cryptoerr.h \
+		../CODE/OpenSSL-Win64/include/openssl/ebcdic.h \
+		../CODE/OpenSSL-Win64/include/openssl/bioerr.h \
+		../CODE/OpenSSL-Win64/include/openssl/evperr.h \
+		../CODE/OpenSSL-Win64/include/openssl/objects.h \
+		../CODE/OpenSSL-Win64/include/openssl/obj_mac.h \
+		../CODE/OpenSSL-Win64/include/openssl/asn1.h \
+		../CODE/OpenSSL-Win64/include/openssl/asn1err.h \
+		../CODE/OpenSSL-Win64/include/openssl/bn.h \
+		../CODE/OpenSSL-Win64/include/openssl/bnerr.h \
+		../CODE/OpenSSL-Win64/include/openssl/objectserr.h \
+		../CODE/OpenSSL-Win64/include/openssl/rand.h \
+		../CODE/OpenSSL-Win64/include/openssl/randerr.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\password.o ..\CODE\password.cpp
 
 release/revise_score.o: ../CODE/revise_score.cpp ../CODE/revise_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QMainWindow \
@@ -2441,7 +2374,7 @@ release/revise_score.o: ../CODE/revise_score.cpp ../CODE/revise_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qicon.h \
-		../CODE/ui_revise_score.h \
+		ui_revise_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtCore/QVariant \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QApplication \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
@@ -2450,13 +2383,6 @@ release/revise_score.o: ../CODE/revise_score.cpp ../CODE/revise_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qinputmethod.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QFormLayout \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qformlayout.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QLayout \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlayout.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qboxlayout.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgridlayout.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QLabel \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlabel.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qframe.h \
@@ -2474,7 +2400,6 @@ release/revise_score.o: ../CODE/revise_score.cpp ../CODE/revise_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QPushButton \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qpushbutton.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QSpacerItem \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QStatusBar \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qstatusbar.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QWidget \
@@ -2654,6 +2579,9 @@ release/total_score.o: ../CODE/total_score.cpp ../CODE/total_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtGui/qinputmethod.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QLabel \
+		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlabel.h \
+		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qframe.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QMenuBar \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qmenubar.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/qmenu.h \
@@ -2664,75 +2592,7 @@ release/total_score.o: ../CODE/total_score.cpp ../CODE/total_score.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\total_score.o ..\CODE\total_score.cpp
 
-release/password.o: ../CODE/password.cpp ../CODE/password.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/QString \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstring.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qchar.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qglobal.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qconfig.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qtcore-config.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qprocessordetection.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qcompilerdetection.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qsysinfo.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qlogging.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qflags.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qatomic.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qbasicatomic.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qgenericatomic.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qatomic_msvc.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qglobalstatic.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qmutex.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qnumeric.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qversiontagging.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qbytearray.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qrefcount.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qnamespace.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qarraydata.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringliteral.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringalgorithms.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringview.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qstringbuilder.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/QCryptographicHash \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qcryptographichash.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
-		E:/Qt/5.14.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
-		../CODE/OpenSSL/include/openssl/evp.h \
-		../CODE/OpenSSL/include/openssl/macros.h \
-		../CODE/OpenSSL/include/openssl/opensslconf.h \
-		../CODE/OpenSSL/include/openssl/configuration.h \
-		../CODE/OpenSSL/include/openssl/opensslv.h \
-		../CODE/OpenSSL/include/openssl/types.h \
-		../CODE/OpenSSL/include/openssl/e_os2.h \
-		../CODE/OpenSSL/include/openssl/safestack.h \
-		../CODE/OpenSSL/include/openssl/stack.h \
-		../CODE/OpenSSL/include/openssl/core.h \
-		../CODE/OpenSSL/include/openssl/core_dispatch.h \
-		../CODE/OpenSSL/include/openssl/symhacks.h \
-		../CODE/OpenSSL/include/openssl/bio.h \
-		../CODE/OpenSSL/include/openssl/crypto.h \
-		../CODE/OpenSSL/include/openssl/cryptoerr.h \
-		../CODE/OpenSSL/include/openssl/cryptoerr_legacy.h \
-		../CODE/OpenSSL/include/openssl/ebcdic.h \
-		../CODE/OpenSSL/include/openssl/bioerr.h \
-		../CODE/OpenSSL/include/openssl/evperr.h \
-		../CODE/OpenSSL/include/openssl/params.h \
-		../CODE/OpenSSL/include/openssl/bn.h \
-		../CODE/OpenSSL/include/openssl/bnerr.h \
-		../CODE/OpenSSL/include/openssl/objects.h \
-		../CODE/OpenSSL/include/openssl/obj_mac.h \
-		../CODE/OpenSSL/include/openssl/asn1.h \
-		../CODE/OpenSSL/include/openssl/asn1err.h \
-		../CODE/OpenSSL/include/openssl/objectserr.h \
-		../CODE/OpenSSL/include/openssl/rand.h \
-		../CODE/OpenSSL/include/openssl/randerr.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\password.o ..\CODE\password.cpp
-
-release/paint.o: ../CODE/paint.cpp ../CODE/Paint.h \
+release/paint.o: ../CODE/paint.cpp ../CODE/paint.h \
 		E:/Qt/5.14.2/mingw73_64/include/QtCharts/QtCharts \
 		E:/Qt/5.14.2/mingw73_64/include/QtCharts/QtChartsDepends \
 		E:/Qt/5.14.2/mingw73_64/include/QtCore/QtCore \
@@ -6742,9 +6602,6 @@ release/moc_input_score.o: release/moc_input_score.cpp
 
 release/moc_login.o: release/moc_login.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_login.o release\moc_login.cpp
-
-release/moc_mainwindow.o: release/moc_mainwindow.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_mainwindow.o release\moc_mainwindow.cpp
 
 release/moc_managerwindow.o: release/moc_managerwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_managerwindow.o release\moc_managerwindow.cpp

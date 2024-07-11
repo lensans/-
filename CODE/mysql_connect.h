@@ -64,7 +64,7 @@ public:
 
     //修改某个学生某科目的成绩
 
-    bool update_score(int  student_id,QString subject,int new_score);
+    bool update_score(QString student_id,QString subject,int new_score);
 
     //将excel文件上传到数据库，批量上传可用for循环-待实现
 
@@ -81,6 +81,9 @@ public:
 
     //获取各科排名 总分用SUM替代
     int get_rank(QString student_id,QString subject);
+
+    //获取所有学生的一分一段数据 使用应用返回结果 类型QMap<int,int> 总分用SUM表示
+    void get_all_ranks(QString subject,QMap<int,int> &scoreDistribution);
 
 };
 
