@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>choice_window</class>
+ <widget class="QWidget" name="choice_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>544</width>
+    <height>378</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="Chinese">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>170</y>
+     <width>80</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 16pt &quot;宋体&quot;;
+background-color: rgb(218, 205, 255);</string>
+   </property>
+   <property name="text">
+    <string>语文</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Math">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>170</y>
+     <width>80</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 16pt &quot;宋体&quot;;
+background-color: rgb(218, 205, 255);</string>
+   </property>
+   <property name="text">
+    <string>数学</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="English">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>220</y>
+     <width>80</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 16pt &quot;宋体&quot;;
+background-color: rgb(218, 205, 255);</string>
+   </property>
+   <property name="text">
+    <string>英语</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Chemestry">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>280</y>
+     <width>80</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 16pt &quot;宋体&quot;;
+background-color: rgb(218, 205, 255);</string>
+   </property>
+   <property name="text">
+    <string>化学</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Physics">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>220</y>
+     <width>80</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 16pt &quot;宋体&quot;;
+background-color: rgb(218, 205, 255);</string>
+   </property>
+   <property name="text">
+    <string>物理</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Biology">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>280</y>
+     <width>80</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 16pt &quot;宋体&quot;;
+background-color: rgb(218, 205, 255);</string>
+   </property>
+   <property name="text">
+    <string>生物</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SUM">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>340</y>
+     <width>80</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 16pt &quot;宋体&quot;;
+background-color: rgb(218, 205, 255);</string>
+   </property>
+   <property name="text">
+    <string>总分</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>40</y>
+     <width>261</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 18pt &quot;宋体&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>请选择要查看一分一段表的科目</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

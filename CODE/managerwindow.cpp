@@ -8,6 +8,7 @@
 #include "total_score.h"
 #include "subject_relation.h"
 #include "single_score.h"
+#include"choice_window.h"
 #include <QPushButton>
 
 managerwindow::managerwindow(QWidget *parent)
@@ -67,7 +68,7 @@ void managerwindow::on_btn_manager_revise_password_clicked()//重置密码
 
 void managerwindow::on_btn_manager_total_clicked()//跳入显示一分一段表界面
 {
-    total_score *to_ma = new total_score(this);
+    choice_window *to_ma = new choice_window(this);
     to_ma->show();
 }
 

@@ -12,7 +12,6 @@ CONFIG   += c++17
 # DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    change_password.cpp \
     delete_score.cpp \
     drag_drop_widget.cpp \
     main.cpp \
@@ -25,17 +24,16 @@ SOURCES += \
     revise_score.cpp \
     single_score.cpp \
     studentwindow.cpp \
-    subject_relation.cpp \
     teacherwindow.cpp \
     total_score.cpp \
     paint.cpp \
     change_password.cpp \
     subject_relation.cpp \
-    single_score.cpp \
-    Relationship.cpp
+    Relationship.cpp \
+    score_distribution.cpp \
+    choice_window.cpp
 
 HEADERS += \
-    change_password.h \
     check_score.h \
     delete_score.h \
     drag_drop_widget.h \
@@ -56,7 +54,9 @@ HEADERS += \
     mysql_connect.h \
     paint.h \
     change_password.h \
-    Relationship.h
+    Relationship.h \
+    score_distribution.h \
+    choice_window.h
 
 FORMS += \
     change_password.ui \
@@ -67,13 +67,12 @@ FORMS += \
     revise_score.ui \
     single_score.ui \
     studentwindow.ui \
-    subject_relation.ui \
     teacherwindow.ui \
     total_score.ui \
     managerwindow.ui \
-    change_password.ui \
     subject_relation.ui \
-    single_score.ui
+    score_distribution.ui \
+    choice_window.ui
 
 
 LIBS += -L"$$PWD/OpenSSL-Win64/lib/" -llibssl -llibcrypto

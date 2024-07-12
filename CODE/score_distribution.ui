@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>score_distribution</class>
+ <widget class="QWidget" name="score_distribution">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>606</width>
+    <height>437</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QChartView" name="graphicsView">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>20</y>
+     <width>511</width>
+     <height>371</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header>qchartview.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
