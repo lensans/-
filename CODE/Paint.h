@@ -5,7 +5,7 @@
 #include <QtCharts>
 
 using namespace std;
-QT_CHARTS_USE_NAMESPACE;
+//QT_CHARTS_USE_NAMESPACE;
 
 class Paint{
 public:

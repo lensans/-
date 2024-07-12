@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>../../../../login_02.png</file>
         <file>login_02.png</file>
     </qresource>
 </RCC>

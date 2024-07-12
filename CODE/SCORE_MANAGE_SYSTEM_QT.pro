@@ -82,6 +82,9 @@ FORMS += \
     score_distribution.ui \
     choice_window.ui
 
+RESOURCES += \
+    images.qrc
+
 
 LIBS += -L"$$PWD/OpenSSL-Win64/lib/" -llibssl -llibcrypto
 

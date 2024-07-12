@@ -2,6 +2,7 @@
 #include "password.h"
 #include <QSqlField>
 #include <QSqlRecord>
+#include <QDebug>
 
 
 DB::DB(){
@@ -118,64 +119,70 @@ VP DB::get_all_score(QString student_id){
 int DB::login_check(QString username, QString password){
     //查询该用户是否为新用户
     QSqlQuery query0(db);
-    query0.prepare("SELECT password FROM USER WHERE username = :username");
-    query0.bindValue(":username",username);
+    query0.prepare("SELECT password FROM USER WHERE username = ?");
+    query0.addBindValue(username);
     if(!query0.exec()){
         QMessageBox::critical(nullptr,"error",query0.lastError().text());
+        qDebug()<<1;
         return -1;
     }
-    if(query0.next()){
-        QString password=query0.value(0).toString();
-        if(password=="123456") return 3;
+    else{
+        query0.first();
+        QString password_tmp=query0.value("password").toString();
+        qDebug()<<password_tmp;
+        if(password_tmp=="123456") return 3;
     }
 
     //查询数据库中是否存在某个用户，其用户名为username，密码为password，盐值为salt
     QSqlQuery query(db);
-    query.prepare("SELECT password FROM users WHERE username = :username");
-    query.bindValue(":username", username);
-    if(!query.exec()||!query.next()){
-        QMessageBox::critical(nullptr,"error",query.lastError().text());
+    query.prepare("SELECT password FROM USER WHERE username = ?");
+    query.addBindValue(username);
+    query.exec();
+    if(!query.first()){
+        QMessageBox::critical(nullptr,"error","用户不存在"+query.lastError().text());
+        qDebug()<<2;
         return -1;
     }
-    if(query.next() && query.value(0).toInt()==1){
+    else{
         QSqlQuery query1(db);
-        query1.prepare("SELECT identity,password,salt FROM USER WHERE username=:username");
-        query1.bindValue(":user",username);
-        query1.bindValue(":password",password);
+        query1.prepare("SELECT identity, password, salt FROM USER WHERE username=?");
+        query1.addBindValue(username);
         if(!query1.exec()){
             QMessageBox::critical(nullptr,"error",query.lastError().text());
+            qDebug()<<3;
             return -1;
         }
-        if(query1.next()){
-            int identity=query1.value(0).toInt();
-            QString storedHashedPassword=query1.value(1).toString();
-            QString storedSalt=query1.value(2).toString();
+        else{
+            query1.first();
+            int identity=query1.value("identity").toInt();
+            QString storedHashedPassword=query1.value("password").toString();
+            QString storedSalt=query1.value("salt").toString();
             QString hashedInputPassword=hashPasswordPBKDF2(password,storedSalt);
             if(hashedInputPassword==storedHashedPassword) return identity;
             else return -1;
         }
     }
-    else{
-        return -1;
-    }
+    qDebug()<<4;
     return -1;
 }
 
 void DB::upload_score(QString file_path){
+
     QXlsx::Document xlsx(file_path);
     if(!xlsx.isLoadPackage()){
         QMessageBox::critical(nullptr,"error","Failed to open Excel document.");
         return;
     }
     QSqlQuery query(db);
-    query.prepare("INSERT INTO scores (student_id, score) VALUES (:student_id, :score)");
+    QString sql=QString("INSERT INTO scores (student_id, score) VALUES (?, ?)");
+    query.prepare(sql);
 
     int row=1;
     while(!xlsx.read(row,1).isNull()){
         QString student_id=xlsx.read(row,1).toString();
         int score=xlsx.read(row,2).toInt();
-        query.bindValue(":student_id",student_id);
-        query.bindValue(":score",score);
+        query.addBindValue(student_id);
+        query.addBindValue(score);
         if(!query.exec()){
             QMessageBox::information(nullptr,"fail",query.lastError().text());
             return;
@@ -188,8 +195,14 @@ bool DB::revise_password(QString username,QString new_password){
     QSqlQuery query(db);
     QString new_salt=generateSalt();
     QString hashedPassword=hashPasswordPBKDF2(new_password,new_salt);
-    QString sql=QString("UPDATE USER SET password=%1, salt=%2 WHERE username=%3").arg(new_password).arg(new_salt).arg(username);
-    if(!query.exec(sql)){
+
+    QString sql = "UPDATE USER SET password = ?, salt = ? WHERE username = ?";
+    query.prepare(sql);
+    query.addBindValue(hashedPassword);
+    query.addBindValue(new_salt);
+    query.addBindValue(username);
+
+    if(!query.exec()){
         QMessageBox::critical(nullptr,"error","密码更新失败："+query.lastError().text());
         return 0;
     }

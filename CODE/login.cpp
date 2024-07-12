@@ -15,7 +15,7 @@ login::login(QWidget *parent)
     ui->setupUi(this);
 
     //设置右侧图片
-    QPixmap *pix = new QPixmap("login_02.png");// 创建一个QPixmap对象，用于加载图片
+    QPixmap *pix = new QPixmap(":/login_02.png");// 创建一个QPixmap对象，用于加载图片
     QSize sz = ui->label_image->size();// 用一个对象sz来获取label_image的大小
     ui->label_image->setPixmap(pix->scaled(sz));// 调整传入图片的大小到label_image的大小，并设置给label_image
 
@@ -33,37 +33,38 @@ login::login(QWidget *parent)
 void login::on_btn_signin_clicked()//点击确认登录
 {
     DB db;
-    QString username, password;
-    ui->lineEdit_password->clear();
-    ui->lineEdit_username->clear();
     //从文本框读入姓名和密码
-    username = ui->lineEdit_username->text();
-    password = ui->lineEdit_password->text();
+    QString username = ui->lineEdit_username->text();
+    QString password = ui->lineEdit_password->text();
     int res = db.login_check(username, password);
-    if(res==-1){
+    switch(res){
+    case -1:
         QMessageBox::information(this,"Error","请重新输入");
-    }
-    else if(res==1&&password=="123456")//登陆成功并且是第一次登录，跳入修改密码界面
-    {
-        change_password *w3 = new change_password(this);
-        w3->show();
-    }
-    else if(res == 0)//登陆成功则进入管理员菜单界面
-    {
-        managerwindow *ma_on = new managerwindow(this);
+        break;
+    case 0:{
+        managerwindow *ma_on = new managerwindow();
         ma_on->show();
-        this->close();
+        break;
     }
-    else if(res == 1) //进入学生界面
-    {
-        StudentWindow *st_on = new StudentWindow(username,this);
+    case 1:{
+        StudentWindow *st_on = new StudentWindow(username);
         st_on->show();
-        this->close();
+        break;
     }
-    else if(res == 2) //进入老师界面
-    {
-        TeacherWindow *te_on = new TeacherWindow(this);
+    case 2:{
+        TeacherWindow *te_on = new TeacherWindow();
         te_on->show();
+        break;
+    }
+    case 3:{
+        change_password *w3 = new change_password();
+        w3->show();
+        break;
+    }
+    default:
+        break;
+    }
+    if(res!=3){
         this->close();
     }
 }
