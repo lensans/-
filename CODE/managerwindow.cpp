@@ -68,7 +68,7 @@ void managerwindow::on_btn_manager_revise_password_clicked()//重置密码
 
 void managerwindow::on_btn_manager_total_clicked()//跳入显示一分一段表界面
 {
-    choice_window *to_ma = new choice_window(this);
+    choice_window *to_ma = new choice_window();
     to_ma->show();
 }
 

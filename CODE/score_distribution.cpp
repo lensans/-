@@ -1,11 +1,14 @@
 #include "score_distribution.h"
 #include "ui_score_distribution.h"
 
-score_distribution::score_distribution(QString subject,DB db,QWidget *parent)
+score_distribution::score_distribution(QString new_subject,DB db,QString new_student_id,QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::score_distribution)
 {
+    subject=new_subject;
+    d1=db;
     ui->setupUi(this);
+    student_id=new_student_id;
     initchart(subject,db);
 }
 
@@ -19,9 +22,9 @@ void score_distribution::initchart(QString subject,DB db){
     chart->setAnimationOptions(QChart::SeriesAnimations);
     ui->graphicsView->setChart(chart);
     ui->graphicsView->setRenderHint(QPainter::Antialiasing);
-    create_distribution_chart(subject,db);
+    create_distribution_chart(subject,db,student_id);
 }
-void score_distribution:: create_distribution_chart(QString subject,DB db){
+void score_distribution:: create_distribution_chart(QString subject,DB db,QString student_id){
     QChart* chart =ui->graphicsView->chart();
     chart->setTitle("一分一段表");
 
@@ -30,12 +33,23 @@ void score_distribution:: create_distribution_chart(QString subject,DB db){
     chart->addSeries(s0);
 
     QValueAxis *x=new QValueAxis;
-    x->setRange((subject=="SUM"?200:30),(subject=="SUM"?600:150));
+    QValueAxis *y=new QValueAxis;
+    if(subject=="SUM"){
+        x->setRange(200,600);
+        y->setRange(0,40);
+    }
+    else if(subject=="Chinese"||subject=="Math"||subject=="English"){
+        x->setRange(20,150);
+        y->setRange(0,60);
+    }
+    else{
+        x->setRange(0,100);
+        y->setRange(0,100);
+    }
     x->setTitleText(subject+"分数分布");
     //创建x轴
 
-    QValueAxis *y=new QValueAxis;
-    y->setRange(0,40);
+
     y->setTitleText("人数分布");
     //创建y轴
     std::vector<int> scores;int distribution[751]{0}; int rank[750];
@@ -54,6 +68,17 @@ void score_distribution:: create_distribution_chart(QString subject,DB db){
     }
     chart->setAxisX(x,s0);
     chart->setAxisY(y,s0);
+    ui->score->setText(QString::number(db.get_single_score(student_id,subject)));
+    ui->rank->setText(QString::number(db.get_rank(student_id,subject)));
 }
 
+
+
+void score_distribution::on_score_returnPressed()
+{
+    std::vector<int> rank(750);
+    d1.get_ranks(subject,rank);
+    int myscore=ui->score->text().toInt();
+    ui->rank->setText(QString::number(rank[myscore]));
+}
 

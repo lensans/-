@@ -17,7 +17,6 @@ public:
     ~choice_window();
 
 private slots:
-    void on_pushButton_6_clicked();
 
     void on_Math_clicked();
 
@@ -30,6 +29,8 @@ private slots:
     void on_Biology_clicked();
 
     void on_SUM_clicked();
+
+    void on_Chinese_clicked();
 
 private:
     Ui::choice_window *ui;

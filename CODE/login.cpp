@@ -43,7 +43,7 @@ void login::on_btn_signin_clicked()//点击确认登录
     if(res==-1){
         QMessageBox::information(this,"Error","请重新输入");
     }
-    else if(res==3)//登陆成功并且是第一次登录，跳入修改密码界面
+    else if(res==1&&password=="123456")//登陆成功并且是第一次登录，跳入修改密码界面
     {
         change_password *w3 = new change_password(this);
         w3->show();
@@ -56,7 +56,7 @@ void login::on_btn_signin_clicked()//点击确认登录
     }
     else if(res == 1) //进入学生界面
     {
-        StudentWindow *st_on = new StudentWindow(this);
+        StudentWindow *st_on = new StudentWindow(username,this);
         st_on->show();
         this->close();
     }

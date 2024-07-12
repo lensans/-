@@ -1,15 +1,16 @@
 #include "studentwindow.h"
 #include "ui_studentwindow.h"
 
-#include "check_score.h"
 #include "change_password.h"
 #include "choice_window.h"
 
-StudentWindow::StudentWindow(QWidget *parent)
+StudentWindow::StudentWindow(QString s,QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::StudentWindow)
 {
     ui->setupUi(this);
+
+    stu=student(s);
 
     connect(ui->btn_student_check,&QPushButton::clicked,this,&StudentWindow::on_btn_student_check_clicked);//跳入查询成绩界面
 
@@ -23,8 +24,8 @@ StudentWindow::StudentWindow(QWidget *parent)
 
 void StudentWindow::on_btn_student_check_clicked()//跳入查询成绩界面
 {
-    check_score *ch_st = new check_score(this);
-    ch_st->show();
+    //stu_check_score *ch_st = new stu_check_score(stu,this);
+    //ch_st->show();
 }
 
 void StudentWindow::on_btn_student_revise_password_clicked()//重置密码

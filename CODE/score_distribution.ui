@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>606</width>
-    <height>437</height>
+    <width>649</width>
+    <height>461</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,6 +20,58 @@
      <y>20</y>
      <width>511</width>
      <height>371</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>400</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Candara&quot;;</string>
+   </property>
+   <property name="text">
+    <string>      你的分数</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="score">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>410</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>400</y>
+     <width>81</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Candara&quot;;</string>
+   </property>
+   <property name="text">
+    <string>你的排名</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="rank">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>410</y>
+     <width>113</width>
+     <height>20</height>
     </rect>
    </property>
   </widget>

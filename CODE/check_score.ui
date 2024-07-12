@@ -22,8 +22,8 @@
      <rect>
       <x>10</x>
       <y>40</y>
-      <width>781</width>
-      <height>511</height>
+      <width>771</width>
+      <height>531</height>
      </rect>
     </property>
     <property name="font">
@@ -101,6 +101,14 @@ color: rgb(103, 103, 103);</string>
 color: rgb(0, 0,0);</string>
       </property>
       <layout class="QGridLayout" name="gridLayout">
+       <item row="3" column="1" colspan="2">
+        <widget class="QLineEdit" name="check_physics_line">
+         <property name="styleSheet">
+          <string notr="true">border:1px groove gray;border-radius:
+7px;padding:2px 4px;</string>
+         </property>
+        </widget>
+       </item>
        <item row="1" column="0">
         <widget class="QLabel" name="check_math_label">
          <property name="styleSheet">
@@ -111,54 +119,8 @@ color: rgb(0, 0,0);</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="check_physics_label">
-         <property name="styleSheet">
-          <string notr="true">font: 16pt &quot;宋体&quot;;</string>
-         </property>
-         <property name="text">
-          <string>物理：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="check_biology_label">
-         <property name="styleSheet">
-          <string notr="true">font: 16pt &quot;宋体&quot;;</string>
-         </property>
-         <property name="text">
-          <string>生物：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1" colspan="2">
-        <widget class="QLineEdit" name="check_English_line">
-         <property name="styleSheet">
-          <string notr="true">border:1px groove gray;border-radius:
-7px;padding:2px 4px;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="check_English_label">
-         <property name="styleSheet">
-          <string notr="true">font: 16pt &quot;宋体&quot;;</string>
-         </property>
-         <property name="text">
-          <string>英语：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1" colspan="2">
-        <widget class="QLineEdit" name="check_biology_line">
-         <property name="styleSheet">
-          <string notr="true">border:1px groove gray;border-radius:
-7px;padding:2px 4px;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1" colspan="2">
-        <widget class="QLineEdit" name="check_chemistry_line">
+       <item row="6" column="2">
+        <widget class="QLineEdit" name="check_sum_line">
          <property name="styleSheet">
           <string notr="true">border:1px groove gray;border-radius:
 7px;padding:2px 4px;</string>
@@ -175,24 +137,6 @@ color: rgb(0, 0,0);</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="1" colspan="2">
-        <widget class="QLineEdit" name="check_physics_line">
-         <property name="styleSheet">
-          <string notr="true">border:1px groove gray;border-radius:
-7px;padding:2px 4px;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0" colspan="2">
-        <widget class="QLabel" name="check_sum_label">
-         <property name="styleSheet">
-          <string notr="true">font: 16pt &quot;宋体&quot;;</string>
-         </property>
-         <property name="text">
-          <string>总分：</string>
-         </property>
-        </widget>
-       </item>
        <item row="4" column="0">
         <widget class="QLabel" name="check_chemistry_label">
          <property name="styleSheet">
@@ -203,8 +147,62 @@ color: rgb(0, 0,0);</string>
          </property>
         </widget>
        </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="check_English_label">
+         <property name="styleSheet">
+          <string notr="true">font: 16pt &quot;宋体&quot;;</string>
+         </property>
+         <property name="text">
+          <string>英语：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="check_physics_label">
+         <property name="styleSheet">
+          <string notr="true">font: 16pt &quot;宋体&quot;;</string>
+         </property>
+         <property name="text">
+          <string>物理：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="QLineEdit" name="check_English_line">
+         <property name="styleSheet">
+          <string notr="true">border:1px groove gray;border-radius:
+7px;padding:2px 4px;</string>
+         </property>
+        </widget>
+       </item>
        <item row="1" column="1" colspan="2">
         <widget class="QLineEdit" name="check_math_line">
+         <property name="styleSheet">
+          <string notr="true">border:1px groove gray;border-radius:
+7px;padding:2px 4px;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="check_biology_label">
+         <property name="styleSheet">
+          <string notr="true">font: 16pt &quot;宋体&quot;;</string>
+         </property>
+         <property name="text">
+          <string>生物：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1" colspan="2">
+        <widget class="QLineEdit" name="check_chemistry_line">
+         <property name="styleSheet">
+          <string notr="true">border:1px groove gray;border-radius:
+7px;padding:2px 4px;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1" colspan="2">
+        <widget class="QLineEdit" name="check_biology_line">
          <property name="styleSheet">
           <string notr="true">border:1px groove gray;border-radius:
 7px;padding:2px 4px;</string>
@@ -219,11 +217,13 @@ color: rgb(0, 0,0);</string>
          </property>
         </widget>
        </item>
-       <item row="6" column="2">
-        <widget class="QLineEdit" name="check_sum_line">
+       <item row="6" column="0" colspan="2">
+        <widget class="QLabel" name="check_sum_label">
          <property name="styleSheet">
-          <string notr="true">border:1px groove gray;border-radius:
-7px;padding:2px 4px;</string>
+          <string notr="true">font: 16pt &quot;宋体&quot;;</string>
+         </property>
+         <property name="text">
+          <string>总分：</string>
          </property>
         </widget>
        </item>
@@ -425,7 +425,7 @@ color: rgb(103, 103, 103);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>17</height>
     </rect>
    </property>
   </widget>

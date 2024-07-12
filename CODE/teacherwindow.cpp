@@ -42,7 +42,7 @@ void TeacherWindow::on_btn_teacher_revise_password_clicked()//重置密码
 
 void TeacherWindow::on_btn_teacher_total_clicked()//跳入显示一分一段表界面
 {
-    choice_window *to_te = new choice_window(this);
+    choice_window *to_te = new choice_window();
     to_te->show();
 }
 

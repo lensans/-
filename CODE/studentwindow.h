@@ -2,7 +2,7 @@
 #define STUDENTWINDOW_H
 
 #include <QMainWindow>
-
+#include"student.h"
 namespace Ui {
 class StudentWindow;
 }
@@ -12,8 +12,8 @@ class StudentWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit StudentWindow(QWidget *parent = nullptr);
-
+    explicit StudentWindow(QString s,QWidget *parent = nullptr);
+    student stu;
     void on_btn_student_check_clicked();  //查询成绩
     void on_btn_student_delete_clicked();  //删除成绩
     void on_btn_student_revise_password_clicked();//重置密码

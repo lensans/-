@@ -23,6 +23,9 @@ SOURCES += \
     password.cpp \
     revise_score.cpp \
     single_score.cpp \
+    stu_change_password.cpp \
+    stu_check_score.cpp \
+    student.cpp \
     studentwindow.cpp \
     teacherwindow.cpp \
     total_score.cpp \
@@ -43,6 +46,9 @@ HEADERS += \
     password.h \
     revise_score.h \
     single_score.h \
+    stu_change_password.h \
+    stu_check_score.h \
+    student.h \
     student.h \
     studentwindow.h \
     subject_relation.h \
@@ -66,6 +72,8 @@ FORMS += \
     login.ui \
     revise_score.ui \
     single_score.ui \
+    stu_change_password.ui \
+    stu_check_score.ui \
     studentwindow.ui \
     teacherwindow.ui \
     total_score.ui \

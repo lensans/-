@@ -1,4 +1,4 @@
-﻿#include "check_score.h"
+#include "check_score.h"
 #include "ui_check_score.h"
 #include <mysql_connect.h>
 
@@ -61,7 +61,3 @@ check_score::~check_score()
 {
     delete ui;
 }
-
-
-
-

@@ -22,7 +22,6 @@
 
 #include <QSqlError>
 
-
 #include <utility>
 #include "xlsxdocument.h"
 #include "xlsxchartsheet.h"
@@ -85,6 +84,7 @@ public:
     //获取所有学生的一分一段数据 使用应用返回结果 类型QMap<int,int> 总分用SUM表示
     void get_all_ranks(QString subject,QMap<int,int> &scoreDistribution);
 
+    void get_ranks(QString subject,std::vector<int>& rank);
 };
 
 #endif // MYSQL_CONNECT_H
