@@ -60,7 +60,7 @@ public:
 
     //将一个学生的科目和成绩保存在一个pair的vector数组中返回
 
-    void get_all_score(QString student_id,VP& subject_score);
+    VP get_all_score(QString student_id);
 
     //修改某个学生某科目的成绩
 

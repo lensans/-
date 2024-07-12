@@ -1,7 +1,6 @@
 #include "choice_window.h"
 #include "ui_choice_window.h"
 #include"score_distribution.h"
-extern DB db;
 choice_window::choice_window(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::choice_window)

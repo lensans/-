@@ -55,16 +55,16 @@ void Input_score::on_input_single_confirm_clicked()//单个录入成绩
     subject_scores[5].first = ui->input_biology->text();
     subject_scores[5].second = ui->input_biology_line->text().toInt();
     subject_scores[6].first = ui->input_sum->text();
-    subject_scores[6].second = ui->input_sum_line->text().toInt();    
+    subject_scores[6].second = ui->input_sum_line->text().toInt();
 
-    extern DB db;
+    DB db;
     db.add_score(student_id, student_name, subject_scores);
 
 }
 
 void Input_score::on_input_excel_confirm_clicked(){
     if(!filePath.isEmpty()){
-        extern DB db;
+        DB db;
         db.upload_score(filePath);
         QMessageBox::information(this,"Success","文件成功上传");
         filePath.clear();

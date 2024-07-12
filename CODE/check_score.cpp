@@ -22,10 +22,10 @@ void check_score::on_btn_check_all_confirm_clicked()//查询全部成绩
 {
     //从文本框读入要查询的学生id
     QString student_id = ui->check_all_student_id->text();
-    VP subject_scores(7);
+    VP subject_scores;
 
-    extern DB db;
-    db.get_all_score(student_id,subject_scores);
+    DB db;
+    subject_scores=db.get_all_score(student_id);
 
     //显示成绩
     QString Chinese = QString("%1").arg(subject_scores[0].second);//将int型的分数强转为QString，赋给LineEdit的文本
@@ -51,7 +51,7 @@ void check_score::on_btn_check_single_confirm_clicked()//查询单科成绩
     //从文本框读入要查询的科目
     QString subject = ui->check_subject->text();
 
-    extern DB db;
+    DB db;
     int res = db.get_single_score(student_id,subject);
     QString subject_score = QString("%1").arg(res);
     ui->check_subject_score->setText(subject_score);

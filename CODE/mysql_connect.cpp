@@ -18,7 +18,6 @@ QSqlDatabase  DB::Init()
     db.setPassword("123456Abc");//设置连接相关参数
     bool success=db.open();
     if(success){
-        QMessageBox::information(nullptr,"success","您已成功连接到数据库");
         return db;//成功时返回该对象
     }
     else{
@@ -95,9 +94,10 @@ bool DB::delete_student(QString student_id){
     }
 }
 
-void DB::get_all_score(QString student_id,VP& subject_score){
+VP DB::get_all_score(QString student_id){
+    VP subject_score;
     QSqlQuery query(db);
-    query.prepare("SELECT Chinese,Math,English,Physics,Chemestriy,Biology,Sum FROM SCORE WHERE ID=?");
+    query.prepare("SELECT Chinese,Math,English,Physics,Chemestry,Biology,Sum FROM SCORE WHERE ID=?");
     query.bindValue(0,student_id);
     if(query.exec()){
         while(query.next()){
@@ -108,6 +108,7 @@ void DB::get_all_score(QString student_id,VP& subject_score){
                 subject_score.push_back(qMakePair(filename,value));
             }
         }
+        return subject_score;
     }
     else{
         QMessageBox::critical(nullptr,"error",query.lastError().text());
@@ -130,7 +131,7 @@ int DB::login_check(QString username, QString password){
 
     //查询数据库中是否存在某个用户，其用户名为username，密码为password，盐值为salt
     QSqlQuery query(db);
-    query.prepare("SELECT password, salt FROM users WHERE username = :username");
+    query.prepare("SELECT password FROM users WHERE username = :username");
     query.bindValue(":username", username);
     if(!query.exec()||!query.next()){
         QMessageBox::critical(nullptr,"error",query.lastError().text());

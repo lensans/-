@@ -18,7 +18,7 @@ void Delete_score::on_btn_delete_confirm_clicked()//点击确认删除
     //从文本框读入要查询的学生id
     QString student_id = ui->delete_student_id->text();
 
-    extern DB db;
+    DB db;
     db.delete_student(student_id);//删除学生成绩
 }
 

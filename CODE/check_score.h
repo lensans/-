@@ -2,7 +2,7 @@
 #define CHECK_SCORE_H
 
 #include <QMainWindow>
-
+#include "mysql_connect.h"
 namespace Ui {
 class check_score;
 }
@@ -16,7 +16,7 @@ public:
 
     void on_btn_check_all_confirm_clicked();//查询全部成绩时点击确认查询
     void on_btn_check_single_confirm_clicked();//查询单科成绩时点击确认查询
-    
+    DB db;
     ~check_score();
 
 

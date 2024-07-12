@@ -35,7 +35,7 @@ void StudentWindow::on_btn_student_revise_password_clicked()//重置密码
 
 void StudentWindow::on_btn_student_total_clicked()//跳入显示一分一段表界面
 {
-    choice_window *to_st = new choice_window(this);
+    choice_window *to_st = new choice_window();
     to_st->show();
 }
 

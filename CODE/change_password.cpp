@@ -19,7 +19,7 @@ void change_password::on_change_password_confirm_clicked()//修改密码
     QString username = ui->change_password_id->text();
     QString new_password = ui->change_password_new->text();
 
-    extern DB db;
+    DB db;
     int res = db.revise_password(username,new_password);
     if(res == 1)//修改成功
     {

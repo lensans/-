@@ -2,7 +2,7 @@
 #define CHOICE_WINDOW_H
 
 #include <QWidget>
-
+#include"mysql_connect.h"
 namespace Ui {
 class choice_window;
 }
@@ -13,6 +13,7 @@ class choice_window : public QWidget
 
 public:
     explicit choice_window(QWidget *parent = nullptr);
+    DB db;
     ~choice_window();
 
 private slots:
