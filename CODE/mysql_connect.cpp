@@ -9,9 +9,16 @@ DB::DB(){
     Init();
 }
 
+void DB::connection_check(){
+    if(QSqlDatabase::contains("scoreConnection")){
+        QSqlDatabase::removeDatabase("scoreConnection");
+    }
+}
+
 QSqlDatabase  DB::Init()
 {
-    db =QSqlDatabase::addDatabase("QMYSQL");//使用qmysql驱动连接数据库
+    connection_check();
+    db =QSqlDatabase::addDatabase("QMYSQL","scoreConnection");//使用qmysql驱动连接数据库
     db.setHostName("sh-cynosdbmysql-grp-mejzbbvg.sql.tencentcdb.com");
     db.setPort(21693);
     db.setDatabaseName("scores");

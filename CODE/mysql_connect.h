@@ -46,7 +46,9 @@ public:
 
     ~DB();
 
-    
+    //检查是否有重复的数据库连接,如有则删
+    void connection_check();
+
     //登录检查
     int login_check(QString username, QString password);//返回登陆账户的identity(int)：0表示管理员 1表示学生 2表示老师 -1表示错误 3表示新用户
 

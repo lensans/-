@@ -1,13 +1,13 @@
-#include "stu_check_score.h"
+﻿#include "stu_check_score.h"
 #include "ui_stu_check_score.h"
 #include "mysql_connect.h"
 
-stu_check_score::stu_check_score(QString s,QWidget *parent)
+stu_check_score::stu_check_score(student stu,QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::stu_check_score)
 {
     ui->setupUi(this);
-    stu=student(s);
+    this->stu=stu;
     connect(ui->btn_check_all_return,&QPushButton::clicked,this,&stu_check_score::close);//查询全部成绩时点击返回,关闭查询成绩界面
 
     VP subject_scores;

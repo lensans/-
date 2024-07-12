@@ -7,10 +7,10 @@
 #include <QMessageBox>
 #include <QDebug>
 
-void sqlite_Init();
-
 QT_BEGIN_NAMESPACE
-namespace Ui { class login; }
+namespace Ui {
+    class login;
+}
 QT_END_NAMESPACE
 
 class login : public QMainWindow
@@ -22,8 +22,7 @@ public:
 
     ~login();
 
-public slots:
-
+private slots:
     void on_btn_signin_clicked();//点击确认登录
 
 

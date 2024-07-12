@@ -1,4 +1,4 @@
-#ifndef STU_CHECK_SCORE_H
+﻿#ifndef STU_CHECK_SCORE_H
 #define STU_CHECK_SCORE_H
 
 #include <QWidget>
@@ -13,7 +13,7 @@ class stu_check_score : public QWidget
     Q_OBJECT
 
 public:
-    explicit stu_check_score(QString s,QWidget *parent = nullptr);
+    explicit stu_check_score(student stu,QWidget *parent = nullptr);
     student stu;
     ~stu_check_score();
 

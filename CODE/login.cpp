@@ -15,7 +15,7 @@ login::login(QWidget *parent)
     ui->setupUi(this);
 
     //设置右侧图片
-    QPixmap *pix = new QPixmap(":/login_02.png");// 创建一个QPixmap对象，用于加载图片
+    QPixmap *pix = new QPixmap(":/logintwo.png");// 创建一个QPixmap对象，用于加载图片
     QSize sz = ui->label_image->size();// 用一个对象sz来获取label_image的大小
     ui->label_image->setPixmap(pix->scaled(sz));// 调整传入图片的大小到label_image的大小，并设置给label_image
 
@@ -57,9 +57,9 @@ void login::on_btn_signin_clicked()//点击确认登录
         break;
     }
     case 3:{
-        change_password *w3 = new change_password();
+        change_password *w3 = new change_password(this);
         w3->show();
-        break;
+        return;
     }
     default:
         break;
