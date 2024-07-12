@@ -22,7 +22,9 @@ QChart *Paint::createBarChart1()
     QBarCategoryAxis *axis = new QBarCategoryAxis();
     axis->append(categories);
     chart->createDefaultAxes();
-    chart->setAxisX(axis, series);
+    QValueAxis* axisX=new QValueAxis;
+    chart->addAxis(axisX, Qt::AlignBottom);
+    series->attachAxis(axisX);
     chart->axes(Qt::Vertical).first()->setRange(0,5000);
 
     // 在标签和轴之间加空格
@@ -89,7 +91,9 @@ QChart *Paint::createBarChart2()
     QBarCategoryAxis *axis = new QBarCategoryAxis();
     axis->append(categories);
     chart->createDefaultAxes();
-    chart->setAxisX(axis, series);
+    QValueAxis* axisX=new QValueAxis;
+    chart->addAxis(axisX, Qt::AlignBottom);
+    series->attachAxis(axisX);
     chart->axes(Qt::Vertical).first()->setRange(0,500);//设置纵轴范围
 
     // 在标签和轴之间加空格

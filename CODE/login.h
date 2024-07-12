@@ -1,4 +1,4 @@
-#ifndef LOGIN_H
+﻿#ifndef LOGIN_H
 #define LOGIN_H
 
 #include <QMainWindow>
@@ -20,11 +20,11 @@ class login : public QMainWindow
 public:
     login(QWidget *parent = nullptr);
 
-    void on_btn_signin_clicked();//点击确认登录
-
     ~login();
 
-private slots:
+public slots:
+
+    void on_btn_signin_clicked();//点击确认登录
 
 
 private:

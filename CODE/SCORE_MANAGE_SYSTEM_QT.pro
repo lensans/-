@@ -1,6 +1,7 @@
 QT       += core gui
 QT       += sql
 QT       += charts
+QT       += network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -21,26 +22,30 @@ SOURCES += \
     password.cpp \
     revise_score.cpp \
     total_score.cpp \
-    paint.cpp
+    paint.cpp \
+    change_password.cpp \
+    subject_relation.cpp \
+    single_score.cpp \
+    Relationship.cpp
 
 HEADERS += \
     check_score.h \
-    course.h \
     drag_drop_widget.h \
-    grade.h \
     input_score.h \
     login.h \
-    manager.h \
     managerwindow.h \
     password.h \
     revise_score.h \
-    student.h \
     total_score.h \
     ui_input_score.h \
     ui_login.h \
     ui_total_score.h \
     mysql_connect.h \
-    paint.h
+    paint.h \
+    change_password.h \
+    subject_relation.h \
+    single_score.h \
+    Relationship.h
 
 FORMS += \
     check_score.ui \
@@ -48,8 +53,15 @@ FORMS += \
     login.ui \
     revise_score.ui \
     total_score.ui \
-    managerwindow.ui
+    managerwindow.ui \
+    change_password.ui \
+    subject_relation.ui \
+    single_score.ui
 
+
+LIBS += -L"$$PWD/OpenSSL-Win64/lib/" -llibssl -llibcrypto
+
+INCLUDEPATH += $$PWD/OpenSSL-Win64/include
 
 # Default rules for deployment.
 QXLSX_PARENTPATH=./     # current QXlsx path is . (. means curret directory)
@@ -59,12 +71,3 @@ include(./QXlsx/QXlsx.pri)
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-#################################
-
-LIBS += -L$$PWD/OpenSSL-Win64/lib/ -llibssl
-
-LIBS += -L$$PWD/OpenSSL-Win64/lib/ -llibcrypto
-
-INCLUDEPATH += $$PWD/OpenSSL-Win64/include
-DEPENDPATH += $$PWD/OpenSSL-Win64/include

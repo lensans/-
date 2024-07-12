@@ -13,7 +13,7 @@ login::login(QWidget *parent)
     ui->setupUi(this);
 
     //设置右侧图片
-    QPixmap *pix = new QPixmap(":/Desktop/login_02.png");// 创建一个QPixmap对象，用于加载图片
+    QPixmap *pix = new QPixmap("login_02.png");// 创建一个QPixmap对象，用于加载图片
     QSize sz = ui->label_image->size();// 用一个对象sz来获取label_image的大小
     ui->label_image->setPixmap(pix->scaled(sz));// 调整传入图片的大小到label_image的大小，并设置给label_image
 
@@ -30,24 +30,23 @@ login::login(QWidget *parent)
 
 void login::on_btn_signin_clicked()//点击确认登录
 {
-    extern DB db;
-    int res=INT_MIN;
+    DB db;
     QString username, password;
-    do{
-        if(res==-1){
-            QMessageBox::critical(this,"error","Please enter again.");
-        }
-        //从文本框读入姓名和密码
-        username = ui->lineEdit_username->text();
-        password = ui->lineEdit_password->text();
-        res = db.login_check(username, password);
-    }while(res==-1);
-    if(res==3)//登陆成功并且是第一次登录，跳入修改密码界面
+    ui->lineEdit_password->clear();
+    ui->lineEdit_username->clear();
+    //从文本框读入姓名和密码
+    username = ui->lineEdit_username->text();
+    password = ui->lineEdit_password->text();
+    int res = db.login_check(username, password);
+    if(res==-1){
+        QMessageBox::information(this,"Error","请重新输入");
+    }
+    else if(res==3)//登陆成功并且是第一次登录，跳入修改密码界面
     {
         change_password *w3 = new change_password(this);
         w3->show();
     }
-    if(res == 0)//登陆成功则进入管理员菜单界面
+    else if(res == 0)//登陆成功则进入管理员菜单界面
     {
         managerwindow *ma_on = new managerwindow(this);
         ma_on->show();

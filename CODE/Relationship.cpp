@@ -1,4 +1,4 @@
-#include"Relationship.h"
+﻿#include"Relationship.h"
 #include<QtCharts>
 #include<qstring.h>
 QChart* Relationship::getrelationshipmap(){
@@ -27,8 +27,10 @@ QChart* Relationship::getrelationshipmap(){
     axisY->setLabelFormat("%.0f");
     axisY->setTickCount(20);
     axisY->setMinorTickCount(4);
-    chart->setAxisX(axisX,series);
-    chart->setAxisY(axisY,series);
+    chart->addAxis(axisX, Qt::AlignBottom);
+    series->attachAxis(axisX);
+    chart->addAxis(axisY, Qt::AlignLeft);
+    series->attachAxis(axisY);
     return chart;
 }
 QString Relationship::getrelationship(){
