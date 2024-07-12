@@ -14,21 +14,43 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">QMainWindow#revise_score
+{
+	border-image: url(:/Desktop/pic.png);
+	background-color: rgb(255, 255, 255);
+	
+}
+
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="btn_revise_return">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>460</y>
-      <width>101</width>
-      <height>41</height>
+      <x>260</x>
+      <y>470</y>
+      <width>111</width>
+      <height>51</height>
      </rect>
     </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 16pt &quot;宋体&quot;;
-background-color: rgb(204, 204, 191);</string>
+     <string notr="true">
+QMainWindow#revise_score QPushButton#btn_revise_return
+{
+   font: 18pt &quot;宋体&quot;;
+	
+	background-color: rgb(255, 255, 255);
+color: rgb(0,0,0);
+}
+
+QMainWindow#revise_score QPushButton#btn_revise_return:hover
+{
+	
+	background-color: rgb(195, 195, 195);
+}</string>
     </property>
     <property name="text">
      <string>返回</string>
@@ -37,18 +59,18 @@ background-color: rgb(204, 204, 191);</string>
    <widget class="QLineEdit" name="revise_student_id">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>170</y>
-      <width>201</width>
-      <height>41</height>
+      <x>280</x>
+      <y>200</y>
+      <width>241</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 255);
+     <string notr="true">background-color: rgb(214, 230, 255);
 border:1px groove gray;border-radius:
 7px;padding:2px 4px;
-font: 10pt &quot;宋体&quot;;
-color: rgb(103, 103, 103);</string>
+font: 12pt &quot;宋体&quot;;
+color: rgb(0,0,0);</string>
     </property>
     <property name="text">
      <string/>
@@ -61,14 +83,36 @@ color: rgb(103, 103, 103);</string>
     <property name="geometry">
      <rect>
       <x>450</x>
-      <y>460</y>
-      <width>101</width>
-      <height>41</height>
+      <y>470</y>
+      <width>111</width>
+      <height>51</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Candara</family>
+      <pointsize>18</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 16pt &quot;宋体&quot;;
-background-color: rgb(218, 205, 255);</string>
+     <string notr="true">QMainWindow#revise_score QPushButton#btn_revise_confirm
+{
+	
+	background-color: rgb(174, 255, 186);
+  color: rgb(0,0,0);
+
+border:0px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#revise_score QPushButton#btn_revise_confirm:hover
+{
+	background-color: rgb(120,200,150);
+}</string>
     </property>
     <property name="text">
      <string>确认修改</string>
@@ -77,37 +121,40 @@ background-color: rgb(218, 205, 255);</string>
    <widget class="QLabel" name="revise_title">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>60</y>
-      <width>141</width>
-      <height>61</height>
+      <x>300</x>
+      <y>110</y>
+      <width>221</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>宋体</family>
-      <pointsize>20</pointsize>
+      <pointsize>24</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);</string>
+    </property>
     <property name="text">
-     <string>修改成绩</string>
+     <string>修改成绩界面</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="revise_subject">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>270</y>
-      <width>201</width>
-      <height>41</height>
+      <x>280</x>
+      <y>280</y>
+      <width>241</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 255);
+     <string notr="true">background-color: rgb(214, 230, 255);
 border:1px groove gray;border-radius:
 7px;padding:2px 4px;
-font: 10pt &quot;宋体&quot;;
-color: rgb(103, 103, 103);</string>
+font: 12pt &quot;宋体&quot;;
+color: rgb(0,0,0);</string>
     </property>
     <property name="placeholderText">
      <string>Places input subject</string>
@@ -116,18 +163,18 @@ color: rgb(103, 103, 103);</string>
    <widget class="QLineEdit" name="revise_new_score">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>340</y>
-      <width>201</width>
-      <height>41</height>
+      <x>280</x>
+      <y>360</y>
+      <width>241</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 255);
+     <string notr="true">background-color: rgb(214, 230, 255);
 border:1px groove gray;border-radius:
 7px;padding:2px 4px;
-font: 10pt &quot;宋体&quot;;
-color: rgb(103, 103, 103);</string>
+font: 12pt &quot;宋体&quot;;
+color: rgb(0,0,0);</string>
     </property>
     <property name="placeholderText">
      <string>Places input new score</string>
@@ -140,7 +187,7 @@ color: rgb(103, 103, 103);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>17</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

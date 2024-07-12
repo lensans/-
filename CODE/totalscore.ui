@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>totalscore</class>
+ <widget class="QMainWindow" name="totalscore">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow#totalscore
+{
+	border-image: url(:/Desktop/pic.png);
+	background-color: rgb(255, 255, 255);
+	
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="Math">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>170</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QMainWindow#totalscore QPushButton#Math
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
+
+border:0px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#totalscore QPushButton#Math:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
+    </property>
+    <property name="text">
+     <string>数学</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Physics">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>240</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMainWindow#totalscore QPushButton#Physics
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
+
+border:0px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#totalscore QPushButton#Physics:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
+    </property>
+    <property name="text">
+     <string>物理</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>90</y>
+      <width>451</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 24pt &quot;宋体&quot;;
+color: rgb(0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string>请选择要查看一分一段表的科目</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="English">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>240</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QMainWindow#totalscore QPushButton#English
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
+
+border:0px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#totalscore QPushButton#English:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
+    </property>
+    <property name="text">
+     <string>英语</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Chinese">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>170</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMainWindow#totalscore QPushButton#Chinese
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
+
+border:0px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#totalscore QPushButton#Chinese:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
+    </property>
+    <property name="text">
+     <string>语文</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Biology">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>310</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMainWindow#totalscore QPushButton#Biology
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
+
+border:0px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#totalscore QPushButton#Biology:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
+    </property>
+    <property name="text">
+     <string>生物</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SUM">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>380</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMainWindow#totalscore QPushButton#SUM
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
+
+border:0px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#totalscore QPushButton#SUM:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
+    </property>
+    <property name="text">
+     <string>总分</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_check_all_return">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>480</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QMainWindow#totalscore QPushButton#btn_check_all_return
+{
+   font: 18pt &quot;宋体&quot;;
+	
+	background-color: rgb(255, 255, 255);
+color: rgb(0,0,0);
+}
+
+QMainWindow#totalscore QPushButton#btn_check_all_return:hover
+{
+	
+	background-color: rgb(195, 195, 195);
+}</string>
+    </property>
+    <property name="text">
+     <string>返回</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Chemestry">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>310</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMainWindow#totalscore QPushButton#Chemestry
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
+
+border:0px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#totalscore QPushButton#Chemestry:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
+    </property>
+    <property name="text">
+     <string>化学</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

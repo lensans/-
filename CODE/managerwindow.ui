@@ -26,36 +26,51 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">QMainWindow#managerwindow
+{
+	border-image: url(:/Desktop/pic.png);
+	background-color: rgb(255, 255, 255);
+	
+}
+
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>120</y>
-      <width>491</width>
-      <height>381</height>
+      <x>120</x>
+      <y>160</y>
+      <width>541</width>
+      <height>311</height>
      </rect>
     </property>
     <widget class="QPushButton" name="btn_manager_input">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>50</x>
        <y>40</y>
        <width>211</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
+      <string notr="true">QMainWindow#managerwindow QPushButton#btn_manager_input
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
 7px;padding:2px 4px;
 font: 16pt &quot;Candara&quot;;
 
-</string>
+}
+
+QMainWindow#managerwindow QPushButton#btn_manager_input:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
      </property>
      <property name="text">
       <string>录入成绩</string>
@@ -70,20 +85,29 @@ font: 16pt &quot;Candara&quot;;
     <widget class="QPushButton" name="btn_manager_check">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>200</y>
+       <x>50</x>
+       <y>180</y>
        <width>211</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
+      <string notr="true">QMainWindow#managerwindow QPushButton#btn_manager_check
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
 7px;padding:2px 4px;
 font: 16pt &quot;Candara&quot;;
-</string>
+
+}
+
+QMainWindow#managerwindow QPushButton#btn_manager_check:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
      </property>
      <property name="text">
       <string>查询成绩</string>
@@ -92,20 +116,29 @@ font: 16pt &quot;Candara&quot;;
     <widget class="QPushButton" name="btn_manager_revise_score">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>120</y>
+       <x>50</x>
+       <y>110</y>
        <width>211</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
+      <string notr="true">QMainWindow#managerwindow QPushButton#btn_manager_revise_score
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
 7px;padding:2px 4px;
 font: 16pt &quot;Candara&quot;;
-</string>
+
+}
+
+QMainWindow#managerwindow QPushButton#btn_manager_revise_score:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
      </property>
      <property name="text">
       <string>修改成绩</string>
@@ -114,20 +147,29 @@ font: 16pt &quot;Candara&quot;;
     <widget class="QPushButton" name="btn_manager_total_score">
      <property name="geometry">
       <rect>
-       <x>270</x>
-       <y>120</y>
+       <x>320</x>
+       <y>110</y>
        <width>211</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
+      <string notr="true">QMainWindow#managerwindow QPushButton#btn_manager_total_score
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
 7px;padding:2px 4px;
 font: 16pt &quot;Candara&quot;;
-</string>
+
+}
+
+QMainWindow#managerwindow QPushButton#btn_manager_total_score:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
      </property>
      <property name="text">
       <string>一分一段表</string>
@@ -136,20 +178,29 @@ font: 16pt &quot;Candara&quot;;
     <widget class="QPushButton" name="btn_manager_subject_relation">
      <property name="geometry">
       <rect>
-       <x>270</x>
-       <y>200</y>
+       <x>320</x>
+       <y>180</y>
        <width>211</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
+      <string notr="true">QMainWindow#managerwindow QPushButton#btn_manager_subject_relation
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
 7px;padding:2px 4px;
 font: 16pt &quot;Candara&quot;;
-</string>
+
+}
+
+QMainWindow#managerwindow QPushButton#btn_manager_subject_relation:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
      </property>
      <property name="text">
       <string>语数外和理化生关系</string>
@@ -158,20 +209,29 @@ font: 16pt &quot;Candara&quot;;
     <widget class="QPushButton" name="btn_manager_single_score">
      <property name="geometry">
       <rect>
-       <x>270</x>
-       <y>280</y>
+       <x>320</x>
+       <y>250</y>
        <width>211</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
+      <string notr="true">QMainWindow#managerwindow QPushButton#btn_manager_single_score
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
 7px;padding:2px 4px;
 font: 16pt &quot;Candara&quot;;
-</string>
+
+}
+
+QMainWindow#managerwindow QPushButton#btn_manager_single_score:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
      </property>
      <property name="text">
       <string>展示单科成绩直方图</string>
@@ -180,21 +240,29 @@ font: 16pt &quot;Candara&quot;;
     <widget class="QPushButton" name="btn_manager_delete">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>280</y>
+       <x>50</x>
+       <y>250</y>
        <width>211</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
+      <string notr="true">QMainWindow#managerwindow QPushButton#btn_manager_delete
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
 7px;padding:2px 4px;
 font: 16pt &quot;Candara&quot;;
 
-</string>
+}
+
+QMainWindow#managerwindow QPushButton#btn_manager_delete:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
      </property>
      <property name="text">
       <string>删除学生成绩</string>
@@ -209,21 +277,29 @@ font: 16pt &quot;Candara&quot;;
     <widget class="QPushButton" name="btn_manager_revise_password">
      <property name="geometry">
       <rect>
-       <x>270</x>
-       <y>39</y>
+       <x>320</x>
+       <y>40</y>
        <width>211</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
+      <string notr="true">QMainWindow#managerwindow QPushButton#btn_manager_revise_password
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
 7px;padding:2px 4px;
 font: 16pt &quot;Candara&quot;;
 
-</string>
+}
+
+QMainWindow#managerwindow QPushButton#btn_manager_revise_password:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
      </property>
      <property name="text">
       <string>重置密码</string>
@@ -236,40 +312,71 @@ font: 16pt &quot;Candara&quot;;
      </property>
     </widget>
    </widget>
+   <widget class="QPushButton" name="btn_manager_return">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>490</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMainWindow#managerwindow QPushButton#btn_manager_return
+{
+   font: 18pt &quot;宋体&quot;;
+	
+	background-color: rgb(255, 255, 255);
+color: rgb(0,0,0);
+}
+
+QMainWindow#managerwindow QPushButton#btn_manager_return:hover
+{
+	
+	background-color: rgb(195, 195, 195);
+}</string>
+    </property>
+    <property name="text">
+     <string>退出</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>80</y>
+      <width>101</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+border-image: url(:/Desktop/picone.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <widget class="QLabel" name="manager_label">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>70</y>
-      <width>481</width>
+      <x>100</x>
+      <y>110</y>
+      <width>511</width>
       <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>宋体</family>
-      <pointsize>20</pointsize>
+      <pointsize>24</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>欢迎使用高考成绩管理系统管理员端</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_manager_return">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
-      <y>500</y>
-      <width>101</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 16pt &quot;宋体&quot;;
-background-color: rgb(204, 204, 191);</string>
-    </property>
-    <property name="text">
-     <string>退出</string>
     </property>
    </widget>
   </widget>

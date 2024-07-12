@@ -12,7 +12,7 @@ public:
     Paint(vector<int> data):data(data){
         data1=new int[7];
         data2=new int[5];
-        }
+    }
     QChart *createBarChart1();
     QChart *createBarChart2();
     void getnums1(int*& Data);

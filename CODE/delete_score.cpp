@@ -20,6 +20,8 @@ void Delete_score::on_btn_delete_confirm_clicked()//点击确认删除
 
     DB db;
     db.delete_student(student_id);//删除学生成绩
+
+    this->close();
 }
 
 Delete_score::~Delete_score()

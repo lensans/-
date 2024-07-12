@@ -5,6 +5,7 @@ score_distribution::score_distribution(QString new_subject,DB db,QString new_stu
     : QWidget(parent)
     , ui(new Ui::score_distribution)
 {
+    ui->setupUi(this);
     subject=new_subject;
     d1=db;
     ui->setupUi(this);
@@ -81,4 +82,3 @@ void score_distribution::on_score_returnPressed()
     int myscore=ui->score->text().toInt();
     ui->rank->setText(QString::number(rank[myscore]));
 }
-

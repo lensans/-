@@ -1,8 +1,9 @@
-﻿#include "studentwindow.h"
+#include "studentwindow.h"
 #include "ui_studentwindow.h"
-#include "stu_check_score.h"
-#include "stu_change_password.h"
-#include "choice_window.h"
+
+#include "stu_check_score_.h"
+#include "stu_change_password_.h"
+#include "totalscore.h"
 
 StudentWindow::StudentWindow(QString s,QWidget *parent)
     : QMainWindow(parent)
@@ -24,19 +25,19 @@ StudentWindow::StudentWindow(QString s,QWidget *parent)
 
 void StudentWindow::on_btn_student_check_clicked()//跳入查询成绩界面
 {
-    stu_check_score *ch_st = new stu_check_score(stu,this);
+    stu_check_score_ *ch_st = new stu_check_score_(stu,this);
     ch_st->show();
 }
 
 void StudentWindow::on_btn_student_revise_password_clicked()//重置密码
 {
-    stu_change_password *ch_st = new stu_change_password(stu);
+    stu_change_password_ *ch_st = new stu_change_password_(stu,this);
     ch_st->show();
 }
 
 void StudentWindow::on_btn_student_total_clicked()//跳入显示一分一段表界面
 {
-    choice_window *to_st = new choice_window();
+    totalscore *to_st = new totalscore();
     to_st->show();
 }
 

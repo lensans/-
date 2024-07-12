@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Input_single_score</class>
+ <widget class="QMainWindow" name="Input_single_score">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow#Input_single_score
+{
+	border-image: url(:/Desktop/pic.png);
+	background-color: rgb(255, 255, 255);
+	
+}
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="input_single_confirm">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>470</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMainWindow#Input_single_score QPushButton#input_single_confirm
+{
+	
+	background-color: rgb(174, 255, 186);
+  color: rgb(0,0,0);
+
+border:0px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#Input_single_score QPushButton#input_single_confirm:hover
+{
+	background-color: rgb(120,200,150);
+}</string>
+    </property>
+    <property name="text">
+     <string>确定导入</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>180</y>
+      <width>291</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+color: rgb(0, 0,0);</string>
+    </property>
+    <widget class="QLineEdit" name="input_Chinese">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>26</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;宋体&quot;;
+background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Chinese</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_Chinese_line">
+     <property name="geometry">
+      <rect>
+       <x>142</x>
+       <y>26</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px groove gray;border-radius:
+7px;padding:2px 4px;
+background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_math">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>73</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;宋体&quot;;background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Math</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_math_line">
+     <property name="geometry">
+      <rect>
+       <x>142</x>
+       <y>73</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px groove gray;border-radius:
+7px;padding:2px 4px;background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_English">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>120</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;宋体&quot;;background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>English</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_English_line">
+     <property name="geometry">
+      <rect>
+       <x>142</x>
+       <y>120</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px groove gray;border-radius:
+7px;padding:2px 4px;background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_physics">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>167</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;宋体&quot;;background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Physics</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_physics_line">
+     <property name="geometry">
+      <rect>
+       <x>142</x>
+       <y>167</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px groove gray;border-radius:
+7px;padding:2px 4px;background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_chemistry">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>214</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;宋体&quot;;background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Chemestry</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_chemistry_line">
+     <property name="geometry">
+      <rect>
+       <x>142</x>
+       <y>214</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px groove gray;border-radius:
+7px;padding:2px 4px;background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_biology">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>261</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;宋体&quot;;background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Biology</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_biology_line">
+     <property name="geometry">
+      <rect>
+       <x>142</x>
+       <y>261</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px groove gray;border-radius:
+7px;padding:2px 4px;background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_sum">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>308</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;宋体&quot;;background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Sum</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_sum_line">
+     <property name="geometry">
+      <rect>
+       <x>142</x>
+       <y>308</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px groove gray;border-radius:
+7px;padding:2px 4px;background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="input_single_return">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>470</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QMainWindow#Input_single_score QPushButton#input_single_return
+{
+   font: 18pt &quot;宋体&quot;;
+	
+	background-color: rgb(255, 255, 255);
+color: rgb(0,0,0);
+}
+
+QMainWindow#Input_single_score QPushButton#input_single_return:hover
+{
+	
+	background-color: rgb(195, 195, 195);
+}</string>
+    </property>
+    <property name="text">
+     <string>返回</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="input_name_line">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>250</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(214, 230, 255);
+border:1px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 12pt &quot;宋体&quot;;
+color: rgb(0,0,0);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Places input your name</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="input_num_line">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>320</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(214, 230, 255);
+border:1px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 12pt &quot;宋体&quot;;
+color: rgb(0,0,0);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Places input your id</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="revise_title_2">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>120</y>
+      <width>201</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>录入成绩界面</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

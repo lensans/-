@@ -22,6 +22,7 @@ void revise_score::on_btn_revise_confirm_clicked()//修改单科成绩
 
     DB db;
     db.update_score(student_id, subject, new_score);
+    this->close();
 }
 
 revise_score::~revise_score()

@@ -14,34 +14,50 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">QMainWindow#TeacherWindow
+{
+	border-image: url(:/Desktop/pic.png);
+	background-color: rgb(255, 255, 255);
+	
+}
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>100</y>
-      <width>521</width>
-      <height>371</height>
+      <x>130</x>
+      <y>190</y>
+      <width>561</width>
+      <height>271</height>
      </rect>
     </property>
     <widget class="QPushButton" name="btn_teacher_check">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>50</y>
+       <x>40</x>
+       <y>20</y>
        <width>211</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
+      <string notr="true">QMainWindow#TeacherWindow QPushButton#btn_teacher_check
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
 7px;padding:2px 4px;
-font: 16pt &quot;Candara&quot;;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#TeacherWindow QPushButton#btn_teacher_check:hover
+{
+	background-color: rgb(130,190, 240);
+}
 </string>
      </property>
      <property name="text">
@@ -51,19 +67,30 @@ font: 16pt &quot;Candara&quot;;
     <widget class="QPushButton" name="btn_teacher_total_score">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>250</y>
+       <x>40</x>
+       <y>180</y>
        <width>211</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
+      <string notr="true">QMainWindow#TeacherWindow QPushButton#btn_teacher_total_score
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
 7px;padding:2px 4px;
-font: 16pt &quot;Candara&quot;;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#TeacherWindow QPushButton#btn_teacher_total_score:hover
+{
+	background-color: rgb(130,190, 240);
+}
+
 </string>
      </property>
      <property name="text">
@@ -73,20 +100,29 @@ font: 16pt &quot;Candara&quot;;
     <widget class="QPushButton" name="btn_teacher_subject_relation">
      <property name="geometry">
       <rect>
-       <x>290</x>
-       <y>100</y>
-       <width>211</width>
+       <x>300</x>
+       <y>60</y>
+       <width>231</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
+      <string notr="true">QMainWindow#TeacherWindow QPushButton#btn_teacher_subject_relation
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
 7px;padding:2px 4px;
-font: 16pt &quot;Candara&quot;;
-</string>
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#TeacherWindow QPushButton#btn_teacher_subject_relation:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
      </property>
      <property name="text">
       <string>语数外和理化生关系</string>
@@ -95,19 +131,29 @@ font: 16pt &quot;Candara&quot;;
     <widget class="QPushButton" name="btn_teacher_single_score">
      <property name="geometry">
       <rect>
-       <x>290</x>
-       <y>200</y>
-       <width>211</width>
+       <x>300</x>
+       <y>140</y>
+       <width>231</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
+      <string notr="true">QMainWindow#TeacherWindow QPushButton#btn_teacher_single_score
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
 7px;padding:2px 4px;
-font: 16pt &quot;Candara&quot;;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#TeacherWindow QPushButton#btn_teacher_single_score:hover
+{
+	background-color: rgb(130,190, 240);
+}
 </string>
      </property>
      <property name="text">
@@ -117,19 +163,29 @@ font: 16pt &quot;Candara&quot;;
     <widget class="QPushButton" name="btn_teacher_revise_password">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>150</y>
+       <x>40</x>
+       <y>100</y>
        <width>211</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
+      <string notr="true">QMainWindow#TeacherWindow QPushButton#btn_teacher_revise_password
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
 7px;padding:2px 4px;
-font: 16pt &quot;Candara&quot;;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#TeacherWindow QPushButton#btn_teacher_revise_password:hover
+{
+	background-color: rgb(130,190, 240);
+}
 
 </string>
      </property>
@@ -147,8 +203,8 @@ font: 16pt &quot;Candara&quot;;
    <widget class="QLabel" name="teacher_label">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>50</y>
+      <x>150</x>
+      <y>120</y>
       <width>481</width>
       <height>41</height>
      </rect>
@@ -156,25 +212,57 @@ font: 16pt &quot;Candara&quot;;
     <property name="font">
      <font>
       <family>宋体</family>
-      <pointsize>20</pointsize>
+      <pointsize>24</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>欢迎使用高考成绩管理系统教师端</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_teacher_return">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>470</y>
-      <width>101</width>
-      <height>41</height>
+      <x>640</x>
+      <y>100</y>
+      <width>91</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 16pt &quot;宋体&quot;;
-background-color: rgb(204, 204, 191);</string>
+     <string notr="true">
+border-image: url(:/Desktop/pictwo.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_teacher_return">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>490</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QMainWindow#TeacherWindow QPushButton#btn_teacher_return
+{
+   font: 18pt &quot;宋体&quot;;
+	
+	background-color: rgb(255, 255, 255);
+color: rgb(0,0,0);
+}
+
+QMainWindow#TeacherWindow QPushButton#btn_teacher_return:hover
+{
+	
+	background-color: rgb(195, 195, 195);
+}</string>
     </property>
     <property name="text">
      <string>退出</string>

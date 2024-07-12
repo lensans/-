@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>check_score</class>
- <widget class="QMainWindow" name="check_score">
+ <class>stu_check_score_</class>
+ <widget class="QMainWindow" name="stu_check_score_">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QMainWindow#check_score
+   <string notr="true">QMainWindow#stu_check_score_
 {
 	border-image: url(:/Desktop/pic.png);
 	background-color: rgb(255, 255, 255);
@@ -24,141 +24,11 @@
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="check_all_student_id">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>260</y>
-      <width>231</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(214, 230, 255);
-border:1px groove gray;border-radius:
-7px;padding:2px 4px;
-font: 12pt &quot;宋体&quot;;
-color: rgb(0,0,0);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="placeholderText">
-     <string>Places input student id</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_check_all_return">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>380</y>
-      <width>111</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
-QMainWindow#check_score QPushButton#btn_check_all_return
-{
-   font: 18pt &quot;宋体&quot;;
-	
-	background-color: rgb(255, 255, 255);
-color: rgb(0,0,0);
-}
-
-QMainWindow#check_score QPushButton#btn_check_all_return:hover
-{
-	
-	background-color: rgb(195, 195, 195);
-}</string>
-    </property>
-    <property name="text">
-     <string>返回</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="check_all_title">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>110</y>
-      <width>201</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>宋体</family>
-      <pointsize>24</pointsize>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);
-font: 24pt &quot;宋体&quot;;</string>
-    </property>
-    <property name="text">
-     <string>查询成绩界面</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="check_score_all_title">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>190</y>
-      <width>181</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>宋体</family>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>该学生的成绩为：</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_check_all_confirm">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>380</y>
-      <width>111</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QMainWindow#check_score QPushButton#btn_check_all_confirm
-{
-	
-	background-color: rgb(174, 255, 186);
-  color: rgb(0,0,0);
-
-border:0px groove gray;border-radius:
-7px;padding:2px 4px;
-font: 18pt &quot;Candara&quot;;
-
-}
-
-QMainWindow#check_score QPushButton#btn_check_all_confirm:hover
-{
-	background-color: rgb(120,200,150);
-}</string>
-    </property>
-    <property name="text">
-     <string>确认查询</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>220</y>
+      <x>330</x>
+      <y>160</y>
       <width>209</width>
       <height>311</height>
      </rect>
@@ -378,6 +248,82 @@ background-color: rgb(255, 255, 255);</string>
 7px;padding:2px 4px;background-color: rgb(255, 255, 255);</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="check_score_all_title">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>180</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>你的成绩为：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="check_all_title">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>100</y>
+      <width>201</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>24</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+font: 24pt &quot;宋体&quot;;</string>
+    </property>
+    <property name="text">
+     <string>查询成绩界面</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_check_all_return">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>490</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QMainWindow#stu_check_score_ QPushButton#btn_check_all_return
+{
+   font: 18pt &quot;宋体&quot;;
+	
+	background-color: rgb(255, 255, 255);
+color: rgb(0,0,0);
+}
+
+QMainWindow#stu_check_score_ QPushButton#btn_check_all_return:hover
+{
+	
+	background-color: rgb(195, 195, 195);
+}</string>
+    </property>
+    <property name="text">
+     <string>返回</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Delete_score</class>
- <widget class="QMainWindow" name="Delete_score">
+ <class>InputWindow</class>
+ <widget class="QMainWindow" name="InputWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,9 +14,8 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QMainWindow#Delete_score
+   <string notr="true">QMainWindow#InputWindow
 {
-	
 	border-image: url(:/Desktop/pic.png);
 	background-color: rgb(255, 255, 255);
 	
@@ -25,72 +24,20 @@
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="delete_student_id">
+   <widget class="QPushButton" name="single_input">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>290</x>
       <y>240</y>
-      <width>231</width>
+      <width>181</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(214, 230, 255);
-border:1px groove gray;border-radius:
-7px;padding:2px 4px;
-font: 12pt &quot;宋体&quot;;
-color: rgb(0,0,0);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="placeholderText">
-     <string>Places input student id</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_delete_return">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>390</y>
-      <width>111</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
-QMainWindow#Delete_score QPushButton#btn_delete_return
-{
-   font: 18pt &quot;宋体&quot;;
-	
-	background-color: rgb(255, 255, 255);
-color: rgb(0,0,0);
-}
-
-QMainWindow#Delete_score QPushButton#btn_delete_return:hover
+     <string notr="true">QMainWindow#InputWindow QPushButton#single_input
 {
 	
-	background-color: rgb(195, 195, 195);
-}</string>
-    </property>
-    <property name="text">
-     <string>返回</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_delete_confirm">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>390</y>
-      <width>111</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QMainWindow#Delete_score QPushButton#btn_delete_confirm
-{
-	
-	background-color: rgb(174, 255, 186);
+	background-color: rgb(156, 217, 255);
   color: rgb(0,0,0);
 
 border:0px groove gray;border-radius:
@@ -99,35 +46,90 @@ font: 18pt &quot;Candara&quot;;
 
 }
 
-QMainWindow#Delete_score QPushButton#btn_delete_confirm:hover
+QMainWindow#InputWindow QPushButton#single_input:hover
 {
-	background-color: rgb(120,200,150);
+	background-color: rgb(130,190, 240);
 }</string>
     </property>
     <property name="text">
-     <string>确认删除</string>
+     <string>单个录入</string>
     </property>
    </widget>
-   <widget class="QLabel" name="delete_title">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>240</x>
       <y>130</y>
-      <width>261</width>
+      <width>301</width>
       <height>61</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <family>宋体</family>
-      <pointsize>24</pointsize>
-     </font>
-    </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
+     <string notr="true">color: rgb(0, 0, 0);
+font: 24pt &quot;宋体&quot;;</string>
     </property>
     <property name="text">
-     <string>删除学生成绩界面</string>
+     <string>请选择成绩录入方式</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="excel_input">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>330</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMainWindow#InputWindow QPushButton#excel_input
+{
+	
+	background-color: rgb(156, 217, 255);
+  color: rgb(0,0,0);
+
+border:0px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 18pt &quot;Candara&quot;;
+
+}
+
+QMainWindow#InputWindow QPushButton#excel_input:hover
+{
+	background-color: rgb(130,190, 240);
+}</string>
+    </property>
+    <property name="text">
+     <string>EXCEL导入</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_input_return">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>450</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QMainWindow#InputWindow QPushButton#btn_input_return
+{
+   font: 18pt &quot;宋体&quot;;
+	
+	background-color: rgb(255, 255, 255);
+color: rgb(0,0,0);
+}
+
+QMainWindow#InputWindow QPushButton#btn_input_return:hover
+{
+	
+	background-color: rgb(195, 195, 195);
+}</string>
+    </property>
+    <property name="text">
+     <string>返回</string>
     </property>
    </widget>
   </widget>

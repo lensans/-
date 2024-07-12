@@ -3,10 +3,9 @@
 
 #include "check_score.h"
 #include "change_password.h"
-#include "total_score.h"
 #include "subject_relation.h"
 #include "single_score.h"
-#include"choice_window.h"
+#include"totalscore.h"
 
 TeacherWindow::TeacherWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,9 +19,9 @@ TeacherWindow::TeacherWindow(QWidget *parent)
 
     connect(ui->btn_teacher_total_score,&QPushButton::clicked,this,&TeacherWindow::on_btn_teacher_total_clicked);//跳入显示一分一段表界面
 
-    connect(ui->btn_teacher_subject_relation,&QPushButton::clicked,this,&TeacherWindow::on_btn_teacher_subject_clicked);//跳入显示学科间线性关系界面
+    //connect(ui->btn_teacher_subject_relation,&QPushButton::clicked,this,&TeacherWindow::on_btn_teacher_subject_clicked);//跳入显示学科间线性关系界面
 
-    connect(ui->btn_teacher_single_score,&QPushButton::clicked,this,&TeacherWindow::on_btn_teacher_single_clicked);//跳入展示单科成绩直方图界面
+    //connect(ui->btn_teacher_single_score,&QPushButton::clicked,this,&TeacherWindow::on_btn_teacher_single_clicked);//跳入展示单科成绩直方图界面
 
     connect(ui->btn_teacher_return,&QPushButton::clicked,this,&TeacherWindow::close);//退出
 
@@ -42,11 +41,11 @@ void TeacherWindow::on_btn_teacher_revise_password_clicked()//重置密码
 
 void TeacherWindow::on_btn_teacher_total_clicked()//跳入显示一分一段表界面
 {
-    choice_window *to_te = new choice_window();
+    totalscore *to_te = new totalscore(this);
     to_te->show();
 }
 
-void TeacherWindow::on_btn_teacher_subject_clicked()//跳入显示学科间线性关系界面
+/*void TeacherWindow::on_btn_teacher_subject_clicked()//跳入显示学科间线性关系界面
 {
     Subject_relation *su_te = new Subject_relation(this);
     su_te->show();
@@ -56,7 +55,7 @@ void TeacherWindow::on_btn_teacher_single_clicked()//跳入展示单科成绩直
 {
     Single_score *si_te = new Single_score(this);
     si_te->show();
-}
+}*/
 
 TeacherWindow::~TeacherWindow()
 {
