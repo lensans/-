@@ -1,5 +1,8 @@
 #include "login.h"
 #include <QApplication>
+#include"mysql_connect.h"
+
+DB db;
 
 int main(int argc, char *argv[])
 {

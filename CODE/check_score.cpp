@@ -9,18 +9,22 @@ check_score::check_score(QWidget *parent)
 {
     ui->setupUi(this);
 
-    connect(ui->btn_check_return,&QPushButton::clicked,this,&check_score::close);//点击返回,关闭查询成绩界面
+    connect(ui->btn_check_all_return,&QPushButton::clicked,this,&check_score::close);//查询全部成绩时点击返回,关闭查询成绩界面
 
-    connect(ui->btn_check_confirm,&QPushButton::clicked,this,&check_score::on_btn_check_confirm_clicked);//点击确定查询
+    connect(ui->btn_check_all_confirm,&QPushButton::clicked,this,&check_score::on_btn_check_all_confirm_clicked);//查询全部成绩时点击确定查询
+
+    connect(ui->btn_check_single_return,&QPushButton::clicked,this,&check_score::close);//查询单科成绩时点击返回,关闭查询成绩界面
+
+    connect(ui->btn_check_single_confirm,&QPushButton::clicked,this,&check_score::on_btn_check_single_confirm_clicked);//查询单科成绩时点击确定查询
 }
 
-void check_score::on_btn_check_confirm_clicked()//查询全部成绩
+void check_score::on_btn_check_all_confirm_clicked()//查询全部成绩
 {
     //从文本框读入要查询的学生id
-    QString student_id = ui->check_student_id->text();
+    QString student_id = ui->check_all_student_id->text();
     VP subject_scores(7);
 
-    DB db;
+    extern DB db;
     db.get_all_score(student_id,subject_scores);
 
     //显示成绩
@@ -38,6 +42,19 @@ void check_score::on_btn_check_confirm_clicked()//查询全部成绩
     ui->check_biology_line->setText(Biology);
     QString Sum = QString("%1").arg(subject_scores[6].second);
     ui->check_sum_line->setText(Sum);
+}
+
+void check_score::on_btn_check_single_confirm_clicked()//查询单科成绩
+{
+    //从文本框读入要查询的学生id
+    QString student_id = ui->check_single_student_id->text();
+    //从文本框读入要查询的科目
+    QString subject = ui->check_subject->text();
+
+    extern DB db;
+    int res = db.get_single_score(student_id,subject);
+    QString subject_score = QString("%1").arg(res);
+    ui->check_subject_score->setText(subject_score);
 }
 
 check_score::~check_score()

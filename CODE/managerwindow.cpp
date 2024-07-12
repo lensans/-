@@ -3,6 +3,8 @@
 #include "input_score.h"
 #include "revise_score.h"
 #include "check_score.h"
+#include "delete_score.h"
+#include "change_password.h"
 #include "total_score.h"
 #include "subject_relation.h"
 #include "single_score.h"
@@ -14,53 +16,71 @@ managerwindow::managerwindow(QWidget *parent)
 
 {
     ui->setupUi(this);
-    connect(ui->btn_input,&QPushButton::clicked,this,&managerwindow::on_btn_input_clicked);//点击录入成绩按钮，跳入录入成绩界面
+    connect(ui->btn_manager_input,&QPushButton::clicked,this,&managerwindow::on_btn_manager_input_clicked);//点击录入成绩按钮，跳入录入成绩界面
 
-    connect(ui->btn_revise,&QPushButton::clicked,this,&managerwindow::on_btn_revise_clicked);//跳入修改成绩界面
+    connect(ui->btn_manager_revise_score,&QPushButton::clicked,this,&managerwindow::on_btn_manager_revise_clicked);//跳入修改成绩界面
 
-    connect(ui->btn_check,&QPushButton::clicked,this,&managerwindow::on_btn_check_clicked);//跳入查询成绩界面
+    connect(ui->btn_manager_check,&QPushButton::clicked,this,&managerwindow::on_btn_manager_check_clicked);//跳入查询成绩界面
 
-    connect(ui->btn_total_score,&QPushButton::clicked,this,&managerwindow::on_btn_total_clicked);//跳入显示总分界面
+    connect(ui->btn_manager_delete,&QPushButton::clicked,this,&managerwindow::on_btn_manager_delete_clicked);//跳入删除学生成绩界面
 
-    connect(ui->btn_subject_relation,&QPushButton::clicked,this,&managerwindow::on_btn_subject_clicked);//跳入显示学科间线性关系界面
+    connect(ui->btn_manager_revise_password,&QPushButton::clicked,this,&managerwindow::on_btn_manager_revise_password_clicked);//跳入重置密码界面
 
-    connect(ui->btn_single_score,&QPushButton::clicked,this,&managerwindow::on_btn_single_clicked);//跳入展示单科成绩直方图界面
+    connect(ui->btn_manager_total_score,&QPushButton::clicked,this,&managerwindow::on_btn_manager_total_clicked);//跳入显示一分一段表界面
+
+    connect(ui->btn_manager_subject_relation,&QPushButton::clicked,this,&managerwindow::on_btn_manager_subject_clicked);//跳入显示学科间线性关系界面
+
+    connect(ui->btn_manager_single_score,&QPushButton::clicked,this,&managerwindow::on_btn_manager_single_clicked);//跳入展示单科成绩直方图界面
+
+    connect(ui->btn_manager_return,&QPushButton::clicked,this,&managerwindow::close);//退出
 }
 
-void managerwindow::on_btn_input_clicked()//点击录入成绩按钮，跳入录入成绩界面
+void managerwindow::on_btn_manager_input_clicked()//点击录入成绩按钮，跳入录入成绩界面
 {
-    Input_score *in_on = new Input_score(this);
-    in_on->show();
+    Input_score *in_ma = new Input_score(this);
+    in_ma->show();
 }
 
-void managerwindow::on_btn_revise_clicked()//跳入修改成绩界面
+void managerwindow::on_btn_manager_revise_clicked()//跳入修改成绩界面
 {
-    revise_score *re_on = new revise_score(this);
-    re_on->show();
+    revise_score *re_ma = new revise_score(this);
+    re_ma->show();
 }
 
-void managerwindow::on_btn_check_clicked()//跳入查询成绩界面
+void managerwindow::on_btn_manager_check_clicked()//跳入查询成绩界面
 {
-    check_score *ch_on = new check_score(this);
-    ch_on->show();
+    check_score *ch_ma = new check_score(this);
+    ch_ma->show();
 }
 
-void managerwindow::on_btn_total_clicked()//跳入显示总分界面
+void managerwindow::on_btn_manager_delete_clicked()//删除成绩
 {
-    total_score *to_on = new total_score(this);
-    to_on->show();
+    Delete_score *de_ma = new Delete_score(this);
+    de_ma->show();
 }
 
-void managerwindow::on_btn_subject_clicked()//跳入显示学科间线性关系界面
+void managerwindow::on_btn_manager_revise_password_clicked()//重置密码
 {
-    Subject_relation *su_on = new Subject_relation(this);
-    su_on->show();
+    change_password *ch_ma = new change_password(this);
+    ch_ma->show();
 }
 
-void managerwindow::on_btn_single_clicked()//跳入展示单科成绩直方图界面
+void managerwindow::on_btn_manager_total_clicked()//跳入显示一分一段表界面
 {
-    Single_score *si_on = new Single_score(this);
-    si_on->show();
+    total_score *to_ma = new total_score(this);
+    to_ma->show();
+}
+
+void managerwindow::on_btn_manager_subject_clicked()//跳入显示学科间线性关系界面
+{
+    Subject_relation *su_ma = new Subject_relation(this);
+    su_ma->show();
+}
+
+void managerwindow::on_btn_manager_single_clicked()//跳入展示单科成绩直方图界面
+{
+    Single_score *si_ma = new Single_score(this);
+    si_ma->show();
 }
 
 managerwindow::~managerwindow()

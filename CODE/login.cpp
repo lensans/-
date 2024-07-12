@@ -3,6 +3,8 @@
 #include <mysql_connect.h>
 #include "change_password.h"
 #include "managerwindow.h"
+#include "studentwindow.h"
+#include "teacherwindow.h"
 #include <QGraphicsDropShadowEffect>
 
 login::login(QWidget *parent)
@@ -52,11 +54,17 @@ void login::on_btn_signin_clicked()//点击确认登录
         ma_on->show();
         this->close();
     }
-    else if(res == 1){
-        //进入学生界面
+    else if(res == 1) //进入学生界面
+    {
+        StudentWindow *st_on = new StudentWindow(this);
+        st_on->show();
+        this->close();
     }
-    else if(res == 2){
-        //进入老师界面
+    else if(res == 2) //进入老师界面
+    {
+        TeacherWindow *te_on = new TeacherWindow(this);
+        te_on->show();
+        this->close();
     }
 }
 

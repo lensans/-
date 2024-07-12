@@ -12,6 +12,8 @@ CONFIG   += c++17
 # DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    change_password.cpp \
+    delete_score.cpp \
     drag_drop_widget.cpp \
     main.cpp \
     check_score.cpp \
@@ -21,6 +23,10 @@ SOURCES += \
     mysql_connect.cpp \
     password.cpp \
     revise_score.cpp \
+    single_score.cpp \
+    studentwindow.cpp \
+    subject_relation.cpp \
+    teacherwindow.cpp \
     total_score.cpp \
     paint.cpp \
     change_password.cpp \
@@ -29,13 +35,20 @@ SOURCES += \
     Relationship.cpp
 
 HEADERS += \
+    change_password.h \
     check_score.h \
+    delete_score.h \
     drag_drop_widget.h \
     input_score.h \
     login.h \
     managerwindow.h \
     password.h \
     revise_score.h \
+    single_score.h \
+    student.h \
+    studentwindow.h \
+    subject_relation.h \
+    teacherwindow.h \
     total_score.h \
     ui_input_score.h \
     ui_login.h \
@@ -43,15 +56,19 @@ HEADERS += \
     mysql_connect.h \
     paint.h \
     change_password.h \
-    subject_relation.h \
-    single_score.h \
     Relationship.h
 
 FORMS += \
+    change_password.ui \
     check_score.ui \
+    delete_score.ui \
     input_score.ui \
     login.ui \
     revise_score.ui \
+    single_score.ui \
+    studentwindow.ui \
+    subject_relation.ui \
+    teacherwindow.ui \
     total_score.ui \
     managerwindow.ui \
     change_password.ui \

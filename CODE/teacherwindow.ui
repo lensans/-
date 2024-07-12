@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>managerwindow</class>
- <widget class="QMainWindow" name="managerwindow">
+ <class>TeacherWindow</class>
+ <widget class="QMainWindow" name="TeacherWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -9,18 +9,6 @@
     <width>800</width>
     <height>600</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>800</width>
-    <height>0</height>
-   </size>
-  </property>
-  <property name="font">
-   <font>
-    <family>华文新魏</family>
-    <pointsize>20</pointsize>
-   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -33,45 +21,16 @@
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>120</y>
-      <width>491</width>
-      <height>381</height>
+      <y>100</y>
+      <width>521</width>
+      <height>371</height>
      </rect>
     </property>
-    <widget class="QPushButton" name="btn_manager_input">
+    <widget class="QPushButton" name="btn_teacher_check">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>40</y>
-       <width>211</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
-
-border:0px groove gray;border-radius:
-7px;padding:2px 4px;
-font: 16pt &quot;Candara&quot;;
-
-</string>
-     </property>
-     <property name="text">
-      <string>录入成绩</string>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>30</width>
-       <height>30</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btn_manager_check">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>200</y>
+       <x>10</x>
+       <y>50</y>
        <width>211</width>
        <height>51</height>
       </rect>
@@ -89,33 +48,11 @@ font: 16pt &quot;Candara&quot;;
       <string>查询成绩</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_manager_revise_score">
+    <widget class="QPushButton" name="btn_teacher_total_score">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>120</y>
-       <width>211</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
-
-border:0px groove gray;border-radius:
-7px;padding:2px 4px;
-font: 16pt &quot;Candara&quot;;
-</string>
-     </property>
-     <property name="text">
-      <string>修改成绩</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btn_manager_total_score">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>120</y>
+       <x>10</x>
+       <y>250</y>
        <width>211</width>
        <height>51</height>
       </rect>
@@ -133,11 +70,11 @@ font: 16pt &quot;Candara&quot;;
       <string>一分一段表</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_manager_subject_relation">
+    <widget class="QPushButton" name="btn_teacher_subject_relation">
      <property name="geometry">
       <rect>
-       <x>270</x>
-       <y>200</y>
+       <x>290</x>
+       <y>100</y>
        <width>211</width>
        <height>51</height>
       </rect>
@@ -155,11 +92,11 @@ font: 16pt &quot;Candara&quot;;
       <string>语数外和理化生关系</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_manager_single_score">
+    <widget class="QPushButton" name="btn_teacher_single_score">
      <property name="geometry">
       <rect>
-       <x>270</x>
-       <y>280</y>
+       <x>290</x>
+       <y>200</y>
        <width>211</width>
        <height>51</height>
       </rect>
@@ -177,11 +114,11 @@ font: 16pt &quot;Candara&quot;;
       <string>展示单科成绩直方图</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_manager_delete">
+    <widget class="QPushButton" name="btn_teacher_revise_password">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>280</y>
+       <x>10</x>
+       <y>150</y>
        <width>211</width>
        <height>51</height>
       </rect>
@@ -197,36 +134,7 @@ font: 16pt &quot;Candara&quot;;
 </string>
      </property>
      <property name="text">
-      <string>删除学生成绩</string>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>30</width>
-       <height>30</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btn_manager_revise_password">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>39</y>
-       <width>211</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(220, 219, 255);
-color: rgb(0,0,0);
-
-border:0px groove gray;border-radius:
-7px;padding:2px 4px;
-font: 16pt &quot;Candara&quot;;
-
-</string>
-     </property>
-     <property name="text">
-      <string>重置密码</string>
+      <string>修改密码</string>
      </property>
      <property name="iconSize">
       <size>
@@ -236,11 +144,11 @@ font: 16pt &quot;Candara&quot;;
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="manager_label">
+   <widget class="QLabel" name="teacher_label">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>70</y>
+      <x>220</x>
+      <y>50</y>
       <width>481</width>
       <height>41</height>
      </rect>
@@ -252,14 +160,14 @@ font: 16pt &quot;Candara&quot;;
      </font>
     </property>
     <property name="text">
-     <string>欢迎使用高考成绩管理系统管理员端</string>
+     <string>欢迎使用高考成绩管理系统教师端</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_manager_return">
+   <widget class="QPushButton" name="btn_teacher_return">
     <property name="geometry">
      <rect>
       <x>550</x>
-      <y>500</y>
+      <y>470</y>
       <width>101</width>
       <height>41</height>
      </rect>
@@ -273,6 +181,17 @@ background-color: rgb(204, 204, 191);</string>
     </property>
    </widget>
   </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
