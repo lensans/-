@@ -5,7 +5,7 @@
 #include "change_password.h"
 #include "subject_relation.h"
 #include "single_score.h"
-#include"totalscore.h"
+#include"total_score.h"
 
 TeacherWindow::TeacherWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -41,7 +41,7 @@ void TeacherWindow::on_btn_teacher_revise_password_clicked()//重置密码
 
 void TeacherWindow::on_btn_teacher_total_clicked()//跳入显示一分一段表界面
 {
-    totalscore *to_te = new totalscore(this);
+    totalscore *to_te = new totalscore("0",this);
     to_te->show();
 }
 

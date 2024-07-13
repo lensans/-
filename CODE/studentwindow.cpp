@@ -3,7 +3,7 @@
 
 #include "stu_check_score_.h"
 #include "stu_change_password_.h"
-#include "totalscore.h"
+#include "total_score.h"
 
 StudentWindow::StudentWindow(QString s,QWidget *parent)
     : QMainWindow(parent)
@@ -37,7 +37,7 @@ void StudentWindow::on_btn_student_revise_password_clicked()//重置密码
 
 void StudentWindow::on_btn_student_total_clicked()//跳入显示一分一段表界面
 {
-    totalscore *to_st = new totalscore();
+    totalscore *to_st = new totalscore(stu.student_id);
     to_st->show();
 }
 

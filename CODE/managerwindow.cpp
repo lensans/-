@@ -5,7 +5,7 @@
 #include "check_score.h"
 #include "delete_score.h"
 #include "change_password.h"
-#include "totalscore.h"
+#include "total_score.h"
 #include <QPushButton>
 
 managerwindow::managerwindow(QWidget *parent)
@@ -65,7 +65,7 @@ void managerwindow::on_btn_manager_revise_password_clicked()//重置密码
 
 void managerwindow::on_btn_manager_total_score_clicked()//跳入显示一分一段表界面
 {
-    totalscore *to = new totalscore(this);
+    totalscore *to = new totalscore("0");
     to->show();
 }
 /*void managerwindow::on_btn_manager_subject_clicked()//跳入显示学科间线性关系界面

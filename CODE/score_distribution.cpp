@@ -1,31 +1,31 @@
 #include "score_distribution.h"
 #include "ui_score_distribution.h"
 
-score_distribution::score_distribution(QString new_subject,DB db,QString new_student_id,QWidget *parent)
+score_distribution::score_distribution(QString new_subject,QString new_student_id,QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::score_distribution)
 {
     ui->setupUi(this);
     subject=new_subject;
-    d1=db;
     ui->setupUi(this);
     student_id=new_student_id;
-    initchart(subject,db);
+    initchart(subject);
 }
 
 score_distribution::~score_distribution()
 {
     delete ui;
 }
-void score_distribution::initchart(QString subject,DB db){
+void score_distribution::initchart(QString subject){
     QChart *chart=new  QChart();
     chart->setTitle("test");
     chart->setAnimationOptions(QChart::SeriesAnimations);
     ui->graphicsView->setChart(chart);
     ui->graphicsView->setRenderHint(QPainter::Antialiasing);
-    create_distribution_chart(subject,db,student_id);
+    create_distribution_chart(subject,student_id);
 }
-void score_distribution:: create_distribution_chart(QString subject,DB db,QString student_id){
+void score_distribution:: create_distribution_chart(QString subject,QString student_id){
+    DB db;
     QChart* chart =ui->graphicsView->chart();
     chart->setTitle("一分一段表");
 
@@ -77,8 +77,9 @@ void score_distribution:: create_distribution_chart(QString subject,DB db,QStrin
 
 void score_distribution::on_score_returnPressed()
 {
+    DB db;
     std::vector<int> rank(750);
-    d1.get_ranks(subject,rank);
+    db.get_ranks(subject,rank);
     int myscore=ui->score->text().toInt();
     ui->rank->setText(QString::number(rank[myscore]));
 }

@@ -1,3 +1,5 @@
+#ifndef SUBJECT_RELATION_H
+#define SUBJECT_RELATION_H
 #include <QMainWindow>
 
 //学科间线性关系

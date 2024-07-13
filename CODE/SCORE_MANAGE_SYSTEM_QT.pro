@@ -32,7 +32,7 @@ SOURCES += \
     change_password.cpp \
     Relationship.cpp \
     score_distribution.cpp \
-    totalscore.cpp
+    total_score.cpp
 
 HEADERS += \
     check_score.h \
@@ -48,10 +48,9 @@ HEADERS += \
     stu_change_password_.h \
     stu_check_score_.h \
     student.h \
-    student.h \
     studentwindow.h \
     teacherwindow.h \
-    totalscore.h \
+    total_score.h \
     ui_input_score.h \
     ui_login.h \
     ui_total_score.h \
@@ -76,7 +75,7 @@ FORMS += \
     teacherwindow.ui \
     managerwindow.ui \
     score_distribution.ui \
-    totalscore.ui
+    total_score.ui
 
 
 LIBS += -L"$$PWD/OpenSSL-Win64/lib/" -llibssl -llibcrypto
