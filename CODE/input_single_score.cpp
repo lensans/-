@@ -1,6 +1,6 @@
 #include "input_single_score.h"
 #include "ui_input_single_score.h"
-#include <mysql_connect.h>
+#include "mysql_connect.h"
 
 Input_single_score::Input_single_score(QWidget *parent)
     : QMainWindow(parent)

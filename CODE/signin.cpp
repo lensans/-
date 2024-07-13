@@ -6,6 +6,7 @@
 #include "studentwindow.h"
 #include "teacherwindow.h"
 #include <QGraphicsDropShadowEffect>
+#include"stu_change_password_.h"
 
 signin::signin(QWidget *parent)
     : QMainWindow(parent)
@@ -57,7 +58,7 @@ void signin::on_btn_signin_clicked()//点击确认登录
         break;
     }
     case 3:{
-        change_password *w3 = new change_password();
+        stu_change_password_ *w3 = new stu_change_password_(student(username));
         w3->show();
         break;
     }

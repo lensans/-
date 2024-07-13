@@ -3,7 +3,6 @@
 
 #include <QWidget>
 #include<QString>
-using namespace std;
 namespace Ui {
 class CMEpaints;
 }

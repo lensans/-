@@ -16,8 +16,8 @@ Subject_relation::Subject_relation(QWidget *parent)
     QString s2=QString::number(j);
     QString subject1="CME";
     QString subject2="PCB";
-    vector<int>cmescore;
-    vector<int>pcbscore;
+    std::vector<int>cmescore;
+    std::vector<int>pcbscore;
     db.get_students_scores(s,s2,subject1,cmescore);
     db.get_students_scores(s,s2,subject2,pcbscore);
     Relationship A(cmescore,pcbscore);

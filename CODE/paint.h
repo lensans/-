@@ -4,12 +4,11 @@
 #include <vector>
 #include <QtCharts>
 #include<Qstring>
-using namespace std;
 //QT_CHARTS_USE_NAMESPACE;
 
 class Paint{
 public:
-    Paint(vector<int> data,QString subject):data(data),subject(subject){
+    Paint(std::vector<int> data,QString subject):data(data),subject(subject){
         data1=new int[7];
         data2=new int[5];
     }
@@ -18,7 +17,7 @@ public:
     void getnums1(int*& Data);
     void getnums2(int*& Data);
 private:
-    vector<int> data;
+    std::vector<int> data;
     QString subject;
     int *data1;
     int *data2;

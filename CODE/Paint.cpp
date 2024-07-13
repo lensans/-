@@ -63,13 +63,13 @@ bool comp6(int x){
     return (x>=140&&x<=150);
 }
 void Paint:: getnums1(int*&Data){
-    Data[0]=count_if(data.begin(),data.end(),comp0);
-    Data[1]=count_if(data.begin(),data.end(),comp1);
-    Data[2]=count_if(data.begin(),data.end(),comp2);
-    Data[3]=count_if(data.begin(),data.end(),comp3);
-    Data[4]=count_if(data.begin(),data.end(),comp4);
-    Data[5]=count_if(data.begin(),data.end(),comp5);
-    Data[6]=count_if(data.begin(),data.end(),comp6);
+    Data[0]=std::count_if(data.begin(),data.end(),comp0);
+    Data[1]=std::count_if(data.begin(),data.end(),comp1);
+    Data[2]=std::count_if(data.begin(),data.end(),comp2);
+    Data[3]=std::count_if(data.begin(),data.end(),comp3);
+    Data[4]=std::count_if(data.begin(),data.end(),comp4);
+    Data[5]=std::count_if(data.begin(),data.end(),comp5);
+    Data[6]=std::count_if(data.begin(),data.end(),comp6);
 }
 QChart *Paint::createBarChart2()
 {
@@ -128,11 +128,11 @@ bool comp11(int x){
 
 
 void Paint:: getnums2(int*&Data){
-    Data[0]=count_if(data.begin(),data.end(),comp7);
-    Data[1]=count_if(data.begin(),data.end(),comp8);
-    Data[2]=count_if(data.begin(),data.end(),comp9);
-    Data[3]=count_if(data.begin(),data.end(),comp10);
-    Data[4]=count_if(data.begin(),data.end(),comp11);
+    Data[0]=std::count_if(data.begin(),data.end(),comp7);
+    Data[1]=std::count_if(data.begin(),data.end(),comp8);
+    Data[2]=std::count_if(data.begin(),data.end(),comp9);
+    Data[3]=std::count_if(data.begin(),data.end(),comp10);
+    Data[4]=std::count_if(data.begin(),data.end(),comp11);
 
 }
 
