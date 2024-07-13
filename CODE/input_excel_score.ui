@@ -94,10 +94,10 @@ QMainWindow#Input_excel_score QPushButton#input_excel_confirm:hover
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(0, 0, 0);
-font: 12pt &quot;宋体&quot;;</string>
+font: 16pt &quot;宋体&quot;;</string>
     </property>
     <property name="text">
-     <string>（将文件拖到该页面中即可）</string>
+     <string>将Excel文件拖拽到此区域上传</string>
     </property>
    </widget>
   </widget>

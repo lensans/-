@@ -2,11 +2,11 @@
 
 DragDropWidget::DragDropWidget(QWidget *parent):QWidget(parent){
     setAcceptDrops(true);
-    QVBoxLayout *layout=new QVBoxLayout(this);
-    QLabel *label=new QLabel("将Excel文件拖拽到此区域上传",this);
-    label->setAlignment(Qt::AlignCenter);
-    layout->addWidget(label);
-    setLayout(layout);
+    //QVBoxLayout *layout=new QVBoxLayout(this);
+    //QLabel *label=new QLabel("将Excel文件拖拽到此区域上传",this);
+    //label->setAlignment(Qt::AlignCenter);
+    //layout->addWidget(label);
+    //setLayout(layout);
 }
 
 void DragDropWidget::dragEnterEvent(QDragEnterEvent *event){
