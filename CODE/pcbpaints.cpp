@@ -9,7 +9,7 @@ PCBpaints::PCBpaints(QString subject,QWidget *parent)
 {
     ui->setupUi(this);
     DB db;
-    vector<int>score;
+    std::vector<int>score;
     int i = 1;
     QString s = QString::number(i);
     int j=1000;

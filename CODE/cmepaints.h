@@ -2,9 +2,7 @@
 #define CMEPAINTS_H
 
 #include <QWidget>
-#include <QString>
-//using namespace std;
-
+#include<QString>
 namespace Ui {
 class CMEpaints;
 }

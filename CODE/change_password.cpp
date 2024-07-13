@@ -23,6 +23,7 @@ void change_password::on_change_password_confirm_clicked()//修改密码
     int res = db.revise_password(username,new_password);
     if(res == 1)//修改成功
     {
+        QMessageBox::information(nullptr,"恭喜","您已成功修改密码");
         this->close();
     }
 }
