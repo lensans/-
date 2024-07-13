@@ -16,7 +16,7 @@ PCBpaints::PCBpaints(QString subject,QWidget *parent)
     QString s2=QString::number(j);
     db.get_students_scores(s,s2,subject,score);
     Paint A(score,subject);
-    ui->graphicsView->setChart(A.createBarChart1());
+    ui->graphicsView->setChart(A.createBarChart2());
 }
 
 PCBpaints::~PCBpaints()

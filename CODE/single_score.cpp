@@ -7,6 +7,8 @@ Single_score::Single_score(QWidget *parent)
     , ui(new Ui::Single_score)
 {
     ui->setupUi(this);
+
+    connect(ui->input_single_return,&QPushButton::clicked,this,&Single_score::close);
 }
 
 Single_score::~Single_score()
