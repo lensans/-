@@ -1,4 +1,4 @@
-﻿#include "paint.h"
+#include "paint.h"
 #include <algorithm>
 
 // 绘制类型一直方图
@@ -8,7 +8,7 @@ QChart *Paint::createBarChart1()
     QChart *chart = new QChart();
     chart->setTitle("直方图演示");
 
-    QBarSet *set0 = new QBarSet("成绩");
+    QBarSet *set0 = new QBarSet(subject);
     *set0<<data1[0]<<data1[1]<<data1[2]<<data1[3]<<data1[4]<<data1[5]<<data1[6];
 
     QBarSeries  *series = new QBarSeries (chart);
@@ -25,7 +25,7 @@ QChart *Paint::createBarChart1()
     QValueAxis* axisX=new QValueAxis;
     chart->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
-    chart->axes(Qt::Vertical).first()->setRange(0,5000);
+    chart->axes(Qt::Vertical).first()->setRange(0,500);
 
     // 在标签和轴之间加空格
     QValueAxis *axisY = qobject_cast<QValueAxis*>(chart->axes(Qt::Vertical).first());
@@ -77,7 +77,7 @@ QChart *Paint::createBarChart2()
     QChart *chart = new QChart();
     chart->setTitle("直方图演示");
 
-    QBarSet *set0 = new QBarSet("人数");
+    QBarSet *set0 = new QBarSet(subject);
     *set0<<data2[0]<<data2[1]<<data2[2]<<data2[3]<<data2[4];
 
     QBarSeries  *series = new QBarSeries (chart);
