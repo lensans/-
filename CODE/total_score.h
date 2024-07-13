@@ -16,7 +16,7 @@ class totalscore : public QMainWindow
 public:
     explicit totalscore(QString newstudent_id,QWidget *parent = nullptr);
     QString student_id;
-
+    ~totalscore();
 
 
 private:
@@ -35,8 +35,6 @@ private slots:
     void on_Biology_clicked();
 
     void on_SUM_clicked();
-
-    ~totalscore();
 };
 
 #endif // TOTAL_SCORE_H

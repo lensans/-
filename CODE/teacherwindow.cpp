@@ -19,9 +19,9 @@ TeacherWindow::TeacherWindow(QWidget *parent)
 
     connect(ui->btn_teacher_total_score,&QPushButton::clicked,this,&TeacherWindow::on_btn_teacher_total_clicked);//跳入显示一分一段表界面
 
-    //connect(ui->btn_teacher_subject_relation,&QPushButton::clicked,this,&TeacherWindow::on_btn_teacher_subject_clicked);//跳入显示学科间线性关系界面
+    connect(ui->btn_teacher_subject_relation,&QPushButton::clicked,this,&TeacherWindow::on_btn_teacher_subject_clicked);//跳入显示学科间线性关系界面
 
-    //connect(ui->btn_teacher_single_score,&QPushButton::clicked,this,&TeacherWindow::on_btn_teacher_single_clicked);//跳入展示单科成绩直方图界面
+    connect(ui->btn_teacher_single_score,&QPushButton::clicked,this,&TeacherWindow::on_btn_teacher_single_clicked);//跳入展示单科成绩直方图界面
 
     connect(ui->btn_teacher_return,&QPushButton::clicked,this,&TeacherWindow::close);//退出
 
@@ -45,7 +45,7 @@ void TeacherWindow::on_btn_teacher_total_clicked()//跳入显示一分一段表�
     to_te->show();
 }
 
-void TeacherWindow::on_btn_teacher_subject_relation_clicked()
+void TeacherWindow::on_btn_teacher_subject_clicked()
 {
     Subject_relation*se_re=new Subject_relation();
     se_re->show();

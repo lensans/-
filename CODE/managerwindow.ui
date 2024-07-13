@@ -28,7 +28,8 @@
   <property name="styleSheet">
    <string notr="true">QMainWindow#managerwindow
 {
-	border-image: url(:/Desktop/pic.png);
+	
+	border-image: url(:/pic.png);
 	background-color: rgb(255, 255, 255);
 	
 }
@@ -351,7 +352,7 @@ QMainWindow#managerwindow QPushButton#btn_manager_return:hover
     </property>
     <property name="styleSheet">
      <string notr="true">
-border-image: url(:/Desktop/picone.png);</string>
+border-image: url(:/picone.png);</string>
     </property>
     <property name="text">
      <string/>

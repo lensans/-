@@ -9,7 +9,7 @@ Subject_relation::Subject_relation(QWidget *parent)
     , ui(new Ui::Subject_relation)
 {
     ui->setupUi(this);
-   extern DB db;
+   DB db;
     int i = 1;
     QString s = QString::number(i);
     int j=1000;
@@ -33,7 +33,6 @@ Subject_relation::~Subject_relation()
 void Subject_relation::on_pushButton_clicked()
 {
     this->close();
-    TeacherWindow*father=new TeacherWindow();
-    father->show();
+    //TeacherWindow* father=new TeacherWindow();
+    //father->show();
 }
-

@@ -14,14 +14,20 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">QMainWindow#Subject_relation
+{
+	border-image: url(:/pic.png);
+	background-color: rgb(255, 255, 255);
+	
+}
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="subject_relation_label">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>-10</y>
+      <x>190</x>
+      <y>90</y>
       <width>451</width>
       <height>61</height>
      </rect>
@@ -32,6 +38,9 @@
       <pointsize>20</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);</string>
+    </property>
     <property name="text">
      <string>语数外总分和理化生总分的线性关系</string>
     </property>
@@ -39,31 +48,53 @@
    <widget class="QChartView" name="graphicsView">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>40</y>
-      <width>411</width>
-      <height>241</height>
+      <x>200</x>
+      <y>160</y>
+      <width>401</width>
+      <height>261</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="mainlineEdit">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>290</y>
-      <width>561</width>
-      <height>31</height>
+      <x>210</x>
+      <y>440</y>
+      <width>361</width>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>380</y>
+      <x>350</x>
+      <y>500</y>
       <width>101</width>
-      <height>41</height>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMainWindow#Subject_relation QPushButton#pushButton
+{
+   font: 18pt &quot;宋体&quot;;
+	
+	background-color: rgb(255, 255, 255);
+color: rgb(0,0,0);
+}
+
+QMainWindow#Subject_relation QPushButton#pushButton:hover
+{
+	
+	background-color: rgb(195, 195, 195);
+}</string>
     </property>
     <property name="text">
      <string>返回</string>

@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">QMainWindow#stu_check_score_
 {
-	border-image: url(:/Desktop/pic.png);
+	border-image: url(:/pic.png);
 	background-color: rgb(255, 255, 255);
 	
 }

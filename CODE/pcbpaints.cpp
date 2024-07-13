@@ -1,6 +1,6 @@
 #include "pcbpaints.h"
 #include "ui_pcbpaints.h"
-#include"Paint.h"
+#include"paint.h"
 #include"mysql_connect.h"
 #include"single_score.h"
 PCBpaints::PCBpaints(QString subject,QWidget *parent)
@@ -8,7 +8,7 @@ PCBpaints::PCBpaints(QString subject,QWidget *parent)
     , ui(new Ui::PCBpaints)
 {
     ui->setupUi(this);
-    extern DB db;
+    DB db;
     vector<int>score;
     int i = 1;
     QString s = QString::number(i);

@@ -1,9 +1,9 @@
 <RCC>
     <qresource prefix="/">
-        <file>login.png</file>
         <file>pic.png</file>
         <file>picone.png</file>
         <file>picthree.png</file>
         <file>pictwo.png</file>
+        <file>login.png</file>
     </qresource>
 </RCC>

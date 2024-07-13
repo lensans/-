@@ -6,6 +6,8 @@
 #include "delete_score.h"
 #include "change_password.h"
 #include "total_score.h"
+#include "subject_relation.h"
+#include "single_score.h"
 #include <QPushButton>
 
 managerwindow::managerwindow(QWidget *parent)
@@ -26,9 +28,9 @@ managerwindow::managerwindow(QWidget *parent)
 
     connect(ui->btn_manager_total_score,&QPushButton::clicked,this,&managerwindow::on_btn_manager_total_score_clicked);//跳入显示一分一段表界面
 
-    //connect(ui->btn_manager_subject_relation,&QPushButton::clicked,this,&managerwindow::on_btn_manager_subject_clicked);//跳入显示学科间线性关系界面
+    connect(ui->btn_manager_subject_relation,&QPushButton::clicked,this,&managerwindow::on_btn_manager_subject_clicked);//跳入显示学科间线性关系界面
 
-    //connect(ui->btn_manager_single_score,&QPushButton::clicked,this,&managerwindow::on_btn_manager_single_clicked);//跳入展示单科成绩直方图界面
+    connect(ui->btn_manager_single_score,&QPushButton::clicked,this,&managerwindow::on_btn_manager_single_clicked);//跳入展示单科成绩直方图界面
 
     connect(ui->btn_manager_return,&QPushButton::clicked,this,&managerwindow::close);//退出
 }
@@ -68,7 +70,7 @@ void managerwindow::on_btn_manager_total_score_clicked()//跳入显示一分一�
     totalscore *to = new totalscore("0");
     to->show();
 }
-/*void managerwindow::on_btn_manager_subject_clicked()//跳入显示学科间线性关系界面
+void managerwindow::on_btn_manager_subject_clicked()//跳入显示学科间线性关系界面
 {
     Subject_relation *su_ma = new Subject_relation(this);
     su_ma->show();
@@ -78,7 +80,7 @@ void managerwindow::on_btn_manager_single_clicked()//跳入展示单科成绩直
 {
     Single_score *si_ma = new Single_score(this);
     si_ma->show();
-}*/
+}
 
 managerwindow::~managerwindow()
 {

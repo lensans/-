@@ -1,7 +1,7 @@
 #include <QApplication>
 #include"mysql_connect.h"
 #include "signin.h"
-#include "total_score.h"
+
 //DB db;
 
 int main(int argc, char *argv[])

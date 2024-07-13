@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">QMainWindow#Input_single_score
 {
-	border-image: url(:/Desktop/pic.png);
+	border-image: url(:/pic.png);
 	background-color: rgb(255, 255, 255);
 	
 }

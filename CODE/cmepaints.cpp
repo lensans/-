@@ -9,7 +9,7 @@ CMEpaints::CMEpaints(QString subject,QWidget *parent)
     , ui(new Ui::CMEpaints)
 {
     ui->setupUi(this);
-     extern DB db;
+     DB db;
     vector<int>score;
      int i = 1;
      QString s = QString::number(i);
