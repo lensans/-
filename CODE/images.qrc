@@ -6,5 +6,7 @@
         <file>pictwo.png</file>
         <file>login.png</file>
         <file>loginone.png</file>
+        <file>signin.png</file>
+        <file>picfour.png</file>
     </qresource>
 </RCC>

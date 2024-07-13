@@ -9,6 +9,9 @@ Subject_relation::Subject_relation(QWidget *parent)
     , ui(new Ui::Subject_relation)
 {
     ui->setupUi(this);
+
+    setFixedSize(800,600);
+
    DB db;
     int i = 1;
     QString s = QString::number(i);

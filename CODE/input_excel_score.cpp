@@ -9,6 +9,8 @@ Input_excel_score::Input_excel_score(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setFixedSize(800,600);
+
     QVBoxLayout *excelLayout = new QVBoxLayout(this);
     QHBoxLayout *buttonLayout = new QHBoxLayout();
     buttonLayout->addWidget(ui->input_excel_return);

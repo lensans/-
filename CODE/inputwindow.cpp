@@ -9,6 +9,8 @@ InputWindow::InputWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setFixedSize(800,600);
+
     connect(ui->single_input,&QPushButton::clicked,this,&InputWindow::on_btn_single_input_clicked);//点击单个录入成绩按钮，跳入单个录入成绩界面
 
     connect(ui->excel_input,&QPushButton::clicked,this,&InputWindow::on_btn_excel_input_clicked);//点击EXCEL导入成绩按钮，跳入EXCEL导入成绩界面

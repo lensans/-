@@ -9,6 +9,9 @@ stu_change_password_::stu_change_password_(student s,QWidget *parent)
 {
     stu=s;
     ui->setupUi(this);
+
+    setFixedSize(800,600);
+
     connect(ui->change_password_return,&QPushButton::clicked,this,&stu_change_password_::close);//点击返回，关闭修改密码界面
     connect(ui->change_password_confirm,&QPushButton::clicked,this,&stu_change_password_::on_change_password_confirm_clicked);//点击确认修改
 }

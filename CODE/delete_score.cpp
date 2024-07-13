@@ -8,6 +8,8 @@ Delete_score::Delete_score(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setFixedSize(800,600);
+
     connect(ui->btn_delete_return,&QPushButton::clicked,this,&Delete_score::close);//点击返回,关闭删除学生成绩界面
 
     connect(ui->btn_delete_confirm,&QPushButton::clicked,this,&Delete_score::on_btn_delete_confirm_clicked);//点击确定删除

@@ -11,6 +11,8 @@ StudentWindow::StudentWindow(QString s,QWidget *parent)
 {
     ui->setupUi(this);
 
+    setFixedSize(800,600);
+
     stu=student(s);
 
     connect(ui->btn_student_check,&QPushButton::clicked,this,&StudentWindow::on_btn_student_check_clicked);//跳入查询成绩界面

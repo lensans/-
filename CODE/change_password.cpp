@@ -8,6 +8,8 @@ change_password::change_password(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setFixedSize(800,600);
+
     connect(ui->change_password_return,&QPushButton::clicked,this,&change_password::close);//点击返回，关闭修改密码界面
 
     connect(ui->change_password_confirm,&QPushButton::clicked,this,&change_password::on_change_password_confirm_clicked);//点击确认，修改密码

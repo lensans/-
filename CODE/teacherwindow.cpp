@@ -13,6 +13,8 @@ TeacherWindow::TeacherWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setFixedSize(800,600);
+
     connect(ui->btn_teacher_check,&QPushButton::clicked,this,&TeacherWindow::on_btn_teacher_check_clicked);//跳入查询成绩界面
 
     connect(ui->btn_teacher_revise_password,&QPushButton::clicked,this,&TeacherWindow::on_btn_teacher_revise_password_clicked);//跳入重置密码界面

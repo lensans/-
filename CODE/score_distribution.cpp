@@ -44,7 +44,8 @@ void score_distribution:: create_distribution_chart(QString subject,QString stud
         x->setRange(20,150);
         y->setRange(0,100);
     }
-    else if(subject=="Math"||subject=="English"){
+    else if(subject=="Math"||subject=="English")
+    {
         x->setRange(20,150);
         y->setRange(0,60);
     }

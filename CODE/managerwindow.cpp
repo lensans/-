@@ -16,6 +16,9 @@ managerwindow::managerwindow(QWidget *parent)
 
 {
     ui->setupUi(this);
+
+    setFixedSize(800,600);
+
     connect(ui->btn_manager_input,&QPushButton::clicked,this,&managerwindow::on_btn_manager_input_clicked);//点击录入成绩按钮，跳入录入成绩界面
 
     connect(ui->btn_manager_revise_score,&QPushButton::clicked,this,&managerwindow::on_btn_manager_revise_clicked);//跳入修改成绩界面

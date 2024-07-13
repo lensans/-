@@ -8,6 +8,8 @@ Input_single_score::Input_single_score(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setFixedSize(800,600);
+
     connect(ui->input_single_return,&QPushButton::clicked,this,&Input_single_score::close);//单个录入时点击返回，关闭录入成绩界面
 
     connect(ui->input_single_confirm,&QPushButton::clicked,this,&Input_single_score::on_input_single_confirm_clicked);//单个录入时点击确认录入

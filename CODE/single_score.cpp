@@ -8,6 +8,8 @@ Single_score::Single_score(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setFixedSize(800,600);
+
     connect(ui->input_single_return,&QPushButton::clicked,this,&Single_score::close);
 }
 

@@ -67,8 +67,8 @@ QMainWindow#TeacherWindow QPushButton#btn_teacher_check:hover
     <widget class="QPushButton" name="btn_teacher_total_score">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>180</y>
+       <x>170</x>
+       <y>200</y>
        <width>211</width>
        <height>51</height>
       </rect>
@@ -100,8 +100,8 @@ QMainWindow#TeacherWindow QPushButton#btn_teacher_total_score:hover
     <widget class="QPushButton" name="btn_teacher_subject_relation">
      <property name="geometry">
       <rect>
-       <x>300</x>
-       <y>60</y>
+       <x>290</x>
+       <y>20</y>
        <width>231</width>
        <height>51</height>
       </rect>
@@ -131,8 +131,8 @@ QMainWindow#TeacherWindow QPushButton#btn_teacher_subject_relation:hover
     <widget class="QPushButton" name="btn_teacher_single_score">
      <property name="geometry">
       <rect>
-       <x>300</x>
-       <y>140</y>
+       <x>290</x>
+       <y>110</y>
        <width>231</width>
        <height>51</height>
       </rect>
@@ -164,7 +164,7 @@ QMainWindow#TeacherWindow QPushButton#btn_teacher_single_score:hover
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>100</y>
+       <y>110</y>
        <width>211</width>
        <height>51</height>
       </rect>

@@ -15,8 +15,10 @@ signin::signin(QWidget *parent)
     // 初始化UI界面
     ui->setupUi(this);
 
+    setFixedSize(801,479);
+
     //设置右侧图片
-    QPixmap *pix = new QPixmap(":/loginone.png");// 创建一个QPixmap对象，用于加载图片
+    QPixmap *pix = new QPixmap(":/signin.png");// 创建一个QPixmap对象，用于加载图片
     QSize sz = ui->label_image->size();// 用一个对象sz来获取label_image的大小
     ui->label_image->setPixmap(pix->scaled(sz));// 调整传入图片的大小到label_image的大小，并设置给label_image
 

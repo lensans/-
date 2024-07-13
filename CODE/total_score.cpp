@@ -9,24 +9,12 @@ totalscore::totalscore(QString newstudent_id,bool student_call,QWidget *parent)
 {
     student=student_call;
     ui->setupUi(this);
-    // newstudent_id="0";
+
+    setFixedSize(800,600);
+
     student_id=newstudent_id;
 
     connect(ui->btn_check_all_return,&QPushButton::clicked,this,&totalscore::close);//退出
-
-    // connect(ui->Chinese,&QPushButton::clicked,this,&totalscore::on_Chinese_clicked);
-
-    // connect(ui->Math,&QPushButton::clicked,this,&totalscore::on_Math_clicked);
-
-    // connect(ui->English,&QPushButton::clicked,this,&totalscore::on_English_clicked);
-
-    // connect(ui->Physics,&QPushButton::clicked,this,&totalscore::on_Physics_clicked);
-
-    // connect(ui->Chemestry,&QPushButton::clicked,this,&totalscore::on_Chemestry_clicked);
-
-    // connect(ui->Biology,&QPushButton::clicked,this,&totalscore::on_Biology_clicked);
-
-    // connect(ui->SUM,&QPushButton::clicked,this,&totalscore::on_SUM_clicked);
 }
 
 void totalscore::on_Chinese_clicked()
