@@ -9,9 +9,6 @@ Subject_relation::Subject_relation(QWidget *parent)
     , ui(new Ui::Subject_relation)
 {
     ui->setupUi(this);
-
-    setFixedSize(800,600);
-
    DB db;
     int i = 1;
     QString s = QString::number(i);
@@ -25,7 +22,12 @@ Subject_relation::Subject_relation(QWidget *parent)
     db.get_students_scores(s,s2,subject2,pcbscore);
     Relationship A(cmescore,pcbscore);
     ui->graphicsView->setChart(A.getrelationshipmap());
-    ui->mainlineEdit->setText(A.getrelationship());
+    ui->lineEdit_2->setText(A.getrelationship());
+    double value = A.getrelationshipr();
+    QString str = QString::number(value);
+    QString str2="r: ";
+    str2+=str;
+    ui->lineEdit->setText(str2);
 }
 
 Subject_relation::~Subject_relation()
@@ -36,6 +38,6 @@ Subject_relation::~Subject_relation()
 void Subject_relation::on_pushButton_clicked()
 {
     this->close();
-    //TeacherWindow* father=new TeacherWindow();
-    //father->show();
+    TeacherWindow* father=new TeacherWindow();
+    father->show();
 }
