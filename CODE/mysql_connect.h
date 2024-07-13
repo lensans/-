@@ -69,7 +69,7 @@ public:
 
     //将excel文件上传到数据库，批量上传可用for循环-待实现
 
-    void upload_score(QString file_path);
+    bool upload_score(QString file_path);
 
     //批量获取学生的单科成绩，保存在pair类型的vector中返回
     void get_students_scores(QString start_student_id,QString end_student_id,QString subject,std::vector<int>& scores);

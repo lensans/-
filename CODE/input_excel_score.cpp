@@ -1,4 +1,4 @@
-#include "input_excel_score.h"
+﻿#include "input_excel_score.h"
 #include "ui_input_excel_score.h"
 #include "drag_drop_widget.h"
 #include <mysql_connect.h>
@@ -32,8 +32,9 @@ Input_excel_score::Input_excel_score(QWidget *parent)
 void Input_excel_score::on_input_excel_confirm_clicked(){
     if(!filePath.isEmpty()){
         DB db;
-        db.upload_score(filePath);
-        QMessageBox::information(this,"Success","文件成功上传");
+        bool res=db.upload_score(filePath);
+        if(res) QMessageBox::information(this,"Success","文件成功上传");
+        else QMessageBox::warning(this,"Warning","上传文件失败");
         filePath.clear();
     }
     else{

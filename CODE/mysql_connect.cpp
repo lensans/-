@@ -142,10 +142,9 @@ int DB::login_check(QString username, QString password){
 
     //查询数据库中是否存在某个用户，其用户名为username，密码为password，盐值为salt
     QSqlQuery query(db);
-    query.prepare("SELECT password FROM USER WHERE username = ?");
+    query.prepare("SELECT password FROM USER WHERE username = '?'");
     query.addBindValue(username);
-    query.exec();
-    if(!query.first()){
+    if(!query.exec()){
         QMessageBox::critical(nullptr,"error","用户不存在"+query.lastError().text());
         qDebug()<<2;
         return -1;
@@ -173,29 +172,59 @@ int DB::login_check(QString username, QString password){
     return -1;
 }
 
-void DB::upload_score(QString file_path){
+bool DB::upload_score(QString file_path){
 
     QXlsx::Document xlsx(file_path);
     if(!xlsx.isLoadPackage()){
-        QMessageBox::critical(nullptr,"error","Failed to open Excel document.");
-        return;
+        QMessageBox::critical(nullptr,"error","文件解析失败");
+        return false;
     }
     QSqlQuery query(db);
-    QString sql=QString("INSERT INTO scores (student_id, score) VALUES (?, ?)");
+    QString sql=QString("INSERT INTO SCORE (name, id, chinese, math, english, physics, chemestry, biology, sum, cme, pcb) VALUES (?, ?,?, ?,?, ?,?, ?,?, ?,?)");
     query.prepare(sql);
 
     int row=1;
+    QString str=xlsx.read(1,1).toString();
+    if(str=="name"||str=="NAME"){
+        row++;
+    }
+
+    if(xlsx.dimension().columnCount()!=11){
+        QMessageBox::critical(nullptr,"Warning","请按：姓名 ID 语 数 英 物 化 生 总分 语数英总分 物化生总分 的顺序包含相应条目");
+    }
+
     while(!xlsx.read(row,1).isNull()){
-        QString student_id=xlsx.read(row,1).toString();
-        int score=xlsx.read(row,2).toInt();
-        query.addBindValue(student_id);
-        query.addBindValue(score);
+        QString name=xlsx.read(row,1).toString();
+        QString id=xlsx.read(row,2).toString();
+        QString chinese=xlsx.read(row,3).toString();
+        QString math=xlsx.read(row,4).toString();
+        QString english=xlsx.read(row,5).toString();
+        QString physics=xlsx.read(row,6).toString();
+        QString chemistry=xlsx.read(row,7).toString();
+        QString biology=xlsx.read(row,8).toString();
+        QString sum=xlsx.read(row,9).toString();
+        QString cme=xlsx.read(row,10).toString();
+        QString pcb=xlsx.read(row,11).toString();
+
+        query.addBindValue(name);
+        query.addBindValue(id);
+        query.addBindValue(chinese);
+        query.addBindValue(math);
+        query.addBindValue(english);
+        query.addBindValue(physics);
+        query.addBindValue(chemistry);
+        query.addBindValue(biology);
+        query.addBindValue(sum);
+        query.addBindValue(cme);
+        query.addBindValue(pcb);
+
         if(!query.exec()){
-            QMessageBox::information(nullptr,"fail",query.lastError().text());
-            return;
+            QMessageBox::information(nullptr,"Fail","文件解析失败："+query.lastError().text());
+            return false;
         }
         row++;
     }
+    return true;
 }
 
 bool DB::revise_password(QString username,QString new_password){
