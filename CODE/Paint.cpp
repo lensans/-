@@ -1,4 +1,4 @@
-#include "paint.h"
+#include "Paint.h"
 #include <algorithm>
 
 // 绘制类型一直方图
@@ -16,21 +16,15 @@ QChart *Paint::createBarChart1()
 
     chart->addSeries(series);
     chart->setAnimationOptions(QChart::SeriesAnimations);
-
     QStringList categories;
-    categories << "90以下" << "90-100" << "100-110" << "110-120" << "120-130" << "130-140"<<"140-150";  //保存横坐标字符串的列表
+    categories << "90以下" << "90-100" << "100-110" << "110-120" << "120-130" << "130-140" << "140-150";
     QBarCategoryAxis *axis = new QBarCategoryAxis();
     axis->append(categories);
     chart->createDefaultAxes();
-    QValueAxis* axisX=new QValueAxis;
-    chart->addAxis(axisX, Qt::AlignBottom);
-    series->attachAxis(axisX);
+    chart->setAxisX(axis, series); // 为柱状图系列设置分类轴
+    QValueAxis* axisY=new QValueAxis;
+    series->attachAxis(axisY);
     chart->axes(Qt::Vertical).first()->setRange(0,500);
-
-    // 在标签和轴之间加空格
-    QValueAxis *axisY = qobject_cast<QValueAxis*>(chart->axes(Qt::Vertical).first());
-    Q_ASSERT(axisY);
-    axisY->setLabelFormat("%.2f  ");
 
     series->setLabelsPosition(QAbstractBarSeries::LabelsInsideEnd);  //设置标签显示的位置
     series->setLabelsVisible(true);  //设置数据标签可见
@@ -73,7 +67,7 @@ void Paint:: getnums1(int*&Data){
 }
 QChart *Paint::createBarChart2()
 {
-     getnums2(data2);
+    getnums2(data2);
     QChart *chart = new QChart();
     chart->setTitle("直方图演示");
 
@@ -91,15 +85,10 @@ QChart *Paint::createBarChart2()
     QBarCategoryAxis *axis = new QBarCategoryAxis();
     axis->append(categories);
     chart->createDefaultAxes();
-    QValueAxis* axisX=new QValueAxis;
-    chart->addAxis(axisX, Qt::AlignBottom);
-    series->attachAxis(axisX);
-    chart->axes(Qt::Vertical).first()->setRange(0,500);//设置纵轴范围
-
-    // 在标签和轴之间加空格
-    QValueAxis *axisY = qobject_cast<QValueAxis*>(chart->axes(Qt::Vertical).first());
-    Q_ASSERT(axisY);
-    axisY->setLabelFormat("%.2f  ");
+    chart->setAxisX(axis, series); // 为柱状图系列设置分类轴
+    QValueAxis* axisY=new QValueAxis;
+    series->attachAxis(axisY);
+    chart->axes(Qt::Vertical).first()->setRange(0,500);
 
     series->setLabelsPosition(QAbstractBarSeries::LabelsInsideEnd);  //设置标签显示的位置
     series->setLabelsVisible(true);  //设置数据标签可见
@@ -125,7 +114,6 @@ bool comp10(int x){
 bool comp11(int x){
     return (x>=90&&x<=100);
 }
-
 
 void Paint:: getnums2(int*&Data){
     Data[0]=std::count_if(data.begin(),data.end(),comp7);
