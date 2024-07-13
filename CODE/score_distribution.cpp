@@ -1,10 +1,11 @@
 #include "score_distribution.h"
 #include "ui_score_distribution.h"
 
-score_distribution::score_distribution(QString new_subject,QString new_student_id,QWidget *parent)
+score_distribution::score_distribution(QString new_subject,QString new_student_id,bool student_call,QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::score_distribution)
 {
+    student=student_call;
     ui->setupUi(this);
     subject=new_subject;
     ui->setupUi(this);
@@ -36,10 +37,14 @@ void score_distribution:: create_distribution_chart(QString subject,QString stud
     QValueAxis *x=new QValueAxis;
     QValueAxis *y=new QValueAxis;
     if(subject=="SUM"){
-        x->setRange(200,600);
-        y->setRange(0,40);
+        x->setRange(240,600);
+        y->setRange(0,32);
     }
-    else if(subject=="Chinese"||subject=="Math"||subject=="English"){
+    else if(subject=="Chinese"){
+        x->setRange(20,150);
+        y->setRange(0,100);
+    }
+    else if(subject=="Math"||subject=="English"){
         x->setRange(20,150);
         y->setRange(0,60);
     }
@@ -59,7 +64,7 @@ void score_distribution:: create_distribution_chart(QString subject,QString stud
         distribution[a]+=1;
     }
     //获取分数分布
-    x->setTickCount(subject=="SUM"?16:11);
+    x->setTickCount(subject=="SUM"?11:11);
     y->setTickCount(11);
     for(int b=1;b<=750;b++){
         rank[b]=distribution[b]+distribution[b-1];
@@ -69,8 +74,17 @@ void score_distribution:: create_distribution_chart(QString subject,QString stud
     }
     chart->setAxisX(x,s0);
     chart->setAxisY(y,s0);
-    ui->score->setText(QString::number(db.get_single_score(student_id,subject)));
-    ui->rank->setText(QString::number(db.get_rank(student_id,subject)));
+    int delta;
+    if(student){
+        ui->score->setText(QString::number(db.get_single_score(student_id,subject)));
+        ui->rank->setText(QString::number(db.get_rank(student_id,subject,delta)));
+        ui->lineEdit->setText(QString::number(delta));
+    }
+    else{
+        ui->score->setText(QString::number(0));
+        ui->rank->setText(QString::number(1000));
+        ui->lineEdit->setText(0);
+    }
 }
 
 

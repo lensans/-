@@ -41,7 +41,7 @@ void TeacherWindow::on_btn_teacher_revise_password_clicked()//重置密码
 
 void TeacherWindow::on_btn_teacher_total_clicked()//跳入显示一分一段表界面
 {
-    totalscore *to_te = new totalscore("0",this);
+    totalscore *to_te = new totalscore("0",0,this);
     to_te->show();
 }
 

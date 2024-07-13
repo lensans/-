@@ -81,7 +81,7 @@ public:
     bool add_score(QString student_id, QString student_name, VP subject_scores);
 
     //获取各科排名 总分用SUM替代
-    int get_rank(QString student_id,QString subject);
+    int get_rank(QString student_id,QString subject,int& delta);
 
     //获取所有学生的一分一段数据 使用应用返回结果 类型QMap<int,int> 总分用SUM表示
     void get_all_ranks(QString subject,QMap<int,int> &scoreDistribution);

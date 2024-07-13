@@ -26,7 +26,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>-10</x>
      <y>400</y>
      <width>121</width>
      <height>41</height>
@@ -42,7 +42,7 @@
   <widget class="QLineEdit" name="score">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>90</x>
      <y>410</y>
      <width>113</width>
      <height>20</height>
@@ -52,7 +52,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>230</x>
      <y>400</y>
      <width>81</width>
      <height>41</height>
@@ -68,9 +68,38 @@
   <widget class="QLineEdit" name="rank">
    <property name="geometry">
     <rect>
-     <x>400</x>
+     <x>310</x>
      <y>410</y>
      <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>400</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Candara</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>   同分人数</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>410</y>
+     <width>81</width>
      <height>20</height>
     </rect>
    </property>

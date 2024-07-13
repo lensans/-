@@ -14,8 +14,9 @@ class totalscore : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit totalscore(QString newstudent_id,QWidget *parent = nullptr);
+    explicit totalscore(QString newstudent_id,bool student_call=1,QWidget *parent = nullptr);
     QString student_id;
+    bool student=1;
     ~totalscore();
 
 

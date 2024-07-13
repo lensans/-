@@ -65,7 +65,7 @@ void signin::on_btn_signin_clicked()//点击确认登录
     default:
         break;
     }
-    if(res!=3){
+    if(res!=3&&res!=-1){
         this->close();
     }
 }

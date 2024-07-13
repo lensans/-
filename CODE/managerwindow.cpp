@@ -67,7 +67,7 @@ void managerwindow::on_btn_manager_revise_password_clicked()//重置密码
 
 void managerwindow::on_btn_manager_total_score_clicked()//跳入显示一分一段表界面
 {
-    totalscore *to = new totalscore("0");
+    totalscore *to = new totalscore("0",0,this);
     to->show();
 }
 void managerwindow::on_btn_manager_subject_clicked()//跳入显示学科间线性关系界面

@@ -261,7 +261,7 @@ void DB::get_students_scores(QString start_student_id, QString end_student_id, Q
 
 }
 
-int DB::get_rank(QString student_id, QString subject){
+int DB::get_rank(QString student_id, QString subject,int& delta){
     QSqlQuery query(db);
     std::vector<int> scores;
     int distribution[751]{0};
@@ -275,7 +275,8 @@ int DB::get_rank(QString student_id, QString subject){
     for(int b=1;b<=750;b++){
         rank[b]=distribution[b]+rank[b-1];
     }
-    return 1000-rank[myscore];
+    delta=rank[myscore+1]-rank[myscore];
+    return 1000-rank[myscore-1];
 }
 
 void DB::get_all_ranks(QString subject,QMap<int,int> &scoreDistribution){
