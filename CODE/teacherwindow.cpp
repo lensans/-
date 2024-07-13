@@ -45,17 +45,18 @@ void TeacherWindow::on_btn_teacher_total_clicked()//跳入显示一分一段表�
     to_te->show();
 }
 
-/*void TeacherWindow::on_btn_teacher_subject_clicked()//跳入显示学科间线性关系界面
+void TeacherWindow::on_btn_teacher_subject_relation_clicked()
 {
-    Subject_relation *su_te = new Subject_relation(this);
-    su_te->show();
+    Subject_relation*se_re=new Subject_relation();
+    se_re->show();
 }
+
 
 void TeacherWindow::on_btn_teacher_single_clicked()//跳入展示单科成绩直方图界面
 {
     Single_score *si_te = new Single_score(this);
     si_te->show();
-}*/
+}
 
 TeacherWindow::~TeacherWindow()
 {
