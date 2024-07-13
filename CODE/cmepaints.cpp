@@ -17,9 +17,7 @@ CMEpaints::CMEpaints(QString subject,QWidget *parent)
      QString s2=QString::number(j);
      db.get_students_scores(s,s2,subject,score);
      Paint a(score,subject);
-     QChartView *chartView;
-     chartView=new QChartView(a.createBarChart1());
-     ui->verticalLayout->insertWidget(0,chartView);
+     ui->graphicsView->setChart(a.createBarChart1());
 }
 
 CMEpaints::~CMEpaints()
