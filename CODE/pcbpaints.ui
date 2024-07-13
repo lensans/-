@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>701</width>
-    <height>523</height>
+    <width>1075</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,10 +15,22 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QGraphicsView" name="graphicsView"/>
+    <widget class="QChartView" name="graphicsView"/>
    </item>
    <item>
     <widget class="QPushButton" name="pushButton">
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>100</width>
+       <height>40</height>
+      </size>
+     </property>
      <property name="text">
       <string>返回</string>
      </property>
@@ -26,6 +38,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header>qchartview.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
