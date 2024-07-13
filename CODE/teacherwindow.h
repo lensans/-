@@ -1,4 +1,4 @@
-#ifndef TEACHERWINDOW_H
+﻿#ifndef TEACHERWINDOW_H
 #define TEACHERWINDOW_H
 
 #include <QMainWindow>
@@ -18,12 +18,13 @@ public:
     void on_btn_teacher_revise_password_clicked();//重置密码
     void on_btn_teacher_total_clicked();//一分一段表
     void on_btn_teacher_single_clicked();//单科成绩直方图
+    void on_btn_teacher_subject_clicked();
 
 
     ~TeacherWindow();
 
 private slots:
-    void on_btn_teacher_subject_relation_clicked();
+    //void on_btn_teacher_subject_relation_clicked();
 
 private:
     Ui::TeacherWindow *ui;
