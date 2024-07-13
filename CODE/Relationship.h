@@ -1,14 +1,19 @@
 #ifndef RELATIONSHIP_H
 #define RELATIONSHIP_H
 #include<vector>
-#include<QtCharts>
+#include <QLineSeries>
+#include <QChart>
+#include <QValueAxis>
+#include <QtMath>
 using  std::vector;
 class Relationship{
 public:
     Relationship(std::vector<int>a,std::vector<int>b):a(a),b(b){
         Series=nullptr;
     }
+    QPointF linearRegression(vector<int>& xData, vector<int>& yData);
     QChart * getrelationshipmap();
+    double getrelationshipr();
     QString getrelationship();
 private:
     //用 a存储语数外成绩之和，b存储物化生成绩之和
