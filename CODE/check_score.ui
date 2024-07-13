@@ -160,7 +160,7 @@ QMainWindow#check_score QPushButton#btn_check_all_confirm:hover
       <x>440</x>
       <y>220</y>
       <width>209</width>
-      <height>311</height>
+      <height>351</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -378,6 +378,36 @@ background-color: rgb(255, 255, 255);</string>
 7px;padding:2px 4px;background-color: rgb(255, 255, 255);</string>
      </property>
     </widget>
+    <widget class="QLabel" name="check_sum_label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>310</y>
+       <width>63</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 16pt &quot;宋体&quot;;</string>
+     </property>
+     <property name="text">
+      <string>排名：</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="check_rank_line_2">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>310</y>
+       <width>116</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px groove gray;border-radius:
+7px;padding:2px 4px;background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -386,7 +416,7 @@ background-color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>17</height>
     </rect>
    </property>
   </widget>

@@ -20,7 +20,7 @@ void check_score::on_btn_check_all_confirm_clicked()//查询成绩
     //从文本框读入要查询的学生id
     QString student_id = ui->check_all_student_id->text();
     VP subject_scores;
-
+    int a=0;
     DB db;
     subject_scores=db.get_all_score(student_id);
 
@@ -39,6 +39,7 @@ void check_score::on_btn_check_all_confirm_clicked()//查询成绩
     ui->check_biology_line->setText(Biology);
     QString Sum = QString("%1").arg(subject_scores[6].second);
     ui->check_sum_line->setText(Sum);
+    ui->check_rank_line_2->setText(QString::number(db.get_rank(student_id,"SUM",a)));
 }
 
 

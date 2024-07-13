@@ -14,7 +14,7 @@ stu_check_score_::stu_check_score_(student stu,QWidget *parent)
 
     DB db;
     subject_scores=db.get_all_score(stu.student_id);
-
+    int a=0;
     //显示成绩
     QString Chinese = QString("%1").arg(subject_scores[0].second);//将int型的分数强转为QString，赋给LineEdit的文本
     ui->check_Chinese_line->setText(Chinese);
@@ -30,6 +30,7 @@ stu_check_score_::stu_check_score_(student stu,QWidget *parent)
     ui->check_biology_line->setText(Biology);
     QString Sum = QString("%1").arg(subject_scores[6].second);
     ui->check_sum_line->setText(Sum);
+    ui->check_sum_line_2->setText(QString::number(db.get_rank(stu.student_id,"SUM",a)));
 }
 
 stu_check_score_::~stu_check_score_()

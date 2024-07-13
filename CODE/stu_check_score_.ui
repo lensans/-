@@ -28,9 +28,9 @@
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>160</y>
+      <y>140</y>
       <width>209</width>
-      <height>311</height>
+      <height>371</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -248,6 +248,36 @@ background-color: rgb(255, 255, 255);</string>
 7px;padding:2px 4px;background-color: rgb(255, 255, 255);</string>
      </property>
     </widget>
+    <widget class="QLabel" name="check_sum_label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>320</y>
+       <width>63</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 16pt &quot;宋体&quot;;</string>
+     </property>
+     <property name="text">
+      <string>排名：</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="check_sum_line_2">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>320</y>
+       <width>116</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px groove gray;border-radius:
+7px;padding:2px 4px;background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QLabel" name="check_score_all_title">
     <property name="geometry">
@@ -299,8 +329,8 @@ font: 24pt &quot;宋体&quot;;</string>
    <widget class="QPushButton" name="btn_check_all_return">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>490</y>
+      <x>390</x>
+      <y>510</y>
       <width>111</width>
       <height>51</height>
      </rect>
@@ -332,7 +362,7 @@ QMainWindow#stu_check_score_ QPushButton#btn_check_all_return:hover
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>17</height>
     </rect>
    </property>
   </widget>
