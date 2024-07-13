@@ -53,6 +53,6 @@ QString Relationship::getrelationship(){
     double slope = (points.size() * sumXY - sumX * sumY) / (points.size() * sumX2 - sumX * sumX);
     double intercept = (sumY - slope * sumX) / points.size();
     // 线性回归方程
-      QString equation = "y = " + QString::number(slope) + "x + " + QString::number(intercept);
+      QString equation = "线性回归方程：y = " + QString::number(slope) + "x + " + QString::number(intercept);
     return equation;
 }
