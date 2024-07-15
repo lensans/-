@@ -2,15 +2,12 @@
 #include "ui_single_score.h"
 #include"cmepaints.h"
 #include"pcbpaints.h"
+#include"teacherwindow.h"
 Single_score::Single_score(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Single_score)
 {
     ui->setupUi(this);
-
-    setFixedSize(800,600);
-
-    connect(ui->input_single_return,&QPushButton::clicked,this,&Single_score::close);
 }
 
 Single_score::~Single_score()
@@ -68,6 +65,14 @@ void Single_score::on_pushButton_6_clicked()
     this->close();
     QString subject="Biology";
     PCBpaints*pic=new PCBpaints(subject);
+    pic->show();
+}
+
+
+void Single_score::on_input_single_return_clicked()
+{
+    this->close();
+    TeacherWindow*pic=new TeacherWindow();
     pic->show();
 }
 

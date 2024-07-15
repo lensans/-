@@ -10,9 +10,9 @@ Subject_relation::Subject_relation(QWidget *parent)
 {
     ui->setupUi(this);
    DB db;
-    int i = 1;
+    int i = 1001;
     QString s = QString::number(i);
-    int j=1000;
+    int j=2000;
     QString s2=QString::number(j);
     QString subject1="CME";
     QString subject2="PCB";
