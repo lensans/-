@@ -19,6 +19,7 @@ QChart* Relationship::getrelationshipmap() {
        scatterSeries->append(points[i]);
        scatterSeries->setMarkerSize(10); // 设置散点的大小
    }
+   scatterSeries->setName("散点");
     // 设置x轴
     QValueAxis* axisX = new QValueAxis;
     axisX->setRange(200, 450);
@@ -39,6 +40,7 @@ QChart* Relationship::getrelationshipmap() {
 
     chart->addAxis(axisY, Qt::AlignLeft);
     scatterSeries->attachAxis(axisY);
+
     chart->addSeries(scatterSeries);
 
     // 线性回归计算
@@ -52,7 +54,7 @@ QChart* Relationship::getrelationshipmap() {
     double slope = (points.size() * sumXY - sumX * sumY) / (points.size() * sumX2 - sumX * sumX);
     double intercept = (sumY - slope * sumX) / points.size();
     // 设定直线的起始点和终点，根据需要设置合适的范围
-    double xMin = 200; // 起始点x坐标
+    double xMin =200; // 起始点x坐标
     double xMax = 450; // 终点x坐标
     double yMin = slope * xMin + intercept;
     double yMax = slope * xMax + intercept;
@@ -60,8 +62,11 @@ QChart* Relationship::getrelationshipmap() {
     lineSeries->append(xMin, yMin);
     lineSeries->append(xMax, yMax);
     chart->addSeries(lineSeries);
-
+    lineSeries->setName("拟合直线");
+    lineSeries->attachAxis(axisX);
+    lineSeries->attachAxis(axisY);
     return chart;
+
 }
 double Relationship::getrelationshipr(){
     // 计算 x 和 y 的均值
