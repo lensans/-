@@ -275,7 +275,7 @@ int DB::get_rank(QString student_id, QString subject,int& delta){
     for(int b=1;b<=750;b++){
         rank[b]=distribution[b]+rank[b-1];
     }
-    delta=rank[myscore+1]-rank[myscore];
+    delta=distribution[myscore];
     return 1000-rank[myscore-1];
 }
 

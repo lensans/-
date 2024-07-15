@@ -37,21 +37,21 @@ void score_distribution:: create_distribution_chart(QString subject,QString stud
     QValueAxis *x=new QValueAxis;
     QValueAxis *y=new QValueAxis;
     if(subject=="SUM"){
-        x->setRange(240,600);
-        y->setRange(0,32);
+        x->setRange(200,650);
+        y->setRange(0,20);
     }
     else if(subject=="Chinese"){
         x->setRange(20,150);
-        y->setRange(0,100);
+        y->setRange(0,40);
     }
     else if(subject=="Math"||subject=="English")
     {
         x->setRange(20,150);
-        y->setRange(0,60);
+        y->setRange(0,30);
     }
     else{
         x->setRange(0,100);
-        y->setRange(0,100);
+        y->setRange(0,50);
     }
     x->setTitleText(subject+"分数分布");
     //创建x轴
@@ -66,12 +66,12 @@ void score_distribution:: create_distribution_chart(QString subject,QString stud
     }
     //获取分数分布
     x->setTickCount(subject=="SUM"?11:11);
-    y->setTickCount(11);
+    y->setTickCount(subject=="SUM"?11:11);
     for(int b=1;b<=750;b++){
         rank[b]=distribution[b]+distribution[b-1];
     }
     for(int i=1;i<=(subject=="SUM"?750:150);i++){
-        s0->append(i,rank[i]);
+        s0->append(i,distribution[i]);
     }
     chart->setAxisX(x,s0);
     chart->setAxisY(y,s0);

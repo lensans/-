@@ -9,7 +9,7 @@ Subject_relation::Subject_relation(QWidget *parent)
     , ui(new Ui::Subject_relation)
 {
     ui->setupUi(this);
-   DB db;
+    DB db;
     int i = 1001;
     QString s = QString::number(i);
     int j=2000;

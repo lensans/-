@@ -20,12 +20,14 @@ public:
     QString subject;
     bool student=1;
 
-    void on_score_returnPressed();
+
 
     ~score_distribution();
 
 private:
     Ui::score_distribution *ui;
+private slots:
+    void on_score_returnPressed();
 };
 
 #endif // SCORE_DISTRIBUTION_H

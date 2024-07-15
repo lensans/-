@@ -4,22 +4,24 @@
 #include<QVector>
 #include<QtCharts>
 QChart* Relationship::getrelationshipmap() {
+    QScatterSeries *scatterSeries = new QScatterSeries();
     QChart *chart = new QChart();
-     QLineSeries *series = new QLineSeries();
+    QLineSeries *series = new QLineSeries();
     // 添加散点数据，生成散点图
    int n = a.size();
    for (int i = 0; i < n; i++) {
        series->append(a[i], b[i]);
    }
-   Series = series;
-      QVector<QPointF> points = Series->pointsVector();
-   QScatterSeries *scatterSeries = new QScatterSeries();
+    Series = series;
+    QVector<QPointF> points = Series->pointsVector();
+
 
    for(int i = 0; i < points.size(); ++i) {
        scatterSeries->append(points[i]);
        scatterSeries->setMarkerSize(10); // 设置散点的大小
-   }
-   scatterSeries->setName("散点");
+    }
+    scatterSeries->setName("散点");
+    chart->addSeries(scatterSeries);
     // 设置x轴
     QValueAxis* axisX = new QValueAxis;
     axisX->setRange(200, 450);
@@ -35,13 +37,14 @@ QChart* Relationship::getrelationshipmap() {
     axisY->setLabelFormat("%.0f");
     axisY->setTickCount(15);
     axisY->setMinorTickCount(3);
-    chart->addAxis(axisX, Qt::AlignBottom);
-    scatterSeries->attachAxis(axisX);
+    // chart->addAxis(axisX, Qt::AlignBottom);
+    // scatterSeries->attachAxis(axisX);
 
-    chart->addAxis(axisY, Qt::AlignLeft);
-    scatterSeries->attachAxis(axisY);
+    // chart->addAxis(axisY, Qt::AlignLeft);
+    // scatterSeries->attachAxis(axisY);
+    chart->setAxisX(axisX,scatterSeries);
+    chart->setAxisY(axisY,scatterSeries);
 
-    chart->addSeries(scatterSeries);
 
     // 线性回归计算
     double sumX = 0.0, sumY = 0.0, sumXY = 0.0, sumX2 = 0.0;
@@ -63,8 +66,10 @@ QChart* Relationship::getrelationshipmap() {
     lineSeries->append(xMax, yMax);
     chart->addSeries(lineSeries);
     lineSeries->setName("拟合直线");
-    lineSeries->attachAxis(axisX);
-    lineSeries->attachAxis(axisY);
+    chart->setAxisX(axisX,lineSeries);
+    chart->setAxisY(axisY,lineSeries);
+    // lineSeries->attachAxis(axisX);
+    // lineSeries->attachAxis(axisY);
     return chart;
 
 }
