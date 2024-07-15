@@ -11,7 +11,6 @@ public:
     Relationship(std::vector<int>a,std::vector<int>b):a(a),b(b){
         Series=nullptr;
     }
-    QPointF linearRegression(vector<int>& xData, vector<int>& yData);
     QChart * getrelationshipmap();
     double getrelationshipr();
     QString getrelationship();
