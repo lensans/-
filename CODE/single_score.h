@@ -28,6 +28,8 @@ private slots:
 
     void on_pushButton_6_clicked();
 
+    void on_input_single_return_clicked();
+
 private:
     Ui::Single_score *ui;
 };
