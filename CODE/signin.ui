@@ -142,7 +142,7 @@ font: 18pt &quot;Candara&quot;;
 
 }
 
-QMainWindow#signin QPushButton#signin:hover
+QMainWindow#signin QPushButton#btn_signin:hover
 {
 	background-color: rgb(120,200,150);
 }</string>
