@@ -21,7 +21,9 @@ void Delete_score::on_btn_delete_confirm_clicked()//点击确认删除
     QString student_id = ui->delete_student_id->text();
 
     DB db;
-    db.delete_student(student_id);//删除学生成绩
+    if(!db.delete_student(student_id)){
+        ui->delete_student_id->setText("学号不存在，请重新输入");
+    }//删除学生成绩
 
     this->close();
 }

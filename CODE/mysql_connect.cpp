@@ -54,8 +54,19 @@ int DB::get_single_score(QString student_id,QString subject){
 
 
 bool DB::update_score(QString student_id,QString subject,int new_score){
-    QSqlQuery query(db);//指定数据库连接
-    QString sql=QString("UPDATE SCORE SET %1=%2 WHERE ID=%3").arg(subject).arg(new_score).arg(student_id);
+    QSqlQuery query(db),query1(db);
+    query1.prepare("SELECT EXISTS(SELECT * FROM SCORE WHERE ID=?)");
+    query1.bindValue(0,student_id);
+    query1.exec();
+    query1.next();
+    if(query1.value(0).toInt()==0){
+        QMessageBox::critical(nullptr,"error","您所输入的学号不存在");
+        return 0;
+    }
+    int old_sum=get_single_score(student_id,"SUM");
+    int old_score=get_single_score(student_id,subject);
+    int new_sum=old_sum+new_score-old_score;
+    QString sql=QString("UPDATE SCORE SET %1=%2,SUM=%3 WHERE ID=%4").arg(subject).arg(new_score).arg(QString::number(new_sum)).arg(student_id);
     bool ret=query.exec(sql);
     if (!ret) {
         QMessageBox::critical(nullptr,"error","Failed to update data: " + query.lastError().text());
@@ -89,11 +100,19 @@ bool DB::add_score(QString student_id, QString student_name, VP subject_scores)
 
 
 bool DB::delete_student(QString student_id){
-    QSqlQuery query(db);
+    QSqlQuery query(db),query1(db);
+    query1.prepare("SELECT COUNT(*) FROM SCORE WHERE ID=?");
+    query1.bindValue(0,student_id);
+    query1.exec();
+    query1.next();
+    if(query1.value(0).toInt()==0){
+        QMessageBox::critical(nullptr,"error","您所输入的学号不存在");
+        return 0;
+    }
     query.prepare("DELETE FROM SCORE WHERE ID=?");
     query.bindValue(0,student_id);
     if(query.exec()){
-        QMessageBox::information(nullptr,"success","success deleted");
+        QMessageBox::information(nullptr,"恭喜","您已成功删除");
         return 1;
     }
     else{
@@ -104,7 +123,16 @@ bool DB::delete_student(QString student_id){
 
 VP DB::get_all_score(QString student_id){
     VP subject_score;
-    QSqlQuery query(db);
+    QSqlQuery query(db),query1(db);
+    query1.prepare("SELECT EXISTS(SELECT * FROM SCORE WHERE ID=?)");
+    query1.bindValue(0,student_id);
+    query1.exec();
+    query1.next();
+    if(query1.value(0).toInt()==0){
+        QMessageBox::critical(nullptr,"error","您所输入的学号不存在");
+        subject_score.push_back(qMakePair("null",-1));
+        return subject_score;
+    }
     query.prepare("SELECT Chinese,Math,English,Physics,Chemestry,Biology,Sum FROM SCORE WHERE ID=?");
     query.bindValue(0,student_id);
     if(query.exec()){
@@ -117,9 +145,6 @@ VP DB::get_all_score(QString student_id){
             }
         }
         return subject_score;
-    }
-    else{
-        QMessageBox::critical(nullptr,"error",query.lastError().text());
     }
 }
 
