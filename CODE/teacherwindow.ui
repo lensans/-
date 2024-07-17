@@ -233,7 +233,7 @@ QMainWindow#TeacherWindow QPushButton#btn_teacher_revise_password:hover
     </property>
     <property name="styleSheet">
      <string notr="true">
-border-image: url(:/Desktop/pictwo.png);</string>
+border-image: url(:/pictwo.png);</string>
     </property>
     <property name="text">
      <string/>

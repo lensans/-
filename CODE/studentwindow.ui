@@ -199,7 +199,7 @@ QMainWindow#StudentWindow QPushButton#btn_student_return:hover
     </property>
     <property name="styleSheet">
      <string notr="true">
-border-image: url(:/Desktop/picthree.png);</string>
+border-image: url(:/picthree.png);</string>
     </property>
     <property name="text">
      <string/>
