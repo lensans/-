@@ -28,6 +28,8 @@ private:
     Ui::score_distribution *ui;
 private slots:
     void on_score_returnPressed();
+    // void on_score_editingFinished();
+    // void on_score_textChanged(const QString &arg1);
 };
 
 #endif // SCORE_DISTRIBUTION_H

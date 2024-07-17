@@ -321,7 +321,7 @@ void DB::get_all_ranks(QString subject,QMap<int,int> &scoreDistribution){
         }
     }
 }
-void DB::get_ranks(QString subject,std::vector<int>& rank){
+void DB::get_ranks(QString subject,int rank[751]){
     QSqlQuery query(db);
     std::vector<int> scores;
     int distribution[751]{0};

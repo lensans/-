@@ -10,6 +10,7 @@ score_distribution::score_distribution(QString new_subject,QString new_student_i
     subject=new_subject;
     ui->setupUi(this);
     student_id=new_student_id;
+    connect(ui->score,&QLineEdit::returnPressed,this,&score_distribution::on_score_returnPressed);
     initchart(subject);
 }
 
@@ -92,9 +93,44 @@ void score_distribution:: create_distribution_chart(QString subject,QString stud
 
 void score_distribution::on_score_returnPressed()
 {
-    DB db;
-    std::vector<int> rank(750);
-    db.get_ranks(subject,rank);
-    int myscore=ui->score->text().toInt();
-    ui->rank->setText(QString::number(rank[myscore]));
+    if(!student){
+        DB db;
+        std::vector<int> scores;
+        int distribution[751]{0};
+        int rank[751];
+        int myscore=ui->score->text().toInt();
+        db.get_students_scores("1","1000",subject,scores);
+        for(int a:scores){
+            distribution[a]+=1;
+        }
+        rank[0]=0;
+        for(int b=1;b<=750;b++){
+            rank[b]=distribution[b]+rank[b-1];
+        }
+        int delta=distribution[myscore];
+        int myrank= 1000-rank[myscore];
+
+        ui->rank->setText(QString::number(myrank));
+        ui->lineEdit->setText(QString::number(delta));
+    }
 }
+
+// void score_distribution::on_score_editingFinished()
+// {
+//     // DB db;
+//     // std::vector<int> rank(750);
+//     // db.get_ranks(subject,rank);
+//     // int myscore=ui->score->text().toInt();
+//     // ui->rank->setText(QString::number(rank[myscore]));
+// }
+
+
+// void score_distribution::on_score_textChanged(const QString &arg1)
+// {
+//     // DB db;
+//     // std::vector<int> rank(750);
+//     // db.get_ranks(subject,rank);
+//     // int myscore=ui->score->text().toInt();
+//     // ui->rank->setText(QString::number(rank[myscore]));
+// }
+
