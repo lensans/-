@@ -20,54 +20,59 @@ Single_score::~Single_score()
 
 void Single_score::on_pushButton_clicked()
 {
-    //this->close();
     QString subject="Chinese";
     CMEpaints*pic=new CMEpaints(subject);
     pic->show();
+    this->close();
 }
 
 
 void Single_score::on_pushButton_2_clicked()
 {
-    //this->close();
+
     QString subject="Math";
     CMEpaints*pic=new CMEpaints(subject);
     pic->show();
+    this->close();
 }
 
 
 void Single_score::on_pushButton_3_clicked()
 {
-    //this->close();
+
     QString subject="English";
     CMEpaints*pic=new CMEpaints(subject);
     pic->show();
+    this->close();
 }
 
 void Single_score::on_pushButton_4_clicked()
 {
-    //this->close();
+
     QString subject="Physics";
     PCBpaints*pic=new PCBpaints(subject);
     pic->show();
+    this->close();
 }
 
 
 void Single_score::on_pushButton_5_clicked()
 {
-    //this->close();
+
     QString subject="Chemestry";
     PCBpaints*pic=new PCBpaints(subject);
     pic->show();
+    this->close();
 }
 
 
 
 void Single_score::on_pushButton_6_clicked()
 {
-    //this->close();
+
     QString subject="Biology";
     PCBpaints*pic=new PCBpaints(subject);
     pic->show();
+    this->close();
 }
 
